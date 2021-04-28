@@ -13,3 +13,6 @@ yarn-error*
 
 # editor specific
 .editorconfig
+
+# next
+.next/*
