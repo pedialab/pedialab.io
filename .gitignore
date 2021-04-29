@@ -6,13 +6,15 @@ node_modules/
 !.yarn/patches
 !.yarn/releases
 !.yarn/plugins
-!.yarn/sdks
+# .yarn/sdks is editor specific, reference: https://yarnpkg.com/getting-started/editor-sdks
+.yarn/sdks 
 !.yarn/versions
 .pnp.*
 yarn-error*
 
 # editor specific
 .editorconfig
+.vscode
 
 # next
 .next/*
