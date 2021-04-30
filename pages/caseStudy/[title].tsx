@@ -1,6 +1,17 @@
 import { GetStaticPaths } from "next";
 import { getTitles, getCaseStudyMd } from "../../caseStudies/lib-server";
 import { markdownToReactComponent, matter } from "../../caseStudies/lib-iso";
+import {
+  Container,
+  Typography,
+  TableContainer,
+  Paper,
+  Table,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableBody,
+} from "@material-ui/core";
 
 type Params = {
   params: { title: string };
@@ -48,10 +59,32 @@ const CaseStudyPage = ({ post }: Props) => {
 
   return (
     <>
-      <h2>content</h2>
-      {content}
-      <h2>data</h2>
-      {JSON.stringify(caseStudy.data)}
+      <Typography variant="h2" gutterBottom>
+        content
+      </Typography>
+      <Container>{content}</Container>
+      <Typography variant="h2" gutterBottom>
+        data
+      </Typography>
+
+      <TableContainer component={Paper}>
+        <Table>
+          <TableHead>
+            <TableRow>
+              {Object.keys(caseStudy.data).map((cellTitle) => (
+                <TableCell key={cellTitle}>{cellTitle}</TableCell>
+              ))}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {Object.values(caseStudy.data).map((cellValue) => (
+              <TableCell key={JSON.stringify(cellValue)}>
+                {JSON.stringify(cellValue)}
+              </TableCell>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </>
   );
 };
