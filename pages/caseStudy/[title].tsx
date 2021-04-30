@@ -1,6 +1,4 @@
-import { GetStaticPaths } from "next";
-import { getTitles, getCaseStudyMd } from "../../caseStudies/lib-server";
-import { markdownToReactComponent, matter } from "../../caseStudies/lib-iso";
+import { GetStaticPaths } from 'next';
 import {
   Container,
   Typography,
@@ -10,8 +8,10 @@ import {
   TableHead,
   TableRow,
   TableCell,
-  TableBody,
-} from "@material-ui/core";
+  TableBody
+} from '@material-ui/core';
+import { getTitles, getCaseStudyMd } from '../../caseStudies/lib-server';
+import { markdownToReactComponent, matter } from '../../caseStudies/lib-iso';
 
 type Params = {
   params: { title: string };
@@ -19,15 +19,14 @@ type Params = {
 
 const getStaticPaths: GetStaticPaths = async () => {
   const articleTitles = getTitles();
-  console.log(articleTitles);
 
   return {
     paths: articleTitles.map((articleTitle) => ({
       params: {
-        title: articleTitle,
-      },
+        title: articleTitle
+      }
     })),
-    fallback: false,
+    fallback: false
   };
 };
 
@@ -44,9 +43,9 @@ const getStaticProps = async ({ params }: Params) => {
   return {
     props: {
       post: {
-        fileName: markdown,
-      },
-    },
+        fileName: markdown
+      }
+    }
   };
 };
 
@@ -54,7 +53,6 @@ export { getStaticPaths, getStaticProps };
 
 const CaseStudyPage = ({ post }: Props) => {
   const caseStudy = matter(post.fileName);
-  console.log(caseStudy.data);
   const content = markdownToReactComponent(caseStudy.content);
 
   return (

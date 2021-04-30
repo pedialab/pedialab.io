@@ -1,6 +1,7 @@
-import type { AppProps } from "next/app";
-import Head from "next/head";
-import CssBaseline from "@material-ui/core/CssBaseline";
+/* eslint-disable react/jsx-props-no-spreading */
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
