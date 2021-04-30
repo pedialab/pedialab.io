@@ -1,7 +1,9 @@
 import fs from 'fs';
 import { join } from 'path';
 
-const caseStudiesDir = join(process.cwd(), 'caseStudies');
+const CASE_STUDY_ARTICLE_FOLDER = 'caseStudies';
+
+const caseStudiesDir = join(process.cwd(), CASE_STUDY_ARTICLE_FOLDER);
 
 type GetTitles = () => string[];
 
