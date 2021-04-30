@@ -12,7 +12,8 @@ module.exports = {
     extends: [
       "airbnb",
       "plugin:jest/recommended",
-      'plugin:@typescript-eslint/recommended'
+      'plugin:@typescript-eslint/recommended',
+      "plugin:react-hooks/recommended"
     ],
     root: true,
     env: {
@@ -20,7 +21,7 @@ module.exports = {
       jest: true,
       browser: true
     },
-    ignorePatterns: ['.eslintrc.js'],
+    ignorePatterns: ['.eslintrc.js', 'docs/'],
     rules: {
       // unnecessary in React 17+
       'react/react-in-jsx-scope': 'off',

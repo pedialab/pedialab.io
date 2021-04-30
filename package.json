@@ -5,7 +5,9 @@
   "homepage": "https://pedialab.io/",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o docs"
+    "build": "next build",
+    "export": "next build && next export -o docs",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@types/node": "^15.0.1",
@@ -19,13 +21,18 @@
     "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "jest": "^26.6.3",
     "typescript": "^4.2.4"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
+    "gray-matter": "^4.0.3",
     "next": "^10.2.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "remark-parse": "^9.0.0",
+    "remark-react": "^8.0.0",
+    "unified": "^9.2.1"
   }
 }
