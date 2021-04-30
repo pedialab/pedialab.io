@@ -1,5 +1,14 @@
+import Head from 'next/head';
+
 function HomePage() {
-  return <div>Welcome to Next.js!</div>;
+  return (
+    <>
+      <Head>
+        <title>Pedia Lab</title>
+      </Head>
+      <div>Welcome to Next.js!</div>
+    </>
+  );
 }
 
 export default HomePage;

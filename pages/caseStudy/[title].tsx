@@ -20,20 +20,20 @@ type Params = {
 const getStaticPaths: GetStaticPaths = async () => {
   const articleTitles = getTitles();
 
+  const paths = articleTitles.map((articleTitle) => ({
+    params: {
+      title: articleTitle
+    }
+  }));
+
   return {
-    paths: articleTitles.map((articleTitle) => ({
-      params: {
-        title: articleTitle
-      }
-    })),
+    paths,
     fallback: false
   };
 };
 
 type Props = {
-  post: {
-    fileName: string;
-  };
+  markdown: string;
 };
 
 const getStaticProps = async ({ params }: Params) => {
@@ -42,18 +42,17 @@ const getStaticProps = async ({ params }: Params) => {
 
   return {
     props: {
-      post: {
-        fileName: markdown
-      }
+      markdown
     }
   };
 };
 
 export { getStaticPaths, getStaticProps };
 
-const CaseStudyPage = ({ post }: Props) => {
-  const caseStudy = matter(post.fileName);
+const CaseStudyPage = ({ markdown }: Props) => {
+  const caseStudy = matter(markdown);
   const content = markdownToReactComponent(caseStudy.content);
+  const metadata = caseStudy.data;
 
   return (
     <>
@@ -69,13 +68,13 @@ const CaseStudyPage = ({ post }: Props) => {
         <Table>
           <TableHead>
             <TableRow>
-              {Object.keys(caseStudy.data).map((cellTitle) => (
+              {Object.keys(metadata).map((cellTitle) => (
                 <TableCell key={cellTitle}>{cellTitle}</TableCell>
               ))}
             </TableRow>
           </TableHead>
           <TableBody>
-            {Object.values(caseStudy.data).map((cellValue) => (
+            {Object.values(metadata).map((cellValue) => (
               <TableCell key={JSON.stringify(cellValue)}>
                 {JSON.stringify(cellValue)}
               </TableCell>
