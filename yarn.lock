@@ -7007,6 +7007,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"enhanced-resolve@npm:^5.7.0":
+  version: 5.8.0
+  resolution: "enhanced-resolve@npm:5.8.0"
+  dependencies:
+    graceful-fs: ^4.2.4
+    tapable: ^2.2.0
+  checksum: a3e1131c9ba0dd6f8276f068ddac4e6469d824ee8132f748e2734722b9f25360f4cb5a7fbec1cab8cd56815a6762e0bb1b8d088cbdf2a276d30d573ac5528bbb
+  languageName: node
+  linkType: hard
+
 "enquirer@npm:^2.3.5":
   version: 2.3.6
   resolution: "enquirer@npm:2.3.6"
@@ -12494,6 +12504,7 @@ fsevents@^1.2.7:
     react-dom: ^17.0.2
     remark-parse: ^9.0.0
     remark-react: ^8.0.0
+    tsconfig-paths-webpack-plugin: ^3.5.1
     typescript: ^4.2.4
     unified: ^9.2.1
   dependenciesMeta:
@@ -15087,6 +15098,13 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
+"tapable@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "tapable@npm:2.2.0"
+  checksum: f8ed725aedb3d777bf908ff06c02d1a2108667d3e64af87dd45354ac8de67e7e4fe1a567e215057fb1a2a5437b31d80cc5e5ddbb8327f7280afd4494967a9a93
+  languageName: node
+  linkType: hard
+
 "tar@npm:^6.0.2, tar@npm:^6.1.0":
   version: 6.1.0
   resolution: "tar@npm:6.1.0"
@@ -15406,6 +15424,17 @@ resolve@^2.0.0-next.3:
     typescript:
       optional: true
   checksum: 78341a27939de565e2754ff65ebb689743c16e3295528089d143c08d91842cf9029c3d6b3c95a9a20854a114a7904329d02c710d63f7ce4dbf671b8a3e560ac1
+  languageName: node
+  linkType: hard
+
+"tsconfig-paths-webpack-plugin@npm:^3.5.1":
+  version: 3.5.1
+  resolution: "tsconfig-paths-webpack-plugin@npm:3.5.1"
+  dependencies:
+    chalk: ^4.1.0
+    enhanced-resolve: ^5.7.0
+    tsconfig-paths: ^3.9.0
+  checksum: 522a48d26112f94850c1d71694bd59a768337df86af5e7b7304debf7b3f825b9a3351484185b3d928de59c882296c6f95bc6167e68c71c60224aa4238b5680b4
   languageName: node
   linkType: hard
 

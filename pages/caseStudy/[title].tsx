@@ -10,8 +10,8 @@ import {
   TableCell,
   TableBody
 } from '@material-ui/core';
-import { getTitles, getCaseStudyMd } from '../../caseStudies/lib-server';
-import { markdownToReactComponent, matter } from '../../caseStudies/lib-iso';
+import { getTitles, getCaseStudyMd } from 'pedialab-case-study/lib-server';
+import { markdownToReactComponent, matter } from 'pedialab-case-study/lib-iso';
 
 type Params = {
   params: { title: string };

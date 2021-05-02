@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "shared/*": ["shared/*"]
+      "pedialab-shared/*": ["shared/*"],
+      "pedialab-case-study/*": ["caseStudyPage/*"],
+      "pedialab-index/*": ["indexPage/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

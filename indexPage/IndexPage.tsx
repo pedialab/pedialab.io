@@ -1,5 +1,12 @@
-import Header from '../shared/components/Header';
+import { Box, Grid } from '@material-ui/core';
+import Header from 'pedialab-shared/components/Header';
 
-const IndexPage = () => <Header />;
+const IndexPage = () => (
+  <Box mx={18}>
+    <Grid container direction="column">
+      <Header />
+    </Grid>
+  </Box>
+);
 
 export default IndexPage;
