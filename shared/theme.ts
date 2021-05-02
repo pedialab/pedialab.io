@@ -9,8 +9,8 @@ const theme = createMuiTheme({
     secondary: {
       main: '#828282'
     },
-    error: {
-      main: red.A400
+    text: {
+      secondary: '#A1A1A1'
     },
     background: {
       default: '#191919'
@@ -22,6 +22,9 @@ const theme = createMuiTheme({
       color: '#E5E5E5',
       fontSize: '32px',
       fontWeight: 'bold'
+    },
+    caption: {
+      fontSize: '14px'
     }
   },
   overrides: {

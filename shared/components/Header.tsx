@@ -13,7 +13,7 @@ const Header = () => {
   const classes = useStyles();
 
   return (
-    <Box mt={4}>
+    <Box component="header" mt={4}>
       <Grid container spacing={2}>
         <Grid item>
           <Logo />
