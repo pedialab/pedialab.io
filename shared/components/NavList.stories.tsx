@@ -1,11 +1,11 @@
 import { Story, Meta } from '@storybook/react';
-import Logo from './Logo';
+import NavList from './NavList';
 
 export default {
-  title: 'Logo',
-  component: Logo
+  title: 'NavList',
+  component: NavList
 } as Meta;
 
-const Template: Story = () => <Logo />;
+const Template: Story = () => <NavList />;
 
 export const Default = Template.bind({});

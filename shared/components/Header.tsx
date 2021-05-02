@@ -1,26 +1,33 @@
 import { Grid, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import Logo from '../assets/Logo';
-import NavItem from './NavItem';
+import NavList from './NavList';
 
-const Header = () => (
-  <>
-    <Grid container spacing={2}>
-      <Grid item>
-        <Logo />
+const useStyles = makeStyles({
+  lastItem: {
+    marginLeft: 'auto'
+  }
+});
+
+const Header = () => {
+  const classes = useStyles();
+
+  return (
+    <>
+      <Grid container spacing={2}>
+        <Grid item>
+          <Logo />
+        </Grid>
+        <Grid item>
+          <Typography variant="h1">Pedia Lab</Typography>
+        </Grid>
+        <Grid item component="nav" className={classes.lastItem}>
+          <NavList />
+        </Grid>
       </Grid>
-      <Grid item>
-        <Typography variant="h1">Pedia Lab</Typography>
-      </Grid>
-      <Grid item component="nav">
-        <NavItem isActive text="About" />
-        <NavItem text="Pricing" />
-        <NavItem text="Team" />
-        <NavItem text="Case Studies" />
-        <NavItem text="Contact" />
-      </Grid>
-    </Grid>
-  </>
-);
+    </>
+  );
+};
 
 export default Header;
 
