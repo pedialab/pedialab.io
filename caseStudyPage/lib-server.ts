@@ -1,9 +1,9 @@
 import fs from 'fs';
 import { join, extname, basename } from 'path';
+import config from '../package.json';
 
-const CASE_STUDY_ARTICLE_FOLDER = 'caseStudies';
-
-const caseStudiesDir = join(process.cwd(), CASE_STUDY_ARTICLE_FOLDER);
+const caseStudySource = config.pedialab.caseStudySource;
+const caseStudiesDir = join(process.cwd(), caseStudySource);
 
 const loadAllMarkdownFileNames = (): string[] => fs
   .readdirSync(caseStudiesDir)
