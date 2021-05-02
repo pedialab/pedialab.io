@@ -1,4 +1,6 @@
+import { Typography } from '@material-ui/core';
 import Head from 'next/head';
+import theme from 'shared/theme';
 
 function HomePage() {
   return (
@@ -6,7 +8,9 @@ function HomePage() {
       <Head>
         <title>Pedia Lab</title>
       </Head>
-      <div>Welcome to Next.js!</div>
+      <Typography variant="h1" color="primary">
+        Welcome to Next.js!
+      </Typography>
     </>
   );
 }
