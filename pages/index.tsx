@@ -1,6 +1,5 @@
 import { Typography } from '@material-ui/core';
 import Head from 'next/head';
-import theme from 'shared/theme';
 
 function HomePage() {
   return (
