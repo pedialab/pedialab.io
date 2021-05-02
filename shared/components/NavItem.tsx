@@ -1,4 +1,4 @@
-import { Button } from '@material-ui/core';
+import { Button, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -6,7 +6,8 @@ const useStyles = makeStyles((theme) => ({
     borderBottomWidth: '1px',
     borderColor: theme.palette.primary.main,
     borderStyle: 'solid',
-    borderRadius: '0'
+    borderBottomLeftRadius: '0',
+    borderBottomRightRadius: '0'
   }
 }));
 
@@ -19,12 +20,14 @@ const NavItem = ({ isActive = false, text }: NavItemProps) => {
   const classes = useStyles();
 
   return (
-    <Button
-      color={isActive ? 'primary' : 'secondary'}
-      className={isActive ? classes.isActive : ''}
-    >
-      {text}
-    </Button>
+    <Box mx={3} component="li">
+      <Button
+        color={isActive ? 'primary' : 'secondary'}
+        className={isActive ? classes.isActive : ''}
+      >
+        {text}
+      </Button>
+    </Box>
   );
 };
 
