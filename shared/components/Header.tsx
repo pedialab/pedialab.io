@@ -1,6 +1,6 @@
-import { Grid, Typography } from '@material-ui/core';
+import { Box, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Logo from '../assets/Logo';
+import Logo from 'pedialab-shared/assets/Logo';
 import NavList from './NavList';
 
 const useStyles = makeStyles({
@@ -13,7 +13,7 @@ const Header = () => {
   const classes = useStyles();
 
   return (
-    <>
+    <Box mt={4}>
       <Grid container spacing={2}>
         <Grid item>
           <Logo />
@@ -25,7 +25,7 @@ const Header = () => {
           <NavList />
         </Grid>
       </Grid>
-    </>
+    </Box>
   );
 };
 

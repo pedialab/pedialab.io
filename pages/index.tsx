@@ -1,5 +1,5 @@
-import { Typography } from '@material-ui/core';
 import Head from 'next/head';
+import IndexPage from 'pedialab-index/IndexPage';
 
 function HomePage() {
   return (
@@ -7,9 +7,7 @@ function HomePage() {
       <Head>
         <title>Pedia Lab</title>
       </Head>
-      <Typography variant="h1" color="primary">
-        Welcome to Next.js!
-      </Typography>
+      <IndexPage />
     </>
   );
 }
