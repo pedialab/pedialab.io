@@ -12,6 +12,9 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "pedialab": {
+    "caseStudySource": "caseStudySource"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/runtime": "^7.14.0",
