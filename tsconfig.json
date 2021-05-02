@@ -12,8 +12,9 @@
     "jsx": "preserve",
     "incremental": false,
     "skipLibCheck": true,
+    "baseUrl": ".",
     "paths": {
-      "caseStudies/*": ["caseStudies/*"]
+      "shared/*": ["shared/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
