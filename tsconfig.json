@@ -15,8 +15,8 @@
     "baseUrl": ".",
     "paths": {
       "pedialab-shared/*": ["shared/*"],
-      "pedialab-case-study/*": ["caseStudyPage/*"],
-      "pedialab-index/*": ["indexPage/*"],
+      "pedialab-case-study/*": ["case-study-page/*"],
+      "pedialab-index/*": ["index-page/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

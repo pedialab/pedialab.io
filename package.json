@@ -13,7 +13,7 @@
     "build-storybook": "build-storybook"
   },
   "pedialab": {
-    "caseStudySource": "caseStudySource"
+    "caseStudySource": "case-study-source"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
