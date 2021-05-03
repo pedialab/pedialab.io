@@ -18,24 +18,34 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: ['Noto Sans'].join(','),
+    // Company Name
     h1: {
       color: '#E5E5E5',
-      fontSize: '32px',
-      fontWeight: 'bold'
+      fontSize: '2rem',
+      fontWeight: 'bold',
+      lineHeight: '1.3'
+    },
+    h2: {
+      fontSize: '3.75rem',
+      lineHeight: '1.27'
+    },
+    body1: {
+      fontSize: '1.5rem',
+      lineHeight: '1.335'
     },
     caption: {
-      fontSize: '14px'
+      fontSize: '0.875rem'
     }
   },
   overrides: {
     MuiButton: {
       text: {
-        textTransform: 'none',
-        minWidth: 'auto',
-        paddingLeft: '4px',
-        paddingRight: '4px',
-        lineHeight: '1',
-        paddingBottom: '13px'
+        textTransform: 'none'
+        // minWidth: 'auto',
+        // paddingLeft: '0',
+        // paddingRight: '0',
+        // lineHeight: '1',
+        // paddingBottom: '13px'
       }
     }
   }

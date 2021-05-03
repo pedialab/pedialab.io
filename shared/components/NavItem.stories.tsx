@@ -10,14 +10,7 @@ const Template: Story<NavItemProps> = ({ isActive, text }: NavItemProps) => (
   <NavItem isActive={isActive} text={text} />
 );
 
-export const NotActive = Template.bind({});
-NotActive.args = {
-  isActive: false,
+export const Default = Template.bind({});
+Default.args = {
   text: 'Pricing'
-};
-
-export const Active = Template.bind({});
-Active.args = {
-  isActive: true,
-  text: 'About'
 };
