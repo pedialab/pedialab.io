@@ -1,20 +1,16 @@
 import fs from 'fs';
-import { join } from 'path';
+import { join, extname, basename } from 'path';
 
 const CASE_STUDY_ARTICLE_FOLDER = 'caseStudies';
 
 const caseStudiesDir = join(process.cwd(), CASE_STUDY_ARTICLE_FOLDER);
 
-type GetTitles = () => string[];
-
-const getTitles: GetTitles = () => fs
+const loadAllMarkdownFileNames = (): string[] => fs
   .readdirSync(caseStudiesDir)
-  .filter((fileName) => fileName.endsWith('.md'))
-  .map((fileName) => fileName.replace(/.md$/, ''));
+  .filter((fileName) => extname(fileName) === '.md')
+  .map((fileName) => basename(fileName, '.md'));
 
-type GetCaseStudyMd = (fileName: string) => string;
-
-const getCaseStudyMd: GetCaseStudyMd = (fileName) => {
+const loadMarkdownFile = (fileName: string): string => {
   const caseStudyMd = fs.readFileSync(
     join(caseStudiesDir, fileName.concat('.md')),
     'utf-8'
@@ -22,4 +18,4 @@ const getCaseStudyMd: GetCaseStudyMd = (fileName) => {
   return caseStudyMd;
 };
 
-export { getTitles, getCaseStudyMd };
+export { loadAllMarkdownFileNames, loadMarkdownFile };
