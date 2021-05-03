@@ -1,11 +1,16 @@
 import { Story, Meta } from '@storybook/react';
-import NavList from './NavList';
+import NavList, { NavListProps } from './NavList';
 
 export default {
   title: 'NavList',
   component: NavList
 } as Meta;
 
-const Template: Story = () => <NavList />;
+const Template: Story<NavListProps> = ({ items }: NavListProps) => (
+  <NavList items={items} />
+);
 
 export const Default = Template.bind({});
+Default.args = {
+  items: ['About', 'Pricing', 'Team', 'Case Studies', 'Careers', 'Contact']
+};

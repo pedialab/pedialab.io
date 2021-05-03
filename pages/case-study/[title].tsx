@@ -10,7 +10,10 @@ import {
   TableCell,
   TableBody
 } from '@material-ui/core';
-import { getTitles, getCaseStudyMd } from 'pedialab-case-study/lib-server';
+import {
+  loadAllMarkdownFileNames,
+  loadMarkdownFile
+} from 'pedialab-case-study/lib-server';
 import { markdownToReactComponent, matter } from 'pedialab-case-study/lib-iso';
 
 type Params = {
@@ -18,7 +21,7 @@ type Params = {
 };
 
 const getStaticPaths: GetStaticPaths = async () => {
-  const articleTitles = getTitles();
+  const articleTitles = loadAllMarkdownFileNames();
 
   const paths = articleTitles.map((articleTitle) => ({
     params: {
@@ -38,7 +41,7 @@ type Props = {
 
 const getStaticProps = async ({ params }: Params) => {
   const title = params.title;
-  const markdown = await getCaseStudyMd(title);
+  const markdown = await loadMarkdownFile(title);
 
   return {
     props: {

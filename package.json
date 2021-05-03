@@ -9,7 +9,7 @@
     "export": "next build && next export -o docs",
     "lint": "eslint .",
     "test": "jest .",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook"
   },
   "pedialab": {

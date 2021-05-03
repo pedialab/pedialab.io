@@ -1,9 +1,13 @@
 import { Box, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Logo from 'pedialab-shared/assets/Logo';
+import { useMemo } from 'react';
+import LogoWithName from './LogoWithName';
 import NavList from './NavList';
 
 const useStyles = makeStyles({
+  container: {
+    alignItems: 'center'
+  },
   lastItem: {
     marginLeft: 'auto'
   }
@@ -11,18 +15,18 @@ const useStyles = makeStyles({
 
 const Header = () => {
   const classes = useStyles();
-
+  const headerList = useMemo(
+    () => ['About', 'Pricing', 'Team', 'Case Studies', 'Careers', 'Contact'],
+    []
+  );
   return (
-    <Box component="header" mt={4}>
-      <Grid container spacing={2}>
+    <Box component="header" mt="2.25rem">
+      <Grid container spacing={2} className={classes.container}>
         <Grid item>
-          <Logo />
-        </Grid>
-        <Grid item>
-          <Typography variant="h1">Pedia Lab</Typography>
+          <LogoWithName />
         </Grid>
         <Grid item component="nav" className={classes.lastItem}>
-          <NavList />
+          <NavList items={headerList} />
         </Grid>
       </Grid>
     </Box>
