@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import LogoWithName from './LogoWithName';
 
 export default {
-  title: 'LogoWithName',
+  title: 'shared/LogoWithName',
   component: LogoWithName
 } as Meta;
 
