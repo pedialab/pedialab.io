@@ -14,7 +14,7 @@ const HeroContent = () => {
   const classes = useStyles();
   return (
     <Box mt="7rem">
-      <Typography variant="h2" color="primary">
+      <Typography variant="h2">
         Architecting software, teams,
         <br />
         companies and dreams
@@ -27,7 +27,7 @@ const HeroContent = () => {
         />
       </Box>
       <Box ml="34.46%" mt="8rem">
-        <Typography component="h3" variant="h2" color="primary">
+        <Typography component="h3" variant="h2">
           The Pedia Lab
           <br />
           Difference
