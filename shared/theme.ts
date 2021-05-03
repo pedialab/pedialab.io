@@ -18,21 +18,24 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: ['Noto Sans'].join(','),
-    // Company Name
+    // Company name
     h1: {
       color: '#E5E5E5',
       fontSize: '2rem',
       fontWeight: 'bold',
       lineHeight: '1.3'
     },
-    // Content Header
+    // Content header
     h2: {
       fontSize: '3.75rem',
-      lineHeight: '1.27'
+      lineHeight: '1.27',
+      color: '#E0E0E0'
     },
+    // Content text
     body1: {
       fontSize: '1.5rem',
-      lineHeight: '1.335'
+      lineHeight: '1.335',
+      color: '#828282'
     },
     caption: {
       fontSize: '0.875rem'
