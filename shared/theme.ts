@@ -25,6 +25,7 @@ const theme = createMuiTheme({
       fontWeight: 'bold',
       lineHeight: '1.3'
     },
+    // Content Header
     h2: {
       fontSize: '3.75rem',
       lineHeight: '1.27'
