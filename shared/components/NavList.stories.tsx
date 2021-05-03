@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import NavList, { NavListProps } from './NavList';
 
 export default {
-  title: 'NavList',
+  title: 'shared/NavList',
   component: NavList
 } as Meta;
 

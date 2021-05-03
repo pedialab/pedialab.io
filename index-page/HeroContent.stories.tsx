@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import HeroContent from './HeroContent';
 
 export default {
-  title: 'HeroContent',
+  title: 'index/HeroContent',
   component: HeroContent
 } as Meta;
 

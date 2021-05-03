@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import NavItem, { NavItemProps } from './NavItem';
 
 export default {
-  title: 'NavItem',
+  title: 'shared/NavItem',
   component: NavItem
 } as Meta;
 

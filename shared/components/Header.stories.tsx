@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import Header, { HeaderProps } from './Header';
 
 export default {
-  title: 'Header',
+  title: 'shared/Header',
   component: Header
 } as Meta;
 
