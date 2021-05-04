@@ -1,5 +1,7 @@
-import { Box, Grid, makeStyles } from '@material-ui/core';
-import { Header, Footer } from 'pedialab-shared/components';
+import {
+  Box, Grid, makeStyles, Typography
+} from '@material-ui/core';
+import { Header, Footer, CommonButton } from 'pedialab-shared/components';
 
 const useStyle = makeStyles({
   footer: {
@@ -12,8 +14,25 @@ const CareerPage = () => {
   return (
     <>
       <Box mx="10%">
-        <Grid container direction="column">
+        <Grid container direction="column" justify="center">
           <Header />
+          <Box alignSelf="center" mt="9.4rem">
+            <Typography variant="h2">Join Pedia Lab</Typography>
+          </Box>
+          <Box alignSelf="center" mt="5.19rem" display="flex">
+            <Box mr="2.5rem">
+              <CommonButton
+                title="Career opportunities - CakeResume"
+                width="26.3rem"
+                href="https://www.cakeresume.com/companies/peraperaai?ref=navs_company"
+              />
+            </Box>
+            <CommonButton
+              title="Career opportunities - AngelList"
+              width="26.3rem"
+              href="https://angel.co/company/peraperaai"
+            />
+          </Box>
           <Footer className={classes.footer} />
         </Grid>
       </Box>
