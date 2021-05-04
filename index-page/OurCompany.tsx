@@ -7,11 +7,15 @@ const useStyles = makeStyles({
   }
 });
 
-const OurCompany = () => {
+export type OurCompanyProps = {
+  className?: string;
+};
+
+const OurCompany = ({ className }: OurCompanyProps) => {
   const classes = useStyles();
 
   return (
-    <Box component="article" mt="7.5rem" pl="8.8%">
+    <Box component="article" className={className}>
       <Typography variant="h2">OUR COMPANY</Typography>
       <Box width="36.2%" mt="2.5rem">
         <img

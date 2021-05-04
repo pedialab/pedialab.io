@@ -1,8 +1,16 @@
 import { Box } from '@material-ui/core';
 
-export type TextListProps = { texts: string[]; width?: string };
+export type TextListProps = {
+  texts: string[];
+  width?: string;
+  textColor?: string;
+};
 
-const TextList = ({ texts = [], width = '22rem' }: TextListProps) => (
+const TextList = ({
+  textColor,
+  texts = [],
+  width = '22rem'
+}: TextListProps) => (
   <Box component="ul" width={width} mt="0" mb="0" pl="2rem">
     {texts.map((text) => (
       <Box
@@ -12,6 +20,7 @@ const TextList = ({ texts = [], width = '22rem' }: TextListProps) => (
         fontWeight={400}
         fontSize="1.5rem"
         lineHeight="1.34"
+        color={textColor}
       >
         {text}
       </Box>

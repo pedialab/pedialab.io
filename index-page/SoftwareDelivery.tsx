@@ -23,7 +23,11 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const SoftwareDelivery = () => {
+export type SoftwareDeliveryProps = {
+  className?: string;
+};
+
+const SoftwareDelivery = ({ className }: SoftwareDeliveryProps) => {
   const classes = useStyles();
   const listContent = useMemo(
     () => [
@@ -40,7 +44,7 @@ const SoftwareDelivery = () => {
     [classes]
   );
   return (
-    <Box component="article" mt="14rem">
+    <Box component="article" className={className}>
       <Grid container>
         <Grid item component="section" lg={6}>
           <Typography variant="h2" className={classes.header}>

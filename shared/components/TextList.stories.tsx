@@ -6,8 +6,12 @@ export default {
   component: TextList
 } as Meta;
 
-const Template: Story<TextListProps> = ({ texts, width }: TextListProps) => (
-  <TextList texts={texts} width={width} />
+const Template: Story<TextListProps> = ({
+  texts,
+  width,
+  textColor
+}: TextListProps) => (
+  <TextList texts={texts} width={width} textColor={textColor} />
 );
 
 export const Default = Template.bind({});

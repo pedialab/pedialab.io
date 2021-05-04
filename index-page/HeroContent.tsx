@@ -10,10 +10,14 @@ const useStyles = makeStyles({
   }
 });
 
-const HeroContent = () => {
+export type HeroContentProps = {
+  className?: string;
+};
+
+const HeroContent = ({ className }: HeroContentProps) => {
   const classes = useStyles();
   return (
-    <Box mt="7rem">
+    <Box className={className}>
       <Typography variant="h2">
         Architecting software, teams,
         <br />
