@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import IndexPage from 'pedialab-pages/index-page/IndexPage';
+import IndexPageContainer from 'pedialab-pages/index-page/IndexPageContainer';
 
 function HomePage() {
   return (
@@ -7,7 +7,7 @@ function HomePage() {
       <Head>
         <title>Pedia Lab</title>
       </Head>
-      <IndexPage />
+      <IndexPageContainer />
     </>
   );
 }

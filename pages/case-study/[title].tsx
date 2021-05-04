@@ -1,4 +1,5 @@
 import { GetStaticPaths } from 'next';
+import Head from 'next/head';
 import {
   Container,
   Typography,
@@ -62,6 +63,9 @@ const CaseStudyPage = ({ markdown }: Props) => {
 
   return (
     <>
+      <Head>
+        <title>Pedia Lab - </title>
+      </Head>
       <Typography variant="h2" gutterBottom>
         content
       </Typography>
