@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { join, extname, basename } from 'path';
-import config from '../package.json';
+import config from '../../package.json';
 
 const caseStudySource = config.pedialab.caseStudySource;
 const caseStudiesDir = join(process.cwd(), caseStudySource);

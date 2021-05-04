@@ -6,7 +6,7 @@ import {
   SoftwareDelivery,
   VendorDifference,
   TechleadaaS
-} from 'pedialab-index/index';
+} from 'pedialab-pages/index-page';
 
 const useStyle = makeStyles({
   heroContent: {
