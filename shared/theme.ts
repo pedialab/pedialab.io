@@ -31,10 +31,23 @@ const theme = createMuiTheme({
       lineHeight: '1.27',
       color: '#E0E0E0'
     },
+    // section header
+    h3: {
+      color: '#E0E0E0',
+      fontSize: '2.125rem',
+      fontWeight: 700,
+      lineHeight: '1.5'
+    },
     // Content text
     body1: {
       fontSize: '1.5rem',
       lineHeight: '1.335',
+      color: '#828282'
+    },
+    // list item
+    body2: {
+      fontSize: '1.5rem',
+      lineHeight: '2',
       color: '#828282'
     },
     caption: {
