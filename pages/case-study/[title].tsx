@@ -13,8 +13,11 @@ import {
 import {
   loadAllMarkdownFileNames,
   loadMarkdownFile
-} from 'pedialab-case-study/lib-server';
-import { markdownToReactComponent, matter } from 'pedialab-case-study/lib-iso';
+} from 'pedialab-pages/case-study-page/lib-server';
+import {
+  markdownToReactComponent,
+  matter
+} from 'pedialab-pages/case-study-page/lib-iso';
 
 type Params = {
   params: { title: string };
