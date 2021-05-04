@@ -15,13 +15,21 @@ const useStyles = makeStyles({
 
 export type HeaderProps = {
   className?: string;
+  isActivatedOrder?: number;
 };
 
-const Header = ({ className }: HeaderProps) => {
+const Header = ({ className, isActivatedOrder }: HeaderProps) => {
   const classes = useStyles();
   const headerList = useMemo(
-    () => ['About', 'Pricing', 'Team', 'Case Studies', 'Careers', 'Contact'],
-    []
+    () => [
+      'About',
+      'Pricing',
+      'Team',
+      'Case Studies',
+      'Careers',
+      'Contact'
+    ].map((text, index) => ({ text, isActive: index === isActivatedOrder })),
+    [isActivatedOrder]
   );
   return (
     <Box component="header" mt="2.25rem" width="100%" className={className}>
