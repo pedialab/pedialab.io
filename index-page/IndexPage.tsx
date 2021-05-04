@@ -3,7 +3,8 @@ import { Header, Footer } from 'pedialab-shared/components';
 import {
   HeroContent,
   OurCompany,
-  SoftwareDelivery
+  SoftwareDelivery,
+  VendorDifference
 } from 'pedialab-index/index';
 
 const IndexPage = () => (
@@ -13,6 +14,7 @@ const IndexPage = () => (
       <HeroContent />
       <OurCompany />
       <SoftwareDelivery />
+      <VendorDifference />
       <Footer />
     </Grid>
   </Box>
