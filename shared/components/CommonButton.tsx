@@ -2,35 +2,46 @@ import {
   Button, Typography, Box, makeStyles
 } from '@material-ui/core';
 
-export type CommonButtonProps = { title: string; subtitle?: string };
+export type CommonButtonProps = {
+  title: string;
+  subtitle?: string;
+  width?: string;
+  href?: string;
+};
 
 const useStyle = makeStyles((theme) => ({
   commonButton: {
-    width: '22.5rem',
     backgroundColor: theme.palette.background.paper
   }
 }));
 
-const CommonButton = ({ title, subtitle }: CommonButtonProps) => {
+const CommonButton = ({
+  title,
+  subtitle,
+  href,
+  width = '22.5rem'
+}: CommonButtonProps) => {
   const classes = useStyle();
 
   return (
-    <Box width="fit-content">
-      <Button className={classes.commonButton}>
+    <Box display="flex" flexDirection="column" width={width}>
+      <Button fullWidth href={href} className={classes.commonButton}>
         <Typography color="textPrimary" variant="h6" component="span">
           {title}
         </Typography>
       </Button>
-      <Box mt="5px">
-        <Typography
-          variant="subtitle1"
-          color="secondary"
-          component="p"
-          align="center"
-        >
-          {subtitle}
-        </Typography>
-      </Box>
+      {subtitle && (
+        <Box mt="5px">
+          <Typography
+            variant="subtitle1"
+            color="secondary"
+            component="p"
+            align="center"
+          >
+            {subtitle}
+          </Typography>
+        </Box>
+      )}
     </Box>
   );
 };
