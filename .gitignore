@@ -1,5 +1,5 @@
 # npm
-node_modules/
+node_modules/*
 
 # yarn 2, reference: https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
 .yarn/*
