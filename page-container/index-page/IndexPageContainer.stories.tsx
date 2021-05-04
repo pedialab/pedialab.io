@@ -1,11 +1,11 @@
 import { Story, Meta } from '@storybook/react';
-import IndexPage from './IndexPage';
+import IndexPageContainer from './IndexPageContainer';
 
 export default {
   title: 'page/IndexPage',
-  component: IndexPage
+  component: IndexPageContainer
 } as Meta;
 
-const Template: Story = () => <IndexPage />;
+const Template: Story = () => <IndexPageContainer />;
 
 export const Default = Template.bind({});

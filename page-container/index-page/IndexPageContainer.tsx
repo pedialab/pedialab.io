@@ -30,7 +30,7 @@ const useStyle = makeStyles({
   }
 });
 
-const IndexPage = () => {
+const IndexPageContainer = () => {
   const classes = useStyle();
   return (
     <>
@@ -53,4 +53,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default IndexPageContainer;
