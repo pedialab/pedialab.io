@@ -15,7 +15,7 @@ const CareerPage = () => {
     <>
       <Box mx="10%">
         <Grid container direction="column" justify="center">
-          <Header />
+          <Header isActivatedOrder={4} />
           <Box alignSelf="center" mt="9.4rem">
             <Typography variant="h2">Join Pedia Lab</Typography>
           </Box>

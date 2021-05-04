@@ -12,5 +12,12 @@ const Template: Story<NavListProps> = ({ items }: NavListProps) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  items: ['About', 'Pricing', 'Team', 'Case Studies', 'Careers', 'Contact']
+  items: [
+    'About',
+    'Pricing',
+    'Team',
+    'Case Studies',
+    'Careers',
+    'Contact'
+  ].map((text) => ({ text, isActive: false }))
 };

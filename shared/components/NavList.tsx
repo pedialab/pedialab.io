@@ -1,7 +1,7 @@
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useMemo } from 'react';
-import NavItem from './NavItem';
+import NavItem, { NavItemProps } from './NavItem';
 
 const useStyles = makeStyles(() => ({
   navList: {
@@ -12,13 +12,15 @@ const useStyles = makeStyles(() => ({
 }));
 
 export type NavListProps = {
-  items: string[];
+  items: NavItemProps[];
 };
 
 const NavList = ({ items = [] }: NavListProps) => {
   const classes = useStyles();
   const navListItems = useMemo(
-    () => items.map((text) => <NavItem text={text} key={text} />),
+    () => items.map((item) => (
+      <NavItem text={item.text} key={item.text} isActive={item.isActive} />
+    )),
     [items]
   );
   return (

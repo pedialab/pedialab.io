@@ -14,3 +14,9 @@ export const Default = Template.bind({});
 Default.args = {
   text: 'Pricing'
 };
+
+export const Active = Template.bind({});
+Active.args = {
+  text: 'Career',
+  isActive: true
+};

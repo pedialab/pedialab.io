@@ -6,6 +6,13 @@ export default {
   component: Header
 } as Meta;
 
-const Template: Story<HeaderProps> = () => <Header />;
+const Template: Story<HeaderProps> = ({ isActivatedOrder }: HeaderProps) => (
+  <Header isActivatedOrder={isActivatedOrder} />
+);
 
 export const Default = Template.bind({});
+
+export const WithActivated = Template.bind({});
+WithActivated.args = {
+  isActivatedOrder: 1
+};
