@@ -34,13 +34,17 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const VendorDifference = () => {
+export type VendorDifferenceProps = {
+  className?: string;
+};
+
+const VendorDifference = ({ className }: VendorDifferenceProps) => {
   const classes = useStyles();
   return (
     <>
       <Box
         component="article"
-        mt="13rem"
+        className={className}
         borderTop={1}
         borderColor="secondary.main"
         display="flex"
