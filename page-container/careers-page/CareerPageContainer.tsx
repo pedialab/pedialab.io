@@ -17,21 +17,15 @@ const CareerPage = () => {
         <Grid container direction="column" justify="center">
           <Header isActivatedOrder={4} />
           <Box alignSelf="center" mt="9.4rem">
-            <Typography variant="h2">Join Pedia Lab</Typography>
+            <Typography variant="h2" color="primary">
+              Join Pedia Lab
+            </Typography>
           </Box>
           <Box alignSelf="center" mt="5.19rem" display="flex">
             <Box mr="2.5rem">
-              <CommonButton
-                title="Career opportunities - CakeResume"
-                width="26.3rem"
-                href="https://www.cakeresume.com/companies/peraperaai?ref=navs_company"
-              />
+              <CommonButton title="Career opportunities - CakeResume" width="26.3rem" href="https://www.cakeresume.com/companies/peraperaai?ref=navs_company" />
             </Box>
-            <CommonButton
-              title="Career opportunities - AngelList"
-              width="26.3rem"
-              href="https://angel.co/company/peraperaai"
-            />
+            <CommonButton title="Career opportunities - AngelList" width="26.3rem" href="https://angel.co/company/peraperaai" />
           </Box>
           <Footer className={classes.footer} />
         </Grid>

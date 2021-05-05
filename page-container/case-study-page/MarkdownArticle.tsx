@@ -18,16 +18,13 @@ const useStyle = makeStyles({
 });
 
 const StyledParagraph = ({ children }: { children: JSX.Element }) => (
-  <Typography variant="body2" component="p">
+  <Typography variant="body2" color="secondary" component="p">
     {children}
   </Typography>
 );
 
 const MarkdownArticle = ({
-  title,
-  heroImageSrc,
-  highlight,
-  content
+  title, heroImageSrc, highlight, content
 }: MarkdownArticleProps) => {
   const classes = useStyle();
 
@@ -40,18 +37,15 @@ const MarkdownArticle = ({
   return (
     <Box component="article" display="flex" flexDirection="column">
       <Box alignSelf="center">
-        <Typography variant="h2">{title}</Typography>
+        <Typography variant="h2" color="primary">
+          {title}
+        </Typography>
       </Box>
       <Box mt="4rem">
         <img src={heroImageSrc} alt={title} />
       </Box>
       <Box mt="2rem">
-        <Typography
-          component="p"
-          variant="subtitle1"
-          color="primary"
-          className={classes.highlight}
-        >
+        <Typography component="p" variant="subtitle1" color="primary" className={classes.highlight}>
           {highlight}
         </Typography>
       </Box>

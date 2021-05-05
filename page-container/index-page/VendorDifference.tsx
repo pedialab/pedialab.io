@@ -42,42 +42,18 @@ const VendorDifference = ({ className }: VendorDifferenceProps) => {
   const classes = useStyles();
   return (
     <>
-      <Box
-        component="article"
-        className={className}
-        borderTop={1}
-        borderColor="secondary.main"
-        display="flex"
-      >
+      <Box component="article" className={className} borderTop={1} borderColor="secondary.main" display="flex">
         <Box flexGrow={1} flexBasis={0} className={classes.firstSection}>
-          <Box
-            mt="0.75rem"
-            ml="0.75rem"
-            display="flex"
-            paddingTop="2.9375rem"
-            paddingRight="7%"
-          >
-            <Typography variant="h3" className={classes.title}>
+          <Box mt="0.75rem" ml="0.75rem" display="flex" paddingTop="2.9375rem" paddingRight="7%">
+            <Typography variant="h3" color="primary" className={classes.title}>
               {content.vendor.title}
             </Typography>
             <TextList texts={content.vendor.lists} />
           </Box>
         </Box>
         <Box flexGrow={1} flexBasis={0}>
-          <Box
-            mt="0.75rem"
-            ml="0.75rem"
-            bgcolor="background.paper"
-            display="flex"
-            borderRadius="40px"
-            paddingTop="2.9375rem"
-            paddingRight="7%"
-          >
-            <Typography
-              color="textPrimary"
-              variant="h3"
-              className={classes.title}
-            >
+          <Box mt="0.75rem" ml="0.75rem" bgcolor="background.paper" display="flex" borderRadius="40px" paddingTop="2.9375rem" paddingRight="7%">
+            <Typography color="textPrimary" variant="h3" className={classes.title}>
               {content.pedialab.title}
             </Typography>
             <TextList texts={content.pedialab.lists} />

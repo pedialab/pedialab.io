@@ -30,12 +30,10 @@ const theme = createMuiTheme({
     // article header
     h2: {
       fontSize: '3.75rem',
-      lineHeight: '1.27',
-      color: '#E0E0E0'
+      lineHeight: '1.27'
     },
     // section header
     h3: {
-      color: '#E0E0E0',
       fontSize: '2.125rem',
       fontWeight: 700,
       lineHeight: '1.5'
@@ -49,13 +47,11 @@ const theme = createMuiTheme({
     // index article text
     body1: {
       fontSize: '1.5rem',
-      lineHeight: '1.335',
-      color: '#828282'
+      lineHeight: '1.335'
     },
     // case-study article paragraph
     body2: {
       fontSize: '1.125rem',
-      color: '#828282',
       lineHeight: '1.56',
       marginTop: '1.625rem',
       marginBottom: '1.625rem'
@@ -68,8 +64,7 @@ const theme = createMuiTheme({
     // index list item
     subtitle2: {
       fontSize: '1.5rem',
-      lineHeight: '2',
-      color: '#828282'
+      lineHeight: '2'
     },
     caption: {
       fontSize: '0.875rem'
@@ -80,7 +75,8 @@ const theme = createMuiTheme({
       '@global': {
         img: {
           width: '100%',
-          height: 'auto'
+          height: 'auto',
+          objectFit: 'cover'
         }
       }
     },
