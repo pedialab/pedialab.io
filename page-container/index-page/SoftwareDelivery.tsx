@@ -38,7 +38,9 @@ const SoftwareDelivery = ({ className }: SoftwareDeliveryProps) => {
       'You need experienced and competent Tech-Lead who understand your business and walk the talk.'
     ].map((content) => (
       <Box component="li" key={content} className={classes.listItem}>
-        <Typography variant="subtitle2">{content}</Typography>
+        <Typography variant="subtitle2" color="secondary">
+          {content}
+        </Typography>
       </Box>
     )),
     [classes]
@@ -47,12 +49,12 @@ const SoftwareDelivery = ({ className }: SoftwareDeliveryProps) => {
     <Box component="article" className={className}>
       <Grid container>
         <Grid item component="section" lg={6}>
-          <Typography variant="h2" className={classes.header}>
+          <Typography variant="h2" color="primary" className={classes.header}>
             PROBLEM OF SOFTWARE DELIVERY
           </Typography>
         </Grid>
         <Grid item component="section" lg={6}>
-          <Typography variant="h3">
+          <Typography variant="h3" color="primary">
             Your Rocket startup or project
             <br />
             needs a Rocket Engine.

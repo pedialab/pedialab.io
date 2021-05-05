@@ -6,18 +6,8 @@ export default {
   component: MarkdownArticle
 } as Meta;
 
-const Template: Story<MarkdownArticleProps> = ({
-  title,
-  heroImageSrc,
-  highlight,
-  content
-}: MarkdownArticleProps) => (
-  <MarkdownArticle
-    title={title}
-    heroImageSrc={heroImageSrc}
-    highlight={highlight}
-    content={content}
-  />
+const Template: Story<MarkdownArticleProps> = ({ title, heroImageSrc, highlight, content }: MarkdownArticleProps) => (
+  <MarkdownArticle title={title} heroImageSrc={heroImageSrc} highlight={highlight} content={content} />
 );
 
 const contentExample = `Our partner Vincent Lau, lead the development of reservation systems and IoT integrations of the award winning sleeping pod, during his time with Space is Ltd.
@@ -36,7 +26,7 @@ IoT
 export const Default = Template.bind({});
 Default.args = {
   title: 'SLEEEP by Space is Ltd',
-  heroImageSrc: '/sleeep.jpg',
+  heroImageSrc: '/case_sleeep.jpg',
   highlight: 'Red Dot Design Awards 18’',
   content: contentExample
 };
