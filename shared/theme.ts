@@ -41,32 +41,49 @@ const theme = createMuiTheme({
       lineHeight: '1.5'
     },
     // button title
-    h6: {
+    button: {
       fontSize: '1.125rem',
       fontWeight: 700,
       lineHeight: '1.225'
     },
-    // article text
+    // index article text
     body1: {
       fontSize: '1.5rem',
       lineHeight: '1.335',
       color: '#828282'
     },
-    // list item
+    // case-study article paragraph
     body2: {
-      fontSize: '1.5rem',
-      lineHeight: '2',
-      color: '#828282'
+      fontSize: '1.125rem',
+      color: '#828282',
+      lineHeight: '1.56',
+      marginTop: '1.625rem',
+      marginBottom: '1.625rem'
     },
+    // 12px
     subtitle1: {
       fontSize: '0.75rem',
       fontWeight: 700
+    },
+    // index list item
+    subtitle2: {
+      fontSize: '1.5rem',
+      lineHeight: '2',
+      color: '#828282'
     },
     caption: {
       fontSize: '0.875rem'
     }
   },
   overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        img: {
+          width: '100%',
+          height: 'auto'
+        }
+      }
+    },
     MuiButton: {
       root: {
         '&:hover': {

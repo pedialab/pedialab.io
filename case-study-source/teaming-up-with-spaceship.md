@@ -1,7 +1,7 @@
 ---
 title: 'Teaming up with Spaceship'
 heroImage: '/spaceship.jpg'
-highLight: 'http://spaceship.hk/'
+highlight: 'http://spaceship.hk/'
 ---
 
 One of the rapidly growing logistics startups in Hong Kong, Spaceship has urging need to increase their technical capacity for their next stage of growth.

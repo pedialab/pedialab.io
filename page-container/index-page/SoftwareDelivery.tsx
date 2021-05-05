@@ -38,7 +38,7 @@ const SoftwareDelivery = ({ className }: SoftwareDeliveryProps) => {
       'You need experienced and competent Tech-Lead who understand your business and walk the talk.'
     ].map((content) => (
       <Box component="li" key={content} className={classes.listItem}>
-        <Typography variant="body2">{content}</Typography>
+        <Typography variant="subtitle2">{content}</Typography>
       </Box>
     )),
     [classes]

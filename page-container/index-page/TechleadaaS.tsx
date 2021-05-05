@@ -50,7 +50,7 @@ const TechleadaaS = ({ className }: TechleadaaSProps) => {
         overflow="hidden"
         width="43.31%"
       >
-        <img loading="lazy" src="/tech_lead_as_a_service.jpeg" alt="" />
+        <img loading="lazy" src="/tech_lead_as_a_service.jpg" alt="" />
       </Box>
     </Box>
   );
