@@ -19,6 +19,7 @@ import {
   markdownToReactComponent,
   matter
 } from 'pedialab-pages/case-study-page/lib-iso';
+import { CaseStudyPageContainer } from 'pedialab-pages/case-study-page';
 
 type Params = {
   params: { title: string };
@@ -58,40 +59,23 @@ export { getStaticPaths, getStaticProps };
 
 const CaseStudyPage = ({ markdown }: Props) => {
   const caseStudy = matter(markdown);
-  const content = markdownToReactComponent(caseStudy.content);
-  const metadata = caseStudy.data;
+  const content = caseStudy.content;
+  const { title, heroImage, highlight } = caseStudy.data;
 
   return (
     <>
       <Head>
-        <title>Pedia Lab - </title>
+        <title>
+          Pedia Lab,
+          {title}
+        </title>
       </Head>
-      <Typography variant="h2" gutterBottom>
-        content
-      </Typography>
-      <Container>{content}</Container>
-      <Typography variant="h2" gutterBottom>
-        data
-      </Typography>
-
-      <TableContainer component={Paper}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              {Object.keys(metadata).map((cellTitle) => (
-                <TableCell key={cellTitle}>{cellTitle}</TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {Object.values(metadata).map((cellValue) => (
-              <TableCell key={JSON.stringify(cellValue)}>
-                {JSON.stringify(cellValue)}
-              </TableCell>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <CaseStudyPageContainer
+        title={title}
+        heroImageSrc={heroImage}
+        highlight={highlight}
+        content={content}
+      />
     </>
   );
 };

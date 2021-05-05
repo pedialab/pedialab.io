@@ -26,7 +26,7 @@ const CommonButton = ({
   return (
     <Box display="flex" flexDirection="column" width={width}>
       <Button fullWidth href={href} className={classes.commonButton}>
-        <Typography color="textPrimary" variant="h6" component="span">
+        <Typography color="textPrimary" variant="button" component="span">
           {title}
         </Typography>
       </Button>
