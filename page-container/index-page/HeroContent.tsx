@@ -10,11 +10,7 @@ const useStyles = makeStyles({
   }
 });
 
-export type HeroContentProps = {
-  className?: string;
-};
-
-const HeroContent = ({ className }: HeroContentProps) => {
+const HeroContent = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyles();
   return (
     <Box className={className}>

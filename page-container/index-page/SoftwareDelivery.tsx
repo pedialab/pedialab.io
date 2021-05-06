@@ -23,11 +23,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export type SoftwareDeliveryProps = {
-  className?: string;
-};
-
-const SoftwareDelivery = ({ className }: SoftwareDeliveryProps) => {
+const SoftwareDelivery = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyles();
   const listContent = useMemo(
     () => [

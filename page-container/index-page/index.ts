@@ -6,7 +6,18 @@ import TechleadaaS from './TechleadaaS';
 import ProjectScopes from './ProjectScopes';
 import TeamUpWithTechlead from './TeamUpWithTechlead';
 import DeveloperSupport from './DeveloperSupport';
+import OurTeam from './OurTeam';
+import CompaniesWeWorkWith from './CompaniesWeWorkWith';
 
 export {
-  HeroContent, OurCompany, SoftwareDelivery, VendorDifference, TechleadaaS, ProjectScopes, TeamUpWithTechlead, DeveloperSupport
+  HeroContent,
+  OurCompany,
+  SoftwareDelivery,
+  VendorDifference,
+  TechleadaaS,
+  ProjectScopes,
+  TeamUpWithTechlead,
+  DeveloperSupport,
+  OurTeam,
+  CompaniesWeWorkWith
 };
