@@ -1,24 +1,8 @@
 import { GetStaticPaths } from 'next';
 import Head from 'next/head';
-import {
-  Container,
-  Typography,
-  TableContainer,
-  Paper,
-  Table,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableBody
-} from '@material-ui/core';
-import {
-  loadAllMarkdownFileNames,
-  loadMarkdownFile
-} from 'pedialab-pages/case-study-page/lib-server';
-import {
-  markdownToReactComponent,
-  matter
-} from 'pedialab-pages/case-study-page/lib-iso';
+
+import { loadAllMarkdownFileNames, loadMarkdownFile } from 'pedialab-pages/case-study-page/lib-server';
+import { matter } from 'pedialab-pages/case-study-page/lib-iso';
 import { CaseStudyPageContainer } from 'pedialab-pages/case-study-page';
 
 type Params = {
@@ -70,12 +54,7 @@ const CaseStudyPage = ({ markdown }: Props) => {
           {title}
         </title>
       </Head>
-      <CaseStudyPageContainer
-        title={title}
-        heroImageSrc={heroImage}
-        highlight={highlight}
-        content={content}
-      />
+      <CaseStudyPageContainer title={title} heroImageSrc={heroImage} highlight={highlight} content={content} />
     </>
   );
 };
