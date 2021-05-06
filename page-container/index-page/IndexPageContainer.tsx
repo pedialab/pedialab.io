@@ -1,7 +1,7 @@
 import { Box, Grid, makeStyles } from '@material-ui/core';
 import { Header, Footer } from 'pedialab-shared/components';
 import {
-  HeroContent, OurCompany, SoftwareDelivery, VendorDifference, TechleadaaS, ProjectScopes
+  HeroContent, OurCompany, SoftwareDelivery, VendorDifference, TechleadaaS, ProjectScopes, TeamUpWithTechlead
 } from 'pedialab-pages/index-page';
 
 const useStyle = makeStyles({
@@ -24,6 +24,7 @@ const useStyle = makeStyles({
   projectScopes: {
     marginTop: '15rem'
   },
+  teamUpWithTechlead: { marginTop: '13.75rem' },
   footer: {
     marginTop: '9.4rem'
   }
@@ -47,6 +48,7 @@ const IndexPageContainer = () => {
       </Box>
       <Box mx="10%">
         <ProjectScopes className={classes.projectScopes} />
+        <TeamUpWithTechlead className={classes.teamUpWithTechlead} />
         <Footer className={classes.footer} />
       </Box>
     </>
