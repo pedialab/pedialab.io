@@ -7,7 +7,7 @@ export type LetsTalkButtonProps = {
 
 const LetsTalkButton = ({ marginTop }: LetsTalkButtonProps) => (
   <Box display="flex" justifyContent="center" mt={marginTop}>
-    <CommonButton title="Let's Talk" subtitle="*Budget in USD" />
+    <CommonButton href="#contact" title="Let's Talk" subtitle="*Budget in USD" />
   </Box>
 );
 

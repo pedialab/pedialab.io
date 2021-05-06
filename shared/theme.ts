@@ -11,6 +11,7 @@ const theme = createMuiTheme({
     secondary: {
       main: '#828282'
     },
+    info: { main: '#ffffff' },
     text: {
       // button title
       primary: '#4F4F4F',
@@ -42,7 +43,7 @@ const theme = createMuiTheme({
       fontWeight: 700,
       lineHeight: '1.5'
     },
-    // button title
+    // button title, 18px
     button: {
       fontSize: '1.125rem',
       fontWeight: 700,
@@ -70,6 +71,7 @@ const theme = createMuiTheme({
       fontSize: '1.5rem',
       lineHeight: '2'
     },
+    // 14px
     caption: {
       fontSize: '0.875rem'
     }
@@ -102,6 +104,11 @@ const theme = createMuiTheme({
             fontStyle: 'normal'
           }
         ]
+      }
+    },
+    MuiTypography: {
+      button: {
+        textTransform: 'none'
       }
     },
     MuiButton: {
