@@ -35,7 +35,7 @@ const theme = createMuiTheme({
     h2: {
       fontSize: '3.75rem',
       fontWeight: 300,
-      lineHeight: '1.27'
+      lineHeight: '1.266'
     },
     // section header
     h3: {

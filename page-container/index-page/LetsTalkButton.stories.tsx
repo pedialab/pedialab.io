@@ -6,8 +6,6 @@ export default {
   component: LetsTalkButton
 } as Meta;
 
-const Template: Story<LetsTalkButtonProps> = ({
-  marginTop
-}: LetsTalkButtonProps) => <LetsTalkButton marginTop={marginTop} />;
+const Template: Story<LetsTalkButtonProps> = ({ className }: LetsTalkButtonProps) => <LetsTalkButton className={className} />;
 
 export const Default = Template.bind({});
