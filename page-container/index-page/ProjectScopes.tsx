@@ -1,6 +1,4 @@
-import {
-  Grid, Box, makeStyles, Typography
-} from '@material-ui/core';
+import { Grid, makeStyles, Typography } from '@material-ui/core';
 import LetsTalkButton from './LetsTalkButton';
 
 type ServiceItemProps = {
