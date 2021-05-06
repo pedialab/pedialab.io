@@ -18,19 +18,20 @@ export type HeaderProps = {
   isActivatedOrder?: number;
 };
 
+const content = [
+  { text: 'About', href: '#our-company' },
+  { text: 'Pricing', href: '#typical-project-scopes' },
+  { text: 'Team', href: '#our-team' },
+  { text: 'Case Studies', href: '#case-studies' },
+  { text: 'Careers', href: '/careers' },
+  { text: 'Contact', href: '#contact' }
+];
+
 const Header = ({ className, isActivatedOrder }: HeaderProps) => {
   const classes = useStyles();
-  const headerList = useMemo(
-    () => [
-      'About',
-      'Pricing',
-      'Team',
-      'Case Studies',
-      'Careers',
-      'Contact'
-    ].map((text, index) => ({ text, isActive: index === isActivatedOrder })),
-    [isActivatedOrder]
-  );
+  const headerList = useMemo(() => content.map((item, index) => ({ text: item.text, href: item.href, isActive: index === isActivatedOrder })), [
+    isActivatedOrder
+  ]);
   return (
     <Box component="header" mt="2.25rem" width="100%" className={className}>
       <Grid container spacing={2} className={classes.container}>

@@ -6,9 +6,7 @@ export default {
   component: NavItem
 } as Meta;
 
-const Template: Story<NavItemProps> = ({ isActive, text }: NavItemProps) => (
-  <NavItem isActive={isActive} text={text} />
-);
+const Template: Story<NavItemProps> = ({ isActive, text, href }: NavItemProps) => <NavItem isActive={isActive} text={text} href={href} />;
 
 export const Default = Template.bind({});
 Default.args = {

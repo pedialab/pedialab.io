@@ -1,4 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
+import NotoSansRegular from '../public/Noto_Sans/NotoSans-Regular.ttf';
+import NotoSansBold from '../public/Noto_Sans/NotoSans-Bold.ttf';
+import NotoSansLight from '../public/Noto_Sans/NotoSans-Light.ttf';
 
 const theme = createMuiTheme({
   palette: {
@@ -30,6 +33,7 @@ const theme = createMuiTheme({
     // article header
     h2: {
       fontSize: '3.75rem',
+      fontWeight: 300,
       lineHeight: '1.27'
     },
     // section header
@@ -77,7 +81,27 @@ const theme = createMuiTheme({
           width: '100%',
           height: 'auto',
           objectFit: 'cover'
-        }
+        },
+        '@font-face': [
+          {
+            fontFamily: 'Noto Sans',
+            src: `url(${NotoSansRegular}) format("truetype")`,
+            fontWeight: 400,
+            fontStyle: 'normal'
+          },
+          {
+            fontFamily: 'Noto Sans',
+            src: `url(${NotoSansBold}) format("truetype")`,
+            fontWeight: 700,
+            fontStyle: 'normal'
+          },
+          {
+            fontFamily: 'Noto Sans',
+            src: `url(${NotoSansLight}) format("truetype")`,
+            fontWeight: 300,
+            fontStyle: 'normal'
+          }
+        ]
       }
     },
     MuiButton: {
