@@ -6,7 +6,9 @@ export default {
   component: MarkdownArticle
 } as Meta;
 
-const Template: Story<MarkdownArticleProps> = ({ title, heroImageSrc, highlight, content }: MarkdownArticleProps) => (
+const Template: Story<MarkdownArticleProps> = ({
+  title, heroImageSrc, highlight, content
+}: MarkdownArticleProps) => (
   <MarkdownArticle title={title} heroImageSrc={heroImageSrc} highlight={highlight} content={content} />
 );
 

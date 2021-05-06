@@ -1,11 +1,15 @@
 import { Button, Box, makeStyles } from '@material-ui/core';
 
 export type NavItemProps = {
-  isActive?: boolean;
   text: string;
+  href: string;
+  isActive?: boolean;
 };
 
 const useStyles = makeStyles((theme) => ({
+  button: {
+    fontWeight: 'normal'
+  },
   isActive: {
     borderBottomWidth: '1px',
     borderColor: theme.palette.primary.main,
@@ -15,14 +19,11 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const NavItem = ({ isActive = false, text }: NavItemProps) => {
+const NavItem = ({ text, href, isActive = false }: NavItemProps) => {
   const classes = useStyles();
   return (
     <Box mx={2} component="li">
-      <Button
-        color={isActive ? 'primary' : 'secondary'}
-        className={isActive ? classes.isActive : ''}
-      >
+      <Button href={href} color={isActive ? 'primary' : 'secondary'} className={isActive ? classes.button.concat(classes.isActive) : classes.button}>
         {text}
       </Button>
     </Box>

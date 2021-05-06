@@ -1,4 +1,6 @@
-import { Box, makeStyles, Typography } from '@material-ui/core';
+import {
+  Grid, Box, makeStyles, Typography
+} from '@material-ui/core';
 
 const useStyles = makeStyles({
   svgImage: {
@@ -15,7 +17,7 @@ const OurCompany = ({ className }: OurCompanyProps) => {
   const classes = useStyles();
 
   return (
-    <Box component="article" className={className}>
+    <Grid container direction="column" component="article" className={className} id="our-company">
       <Typography variant="h2" color="primary">
         OUR COMPANY
       </Typography>
@@ -37,7 +39,7 @@ const OurCompany = ({ className }: OurCompanyProps) => {
           We only work with clients and projects that are making a difference, at various stages in their journey from seed to IPO.
         </Typography>
       </Box>
-    </Box>
+    </Grid>
   );
 };
 
