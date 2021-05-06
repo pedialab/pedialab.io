@@ -8,7 +8,9 @@ import {
   TechleadaaS,
   ProjectScopes,
   TeamUpWithTechlead,
-  DeveloperSupport
+  DeveloperSupport,
+  OurTeam,
+  CompaniesWeWorkWith
 } from 'pedialab-pages/index-page';
 
 const useStyle = makeStyles({
@@ -33,6 +35,8 @@ const useStyle = makeStyles({
   },
   teamUpWithTechlead: { marginTop: '13.75rem' },
   developerSupport: { marginTop: '15.625rem' },
+  ourTeam: { marginTop: '15.75rem' },
+  companiesWeWorkWith: { marginTop: '20rem' },
   footer: {
     marginTop: '9.4rem'
   }
@@ -58,6 +62,8 @@ const IndexPageContainer = () => {
         <ProjectScopes className={classes.projectScopes} />
         <TeamUpWithTechlead className={classes.teamUpWithTechlead} />
         <DeveloperSupport className={classes.developerSupport} />
+        <OurTeam className={classes.ourTeam} />
+        <CompaniesWeWorkWith className={classes.companiesWeWorkWith} />
         <Footer className={classes.footer} />
       </Box>
     </>

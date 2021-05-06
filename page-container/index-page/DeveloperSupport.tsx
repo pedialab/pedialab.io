@@ -32,7 +32,7 @@ const content = [
   }
 ];
 
-const DeveloperSupport = ({ className }: { className: string }) => {
+const DeveloperSupport = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyle();
   return (
     <Grid className={className} component="article" container justify="space-between">

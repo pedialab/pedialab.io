@@ -22,11 +22,7 @@ const content = [
   'Grow with you your team, delegate non-core work and serve both short-term and long-term need.'
 ];
 
-export type TechleadaaSProps = {
-  className?: string;
-};
-
-const TechleadaaS = ({ className }: TechleadaaSProps) => {
+const TechleadaaS = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyles();
 
   return (

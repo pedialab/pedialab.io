@@ -39,11 +39,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export type VendorDifferenceProps = {
-  className?: string;
-};
-
-const VendorDifference = ({ className }: VendorDifferenceProps) => {
+const VendorDifference = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyles();
   return (
     <>

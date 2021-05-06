@@ -84,11 +84,7 @@ const ServiceItem = ({
   );
 };
 
-export type ProjectScopesProps = {
-  className?: string;
-};
-
-const ProjectScopes = ({ className }: ProjectScopesProps) => {
+const ProjectScopes = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyles();
   return (
     <Grid id="typical-project-scopes" container component="article" justify="space-between" className={[className].join(' ')}>

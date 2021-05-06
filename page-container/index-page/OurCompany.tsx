@@ -9,11 +9,7 @@ const useStyles = makeStyles({
   }
 });
 
-export type OurCompanyProps = {
-  className?: string;
-};
-
-const OurCompany = ({ className }: OurCompanyProps) => {
+const OurCompany = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyles();
 
   return (
