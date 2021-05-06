@@ -48,6 +48,9 @@ const useStyles = makeStyles({
       color: '#ffffff',
       marginRight: '0.5rem'
     }
+  },
+  letsTalk: {
+    marginTop: '5.3125rem'
   }
 });
 
@@ -85,20 +88,23 @@ export type ProjectScopesProps = {
   className?: string;
 };
 
-const ProjectScopes = ({ className }: ProjectScopesProps) => (
-  <Grid id="typical-project-scopes" container component="article" justify="space-between" className={[className].join(' ')}>
-    <Grid item sm={12}>
-      <Typography align="center" variant="h2" color="primary">
-        Typical Project Scopes
-      </Typography>
+const ProjectScopes = ({ className }: ProjectScopesProps) => {
+  const classes = useStyles();
+  return (
+    <Grid id="typical-project-scopes" container component="article" justify="space-between" className={[className].join(' ')}>
+      <Grid item sm={12}>
+        <Typography align="center" variant="h2" color="primary">
+          Typical Project Scopes
+        </Typography>
+      </Grid>
+      {content.map((item) => (
+        <ServiceItem key={item.title} title={item.title} price={item.price} priceUnit={item.priceUnit} service={item.service} />
+      ))}
+      <Grid item sm={12} container justify="center" className={classes.letsTalk}>
+        <LetsTalkButton />
+      </Grid>
     </Grid>
-    {content.map((item) => (
-      <ServiceItem key={item.title} title={item.title} price={item.price} priceUnit={item.priceUnit} service={item.service} />
-    ))}
-    <Grid item sm={12}>
-      <LetsTalkButton marginTop="5.3125rem" />
-    </Grid>
-  </Grid>
-);
+  );
+};
 
 export default ProjectScopes;

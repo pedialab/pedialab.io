@@ -1,14 +1,14 @@
-import { Box } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { CommonButton } from 'pedialab-shared/components';
 
 export type LetsTalkButtonProps = {
-  marginTop: string;
+  className?: string;
 };
 
-const LetsTalkButton = ({ marginTop }: LetsTalkButtonProps) => (
-  <Box display="flex" justifyContent="center" mt={marginTop}>
+const LetsTalkButton = ({ className }: LetsTalkButtonProps) => (
+  <Grid justify="center" className={className}>
     <CommonButton href="#contact" title="Let's Talk" subtitle="*Budget in USD" />
-  </Box>
+  </Grid>
 );
 
 export default LetsTalkButton;

@@ -1,4 +1,6 @@
-import { Box, makeStyles, Typography } from '@material-ui/core';
+import {
+  Box, Grid, makeStyles, Typography
+} from '@material-ui/core';
 import { TextList } from 'pedialab-shared/components';
 import LetsTalkButton from './LetsTalkButton';
 
@@ -31,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
     borderRightStyle: 'solid',
     borderWidth: '1px',
     borderColor: theme.palette.secondary.main
+  },
+  letsTalk: {
+    marginTop: '5rem'
   }
 }));
 
@@ -60,7 +65,10 @@ const VendorDifference = ({ className }: VendorDifferenceProps) => {
           </Box>
         </Box>
       </Box>
-      <LetsTalkButton marginTop="5rem" />
+      <Grid container justify="center">
+        <LetsTalkButton className={classes.letsTalk} />
+      </Grid>
+      x
     </>
   );
 };
