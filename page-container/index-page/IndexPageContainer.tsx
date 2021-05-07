@@ -14,7 +14,8 @@ import {
   WhereWeServe,
   CaseStudies,
   ProjectPhrases,
-  Testimonial
+  Testimonial,
+  Contact
 } from 'pedialab-pages/index-page';
 
 const useStyle = makeStyles({
@@ -59,6 +60,7 @@ const useStyle = makeStyles({
   testimonial: {
     marginTop: '12.75rem'
   },
+  contact: { marginTop: '13rem' },
   footer: {
     marginTop: '9.4rem'
   }
@@ -96,6 +98,7 @@ const IndexPageContainer = () => {
       </Box>
       <Testimonial className={classes.testimonial} />
       <Box mx="10%">
+        <Contact className={classes.contact} />
         <Footer className={classes.footer} />
       </Box>
     </>
