@@ -10,6 +10,7 @@ import OurTeam from './OurTeam';
 import CompaniesWeWorkWith from './CompaniesWeWorkWith';
 import WhereWeServe from './WhereWeServe';
 import CaseStudies from './CaseStudies';
+import ProjectPhrases from './ProjectPhrases';
 
 export {
   HeroContent,
@@ -23,5 +24,6 @@ export {
   OurTeam,
   CompaniesWeWorkWith,
   WhereWeServe,
-  CaseStudies
+  CaseStudies,
+  ProjectPhrases
 };
