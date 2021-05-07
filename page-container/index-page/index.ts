@@ -9,6 +9,7 @@ import DeveloperSupport from './DeveloperSupport';
 import OurTeam from './OurTeam';
 import CompaniesWeWorkWith from './CompaniesWeWorkWith';
 import WhereWeServe from './WhereWeServe';
+import CaseStudies from './CaseStudies';
 
 export {
   HeroContent,
@@ -21,5 +22,6 @@ export {
   DeveloperSupport,
   OurTeam,
   CompaniesWeWorkWith,
-  WhereWeServe
+  WhereWeServe,
+  CaseStudies
 };
