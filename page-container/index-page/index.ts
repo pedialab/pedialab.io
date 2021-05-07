@@ -8,6 +8,7 @@ import TeamUpWithTechlead from './TeamUpWithTechlead';
 import DeveloperSupport from './DeveloperSupport';
 import OurTeam from './OurTeam';
 import CompaniesWeWorkWith from './CompaniesWeWorkWith';
+import WhereWeServe from './WhereWeServe';
 
 export {
   HeroContent,
@@ -19,5 +20,6 @@ export {
   TeamUpWithTechlead,
   DeveloperSupport,
   OurTeam,
-  CompaniesWeWorkWith
+  CompaniesWeWorkWith,
+  WhereWeServe
 };
