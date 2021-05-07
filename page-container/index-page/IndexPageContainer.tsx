@@ -13,7 +13,8 @@ import {
   CompaniesWeWorkWith,
   WhereWeServe,
   CaseStudies,
-  ProjectPhrases
+  ProjectPhrases,
+  Testimonial
 } from 'pedialab-pages/index-page';
 
 const useStyle = makeStyles({
@@ -36,16 +37,27 @@ const useStyle = makeStyles({
   projectScopes: {
     marginTop: '15rem'
   },
-  teamUpWithTechlead: { marginTop: '13.75rem' },
-  developerSupport: { marginTop: '15.625rem' },
-  ourTeam: { marginTop: '15.75rem' },
-  companiesWeWorkWith: { marginTop: '20rem' },
+  teamUpWithTechlead: {
+    marginTop: '13.75rem'
+  },
+  developerSupport: {
+    marginTop: '15.625rem'
+  },
+  ourTeam: {
+    marginTop: '15.75rem'
+  },
+  companiesWeWorkWith: {
+    marginTop: '20rem'
+  },
   whereWeServe: {
     marginTop: '16.4375rem'
   },
   caseStudies: { marginTop: '24.3125rem' },
   projectPhrases: {
     marginTop: '19.875rem'
+  },
+  testimonial: {
+    marginTop: '12.75rem'
   },
   footer: {
     marginTop: '9.4rem'
@@ -81,6 +93,9 @@ const IndexPageContainer = () => {
       <Box mx="10%">
         <CaseStudies className={classes.caseStudies} />
         <ProjectPhrases className={classes.projectPhrases} />
+      </Box>
+      <Testimonial className={classes.testimonial} />
+      <Box mx="10%">
         <Footer className={classes.footer} />
       </Box>
     </>
