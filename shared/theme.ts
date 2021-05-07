@@ -15,6 +15,7 @@ const theme = createMuiTheme({
     text: {
       // button title
       primary: '#4F4F4F',
+      // case studies component title
       secondary: '#A1A1A1'
     },
     background: {

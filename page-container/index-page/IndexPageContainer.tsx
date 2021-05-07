@@ -11,7 +11,8 @@ import {
   DeveloperSupport,
   OurTeam,
   CompaniesWeWorkWith,
-  WhereWeServe
+  WhereWeServe,
+  CaseStudies
 } from 'pedialab-pages/index-page';
 
 const useStyle = makeStyles({
@@ -41,6 +42,7 @@ const useStyle = makeStyles({
   whereWeServe: {
     marginTop: '16.4375rem'
   },
+  caseStudies: { marginTop: '24.3125rem' },
   footer: {
     marginTop: '9.4rem'
   }
@@ -72,7 +74,8 @@ const IndexPageContainer = () => {
       <Box mr="17%">
         <WhereWeServe className={classes.whereWeServe} />
       </Box>
-      <Box>
+      <Box mx="10%">
+        <CaseStudies className={classes.caseStudies} />
         <Footer className={classes.footer} />
       </Box>
     </>
