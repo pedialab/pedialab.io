@@ -12,6 +12,7 @@ import WhereWeServe from './WhereWeServe';
 import CaseStudies from './CaseStudies';
 import ProjectPhrases from './ProjectPhrases';
 import Testimonial from './Testimonial';
+import Contact from './Contact';
 
 export {
   HeroContent,
@@ -27,5 +28,6 @@ export {
   WhereWeServe,
   CaseStudies,
   ProjectPhrases,
-  Testimonial
+  Testimonial,
+  Contact
 };
