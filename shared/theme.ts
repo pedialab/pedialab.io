@@ -11,7 +11,6 @@ const theme = createMuiTheme({
     secondary: {
       main: '#828282'
     },
-    info: { main: '#ffffff' },
     text: {
       // button title
       primary: '#4F4F4F',
