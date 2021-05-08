@@ -1,6 +1,8 @@
 import {
   Typography, Grid, makeStyles, TextField, Button
 } from '@material-ui/core';
+import { useCallback, useState } from 'react';
+import packageConfig from '../../package.json';
 
 const useStyle = makeStyles((theme) => ({
   title: {
@@ -21,7 +23,8 @@ const useStyle = makeStyles((theme) => ({
       color: theme.palette.text.secondary
     },
     '& button[type="submit"]': {
-      backgroundColor: theme.palette.background.paper
+      backgroundColor: theme.palette.background.paper,
+      borderRadius: '3px'
     }
   },
   inputRoot: {
@@ -35,8 +38,38 @@ const useStyle = makeStyles((theme) => ({
   }
 }));
 
+type FormState = {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  message: string;
+} | null;
+
+const formPostUrl = packageConfig.pedialab.contactFormEndpoint;
+
 const ContactForm = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyle();
+
+  const [formState, setFormState] = useState<FormState>(null);
+
+  const handleSubmit = useCallback(
+    (event: React.FormEvent) => {
+      event.preventDefault();
+
+      if (formState) {
+        fetch(formPostUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formState)
+        });
+      }
+    },
+    [formState]
+  );
+
   return (
     <Grid container className={className} direction="column">
       <Grid item className={classes.title}>
@@ -47,30 +80,64 @@ const ContactForm = ({ className }: Partial<{ className: string }>) => {
           Got a project you&#39;re excited about and think we can help?
         </Typography>
       </Grid>
-      <Grid item />
-      <Grid
-        component="form"
-        className={classes.formRoot}
-        onSubmit={(event) => {
-          event.preventDefault();
-        }}
-        container
-        justify="space-between"
-      >
+      <Grid component="form" className={classes.formRoot} onSubmit={handleSubmit} item container justify="space-between">
         <Grid item sm={12}>
-          <TextField id="guest-name" fullWidth label="Name" classes={{ root: classes.inputRoot }} />
+          <TextField
+            id="guest-name"
+            fullWidth
+            label="Name"
+            classes={{ root: classes.inputRoot }}
+            onChange={(event) => {
+              setFormState({ ...formState, name: event.target['value'] });
+            }}
+          />
         </Grid>
         <Grid item sm={5}>
-          <TextField id="guest-email" fullWidth type="email" label="Email" classes={{ root: classes.inputRoot }} />
+          <TextField
+            id="guest-email"
+            fullWidth
+            type="email"
+            label="Email"
+            classes={{ root: classes.inputRoot }}
+            onChange={(event) => {
+              setFormState({ ...formState, email: event.target['value'] });
+            }}
+          />
         </Grid>
         <Grid item sm={5}>
-          <TextField id="guest-phone" fullWidth type="tel" label="Phone" classes={{ root: classes.inputRoot }} />
+          <TextField
+            id="guest-phone"
+            fullWidth
+            type="tel"
+            label="Phone"
+            classes={{ root: classes.inputRoot }}
+            onChange={(event) => {
+              setFormState({ ...formState, phone: event.target['value'] });
+            }}
+          />
         </Grid>
         <Grid item sm={12}>
-          <TextField id="guest-company" fullWidth label="Company" classes={{ root: classes.inputRoot }} />
+          <TextField
+            id="guest-company"
+            fullWidth
+            label="Company"
+            classes={{ root: classes.inputRoot }}
+            onChange={(event) => {
+              setFormState({ ...formState, company: event.target['value'] });
+            }}
+          />
         </Grid>
         <Grid item sm={12}>
-          <TextField id="guest-message" label="What’s your project about? How can we help?" fullWidth multiline classes={{ root: classes.inputRoot }} />
+          <TextField
+            id="guest-message"
+            label="What’s your project about? How can we help?"
+            fullWidth
+            multiline
+            classes={{ root: classes.inputRoot }}
+            onChange={(event) => {
+              setFormState({ ...formState, message: event.target['value'] });
+            }}
+          />
         </Grid>
         <Grid item sm={5}>
           <Button type="submit" fullWidth>
