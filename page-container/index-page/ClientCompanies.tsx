@@ -21,16 +21,23 @@ const content = {
     { name: 'GOGOX', logoSrc: '/logo_gogox.png' },
     { name: 'JavaScript', logoSrc: '/logo_js.png' },
     { name: 'HK01', logoSrc: '/logo_hongkong01.png' },
-    { name: 'Shaw Brothers Pictures International Limited', logoSrc: '/logo_SB.png' }
+    {
+      name: 'Shaw Brothers Pictures International Limited',
+      logoSrc: '/logo_SB.png'
+    }
   ]
 };
 
-const CompaniesWeWorkWith = ({ className }: Partial<{ className: string }>) => {
+const ClientCompanies = ({ className }: Partial<{ className: string }>) => {
   const { title, brands, brandsMarginTop } = content;
   return (
     <Box component="article" className={className}>
-      <LogoList title={title} brands={brands} brandsMarginTop={brandsMarginTop} />
+      <LogoList
+        title={title}
+        brands={brands}
+        brandsMarginTop={brandsMarginTop}
+      />
     </Box>
   );
 };
-export default CompaniesWeWorkWith;
+export default ClientCompanies;

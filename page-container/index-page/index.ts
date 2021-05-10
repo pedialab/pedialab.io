@@ -7,7 +7,7 @@ import ProjectScopes from './ProjectScopes';
 import TeamUpWithTechlead from './TeamUpWithTechlead';
 import DeveloperSupport from './DeveloperSupport';
 import OurTeam from './OurTeam';
-import CompaniesWeWorkWith from './CompaniesWeWorkWith';
+import ClientCompanies from './ClientCompanies';
 import WhereWeServe from './WhereWeServe';
 import CaseStudies from './CaseStudies';
 import ProjectPhrases from './ProjectPhrases';
@@ -24,7 +24,7 @@ export {
   TeamUpWithTechlead,
   DeveloperSupport,
   OurTeam,
-  CompaniesWeWorkWith,
+  ClientCompanies,
   WhereWeServe,
   CaseStudies,
   ProjectPhrases,

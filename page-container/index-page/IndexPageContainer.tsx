@@ -10,7 +10,7 @@ import {
   TeamUpWithTechlead,
   DeveloperSupport,
   OurTeam,
-  CompaniesWeWorkWith,
+  ClientCompanies,
   WhereWeServe,
   CaseStudies,
   ProjectPhrases,
@@ -47,7 +47,7 @@ const useStyle = makeStyles({
   ourTeam: {
     marginTop: '15.75rem'
   },
-  companiesWeWorkWith: {
+  clientCompanies: {
     marginTop: '20rem'
   },
   whereWeServe: {
@@ -87,7 +87,7 @@ const IndexPageContainer = () => {
         <TeamUpWithTechlead className={classes.teamUpWithTechlead} />
         <DeveloperSupport className={classes.developerSupport} />
         <OurTeam className={classes.ourTeam} />
-        <CompaniesWeWorkWith className={classes.companiesWeWorkWith} />
+        <ClientCompanies className={classes.clientCompanies} />
       </Box>
       <Box mr="17%">
         <WhereWeServe className={classes.whereWeServe} />
