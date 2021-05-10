@@ -1,11 +1,11 @@
-import { Box, Grid, makeStyles } from '@material-ui/core';
-import { Header, Footer } from 'pedialab-shared/components';
-import { MarkdownArticle } from 'pedialab-pages/case-study-page';
+import { Box, Grid, makeStyles, Container } from "@material-ui/core";
+import { Header, Footer } from "pedialab-shared/components";
+import { MarkdownArticle } from "pedialab-pages/case-study-page";
 
 const useStyle = makeStyles({
   footer: {
-    marginTop: '9.4rem'
-  }
+    marginTop: "9.4rem",
+  },
 });
 
 export type CaseStudyPageProps = {
@@ -19,12 +19,12 @@ const CaseStudyPage = ({
   title,
   heroImageSrc,
   highlight,
-  content
+  content,
 }: CaseStudyPageProps) => {
   const classes = useStyle();
   return (
     <>
-      <Box mx="10%">
+      <Container disableGutters fixed>
         <Grid container direction="column">
           <Header isActivatedOrder={3} />
           <Box
@@ -45,7 +45,7 @@ const CaseStudyPage = ({
           </Box>
           <Footer className={classes.footer} />
         </Grid>
-      </Box>
+      </Container>
     </>
   );
 };
