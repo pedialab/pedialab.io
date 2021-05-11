@@ -1,0 +1,15 @@
+name: CI Tests
+on: push
+
+jobs:
+  tests:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check modules
+        run: yarn install --immutable --immutable-cache
+      - name: Run unit tests
+        run: yarn test
+      - name: Run build check
+        run: yarn export
