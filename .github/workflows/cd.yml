@@ -1,14 +1,20 @@
 name: CI Tests
-on:
-  push:
-    branches:
-      - develop
+on: push
 
 jobs:
-  tests:
-    name: Run Tests
+  deployment:
+    name: Deploy to GitHub Page
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Check modules
         run: yarn install --immutable --immutable-cache
+
+      - name: Build
+        run: yarn export
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
