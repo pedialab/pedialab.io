@@ -1,4 +1,4 @@
-name: CI Tests
+name: Continuous Integration
 on: push
 
 jobs:
@@ -11,5 +11,5 @@ jobs:
         run: yarn install --immutable --immutable-cache
       - name: Run unit tests
         run: yarn test
-      - name: Run build check
-        run: yarn export
+      - name: Run TypeScript check
+        run: yarn tsc

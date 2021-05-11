@@ -3,14 +3,14 @@ import {
   Grid,
   makeStyles,
   Typography,
-  Container,
-} from "@material-ui/core";
-import { Header, Footer, CommonButton } from "pedialab-shared/components";
+  Container
+} from '@material-ui/core';
+import { Header, Footer, CommonButton } from 'pedialab-shared/components';
 
 const useStyle = makeStyles({
   footer: {
-    marginTop: "9.4rem",
-  },
+    marginTop: '9.4rem'
+  }
 });
 
 const CareerPage = () => {
