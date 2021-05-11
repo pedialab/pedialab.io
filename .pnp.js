@@ -69,6 +69,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:4d89da691be14497f55cb1ff573d1ab1aeed6b8b761caab0612e4438b3c954ae1bdb0cfd1746ebb436a7e4b27e836296635f99b66de8c31c3200e397f099b025#npm:17.0.2"],
             ["remark-parse", "npm:9.0.0"],
             ["remark-react", "npm:8.0.0"],
+            ["rxjs", "npm:7.0.0"],
             ["tsconfig-paths-webpack-plugin", "npm:3.5.1"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"],
             ["unified", "npm:9.2.1"]
@@ -16544,6 +16545,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:4d89da691be14497f55cb1ff573d1ab1aeed6b8b761caab0612e4438b3c954ae1bdb0cfd1746ebb436a7e4b27e836296635f99b66de8c31c3200e397f099b025#npm:17.0.2"],
             ["remark-parse", "npm:9.0.0"],
             ["remark-react", "npm:8.0.0"],
+            ["rxjs", "npm:7.0.0"],
             ["tsconfig-paths-webpack-plugin", "npm:3.5.1"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"],
             ["unified", "npm:9.2.1"]
@@ -18382,6 +18384,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["rxjs", [
+        ["npm:7.0.0", {
+          "packageLocation": "./.yarn/cache/rxjs-npm-7.0.0-19a7ff1bf8-e0d08420f9.zip/node_modules/rxjs/",
+          "packageDependencies": [
+            ["rxjs", "npm:7.0.0"],
+            ["tslib", "npm:2.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["safe-buffer", [
         ["npm:5.1.1", {
           "packageLocation": "./.yarn/cache/safe-buffer-npm-5.1.1-cdaab52fc6-e09911f17f.zip/node_modules/safe-buffer/",
@@ -20067,6 +20079,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/tslib-npm-1.14.1-102499115e-f44fe7f216.zip/node_modules/tslib/",
           "packageDependencies": [
             ["tslib", "npm:1.14.1"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:2.1.0", {
+          "packageLocation": "./.yarn/cache/tslib-npm-2.1.0-81c9ac9b82-d8f5bdd067.zip/node_modules/tslib/",
+          "packageDependencies": [
+            ["tslib", "npm:2.1.0"]
           ],
           "linkType": "HARD",
         }],
