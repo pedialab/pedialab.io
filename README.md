@@ -1,1 +1,0 @@
-# pedialab.io
