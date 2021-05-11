@@ -1,5 +1,7 @@
-import { Box, Grid, makeStyles, Container } from "@material-ui/core";
-import { Header, Footer } from "pedialab-shared/components";
+import {
+  Box, Grid, makeStyles, Container
+} from '@material-ui/core';
+import { Header, Footer } from 'pedialab-shared/components';
 import {
   HeroContent,
   OurCompany,
@@ -15,57 +17,57 @@ import {
   CaseStudies,
   ProjectPhrases,
   Testimonial,
-  Contact,
-} from "pedialab-pages/index-page";
+  Contact
+} from 'pedialab-pages/index-page';
 
 const useStyle = makeStyles({
   heroContent: {
-    marginTop: "7rem",
+    marginTop: '7rem'
   },
   ourCompany: {
-    marginTop: "7.5rem",
-    paddingLeft: "8.8%",
+    marginTop: '7.5rem',
+    paddingLeft: '8.8%'
   },
   softwareDelivery: {
-    marginTop: "14rem",
+    marginTop: '14rem'
   },
   vendorDifference: {
-    marginTop: "13rem",
+    marginTop: '13rem'
   },
   techleadaaS: {
-    marginTop: "14.65rem",
-    marginLeft: "10%",
+    marginTop: '14.65rem',
+    marginLeft: '10%'
   },
   projectScopes: {
-    marginTop: "15rem",
+    marginTop: '15rem'
   },
   teamUpWithTechlead: {
-    marginTop: "13.75rem",
+    marginTop: '13.75rem'
   },
   developerSupport: {
-    marginTop: "15.625rem",
+    marginTop: '15.625rem'
   },
   ourTeam: {
-    marginTop: "15.75rem",
+    marginTop: '15.75rem'
   },
   clientCompanies: {
-    marginTop: "20rem",
+    marginTop: '20rem'
   },
   whereWeServe: {
-    marginTop: "16.4375rem",
-    paddingRight: "17%",
+    marginTop: '16.4375rem',
+    paddingRight: '17%'
   },
-  caseStudies: { marginTop: "24.3125rem" },
+  caseStudies: { marginTop: '24.3125rem' },
   projectPhrases: {
-    marginTop: "19.875rem",
+    marginTop: '19.875rem'
   },
   testimonial: {
-    marginTop: "12.75rem",
+    marginTop: '12.75rem'
   },
-  contact: { marginTop: "13rem" },
+  contact: { marginTop: '13rem' },
   footer: {
-    marginTop: "9.4rem",
-  },
+    marginTop: '9.4rem'
+  }
 });
 
 const IndexPageContainer = () => {
