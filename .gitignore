@@ -1,15 +1,15 @@
 # npm
 node_modules/*
 
-# yarn 2, reference: https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+# yarn 2 start zero-install, reference: https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
 .yarn/*
+!.yarn/cache
 !.yarn/patches
-!.yarn/releases
 !.yarn/plugins
+!.yarn/releases
 # .yarn/sdks is editor specific, reference: https://yarnpkg.com/getting-started/editor-sdks
-.yarn/sdks 
+.yarn/sdks
 !.yarn/versions
-.pnp.*
 yarn-error*
 
 # editor specific
