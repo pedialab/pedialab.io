@@ -1,5 +1,8 @@
 name: CI Tests
 on: push
+  push:
+    branches:
+      - develop
 
 jobs:
   deployment:
@@ -7,14 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Check modules
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Check modules and export
         run: yarn install --immutable --immutable-cache
-
-      - name: Build
         run: yarn export
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: ./docs
+          commit_message: ${{ github.event.head_commit.message }}
