@@ -12,10 +12,28 @@
     "jsx": "preserve",
     "incremental": false,
     "skipLibCheck": true,
+    "baseUrl": ".",
     "paths": {
-      "caseStudies/*": ["caseStudies/*"]
-    }
+      "pedialab-shared/*": [
+        "shared/*"
+      ],
+      "pedialab-pages/*": [
+        "page-container/*"
+      ],
+    },
+    "lib": [
+      "DOM",
+      "es2020",
+      "esnext.asynciterable"
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.ttf"
+  ]
 }

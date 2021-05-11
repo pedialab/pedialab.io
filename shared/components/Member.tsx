@@ -1,0 +1,45 @@
+import {
+  makeStyles, Grid, Avatar, Typography
+} from '@material-ui/core';
+
+export type MemberProps = {
+  avatarSrc: string;
+  name: string;
+  position: string;
+};
+
+const useStyles = makeStyles({
+  root: {
+    '& > div:nth-child(2)': {
+      marginTop: '1.5rem',
+      marginBottom: '2px'
+    }
+  },
+  avatar: {
+    width: '12.5rem',
+    height: '12.5rem'
+  }
+});
+
+const Member = ({ avatarSrc, name, position }: MemberProps) => {
+  const classes = useStyles();
+  return (
+    <Grid container direction="column" component="section" className={classes.root}>
+      <Grid item>
+        <Avatar src={avatarSrc} alt={name} className={classes.avatar} />
+      </Grid>
+      <Grid item>
+        <Typography component="h3" variant="h3" color="primary">
+          {name}
+        </Typography>
+      </Grid>
+      <Grid item>
+        <Typography component="p" variant="body1" color="secondary">
+          {position}
+        </Typography>
+      </Grid>
+    </Grid>
+  );
+};
+
+export default Member;

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import IndexPageContainer from 'pedialab-pages/index-page/IndexPageContainer';
 
 function HomePage() {
   return (
@@ -6,7 +7,7 @@ function HomePage() {
       <Head>
         <title>Pedia Lab</title>
       </Head>
-      <div>Welcome to Next.js!</div>
+      <IndexPageContainer />
     </>
   );
 }
