@@ -1,7 +1,8 @@
 ---
-title: 'Teaming up with Spaceship'
-heroImage: '/spaceship.jpg'
-highlight: 'http://spaceship.hk/'
+title: "Teaming up with Spaceship"
+heroImage: "/case_spaceship.jpg"
+highlight: "http://spaceship.hk/"
+summary: "One of the rapidly growing logistics startups in Hong Kong, Spaceship has urging need to increase their technical capacity for their next stage of growth."
 ---
 
 One of the rapidly growing logistics startups in Hong Kong, Spaceship has urging need to increase their technical capacity for their next stage of growth.

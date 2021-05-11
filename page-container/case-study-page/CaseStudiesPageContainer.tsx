@@ -1,14 +1,7 @@
 import {
-  Box, Grid, makeStyles, Container
+  Box, Grid, makeStyles
 } from '@material-ui/core';
 import { Header, Footer, ArticleCardList } from 'pedialab-shared/components';
-
-const useStyle = makeStyles({
-  caseStudyList: { marginTop: '5rem' },
-  footer: {
-    marginTop: '9.4rem'
-  }
-});
 
 const cards = [
   {
@@ -67,26 +60,32 @@ Our partner Vincent Lau, lead the development of reservation systems and IoT int
   }
 ];
 
+const useStyle = makeStyles({
+  container: { marginLeft: '10%', marginRight: '10%' },
+  caseStudyList: { marginTop: '5rem' },
+  footer: {
+    marginTop: '9.4rem'
+  }
+});
+
 const CaseStudiesPage = () => {
   const classes = useStyle();
   return (
-    <>
-      <Container maxWidth="lg" disableGutters fixed>
-        <Grid container direction="column">
-          <Header isActivatedOrder={3} />
-          <Box
-            mt="9.63rem"
-            color="text.secondary"
-            fontSize="3.75rem"
-            fontWeight={300}
-          >
-            Case Studies
-          </Box>
-          <ArticleCardList cards={cards} className={classes.caseStudyList} />
-          <Footer className={classes.footer} />
-        </Grid>
-      </Container>
-    </>
+    <Box className={classes.container}>
+      <Grid container direction="column">
+        <Header isActivatedOrder={3} />
+        <Box
+          mt="9.63rem"
+          color="text.secondary"
+          fontSize="3.75rem"
+          fontWeight={300}
+        >
+          Case Studies
+        </Box>
+        <ArticleCardList cards={cards} className={classes.caseStudyList} />
+        <Footer className={classes.footer} />
+      </Grid>
+    </Box>
   );
 };
 
