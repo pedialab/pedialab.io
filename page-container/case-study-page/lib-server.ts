@@ -10,8 +10,8 @@ const loadAllMarkdownFileNames = (): string[] => fs
   .filter((fileName) => extname(fileName) === '.md')
   .map((fileName) => basename(fileName, '.md'));
 
-const loadMarkdownFile = (fileName: string): string => {
-  const caseStudyMd = fs.readFileSync(
+const loadMarkdownFile = (fileName: string): Promise<string> => {
+  const caseStudyMd = fs.promises.readFile(
     join(caseStudiesDir, fileName.concat('.md')),
     'utf-8'
   );
