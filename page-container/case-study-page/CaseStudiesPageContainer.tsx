@@ -61,7 +61,6 @@ Our partner Vincent Lau, lead the development of reservation systems and IoT int
 ];
 
 const useStyle = makeStyles({
-  container: { marginLeft: '10%', marginRight: '10%' },
   caseStudyList: { marginTop: '5rem' },
   footer: {
     marginTop: '9.4rem'
@@ -71,7 +70,7 @@ const useStyle = makeStyles({
 const CaseStudiesPage = () => {
   const classes = useStyle();
   return (
-    <Box className={classes.container}>
+    <Box mx="10%">
       <Grid container direction="column">
         <Header isActivatedOrder={3} />
         <Box

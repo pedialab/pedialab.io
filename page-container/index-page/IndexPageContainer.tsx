@@ -1,5 +1,5 @@
 import {
-  Box, Grid, makeStyles, Container
+  Box, Grid, makeStyles
 } from '@material-ui/core';
 import { Header, Footer } from 'pedialab-shared/components';
 import {
@@ -35,8 +35,7 @@ const useStyle = makeStyles({
     marginTop: '13rem'
   },
   techleadaaS: {
-    marginTop: '14.65rem',
-    marginLeft: '10%'
+    marginTop: '14.65rem'
   },
   projectScopes: {
     marginTop: '15rem'
@@ -54,8 +53,7 @@ const useStyle = makeStyles({
     marginTop: '20rem'
   },
   whereWeServe: {
-    marginTop: '16.4375rem',
-    paddingRight: '17%'
+    marginTop: '16.4375rem'
   },
   caseStudies: { marginTop: '24.3125rem' },
   projectPhrases: {
@@ -74,7 +72,7 @@ const IndexPageContainer = () => {
   const classes = useStyle();
   return (
     <>
-      <Container disableGutters fixed>
+      <Box mx="10%">
         <Grid container direction="column">
           <Header />
           <HeroContent className={classes.heroContent} />
@@ -82,31 +80,29 @@ const IndexPageContainer = () => {
           <SoftwareDelivery className={classes.softwareDelivery} />
           <VendorDifference className={classes.vendorDifference} />
         </Grid>
-      </Container>
-
-      <TechleadaaS className={classes.techleadaaS} />
-
-      <Container disableGutters fixed>
+      </Box>
+      <Box ml="10%">
+        <TechleadaaS className={classes.techleadaaS} />
+      </Box>
+      <Box mx="10%">
         <ProjectScopes className={classes.projectScopes} />
         <TeamUpWithTechlead className={classes.teamUpWithTechlead} />
         <DeveloperSupport className={classes.developerSupport} />
         <OurTeam className={classes.ourTeam} />
         <ClientCompanies className={classes.clientCompanies} />
-      </Container>
-
-      <WhereWeServe className={classes.whereWeServe} />
-
-      <Container disableGutters fixed>
+      </Box>
+      <Box mr="17%">
+        <WhereWeServe className={classes.whereWeServe} />
+      </Box>
+      <Box mx="10%">
         <CaseStudies className={classes.caseStudies} />
         <ProjectPhrases className={classes.projectPhrases} />
-      </Container>
-
+      </Box>
       <Testimonial className={classes.testimonial} />
-
-      <Container disableGutters fixed>
+      <Box mx="10%">
         <Contact className={classes.contact} />
         <Footer className={classes.footer} />
-      </Container>
+      </Box>
     </>
   );
 };

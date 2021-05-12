@@ -1,5 +1,5 @@
 import {
-  Box, Grid, makeStyles, Container
+  Box, Grid, makeStyles
 } from '@material-ui/core';
 import { Header, Footer } from 'pedialab-shared/components';
 import { MarkdownArticle } from 'pedialab-pages/case-study-page';
@@ -26,7 +26,7 @@ const CaseStudyPage = ({
   const classes = useStyle();
   return (
     <>
-      <Container disableGutters fixed>
+      <Box mx="10%">
         <Grid container direction="column">
           <Header isActivatedOrder={3} />
           <Box
@@ -47,7 +47,7 @@ const CaseStudyPage = ({
           </Box>
           <Footer className={classes.footer} />
         </Grid>
-      </Container>
+      </Box>
     </>
   );
 };

@@ -8,7 +8,7 @@ const content = [
       '“Vincent’s strong technical skills together with his business sense take us to next level. His experience in startup saved us a huge amount of time and he always provide us both insights and actions.”'
   },
   {
-    name: 'Fund Ng',
+    name: 'Fung Ng',
     title: 'Chief Architect, Head of Process & Control at AIA',
     description:
       '“Vincent is proactive at work and passionate in technology. Eager to learn, pick up things with great pace and always bring new technologies to the team.”'
