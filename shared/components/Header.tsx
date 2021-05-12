@@ -1,6 +1,6 @@
 import { Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import LogoWithName from './LogoWithName';
 import NavList from './NavList';
 

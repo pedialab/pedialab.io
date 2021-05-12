@@ -8,6 +8,7 @@ import { matter } from 'pedialab-pages/case-study-page/lib-iso';
 type Props = { cards : ArticleCardProps[] }
 
 type CaseStudyMeta = {
+  fileName: string;
   title: string;
   heroImage: string;
   highlight: string;
@@ -16,12 +17,16 @@ type CaseStudyMeta = {
 }
 const getStaticProps: GetStaticProps<Props> = async () => {
   const filesNames = loadAllMarkdownFileNames();
-  const markdownFiles = await Promise.all(filesNames.map((title) => loadMarkdownFile(title)));
+  const markdownFiles = await Promise.all(filesNames.map(async (title) => ({
+    fileName: title,
+    file: await loadMarkdownFile(title)
+  })));
   const metadataList = markdownFiles
-    .map((markdown) => matter(markdown).data as CaseStudyMeta)
+    .map((markdown) => ({ ...matter(markdown.file).data, fileName: markdown.fileName }) as CaseStudyMeta)
     .sort((m1, m2) => (m1.order - m2.order));
 
   const cards: ArticleCardProps[] = metadataList.map((caseStudyMeta) => ({
+    link: '/case-study/'.concat(caseStudyMeta.fileName),
     title: caseStudyMeta.title,
     imgSrc: caseStudyMeta.heroImage,
     content: caseStudyMeta.summary

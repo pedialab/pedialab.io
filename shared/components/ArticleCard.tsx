@@ -1,6 +1,6 @@
 import { Grid, makeStyles, Typography } from '@material-ui/core';
 
-export type ArticleCardProps = { title: string; imgSrc: string; content: string };
+export type ArticleCardProps = { link: string, title: string; imgSrc: string; content: string };
 
 const useStyles = makeStyles({
   root: { width: '100%' },
@@ -18,22 +18,26 @@ const useStyles = makeStyles({
   }
 });
 
-const ArticleCard = ({ title, imgSrc, content }: ArticleCardProps) => {
+const ArticleCard = ({
+  link, title, imgSrc, content
+}: ArticleCardProps) => {
   const classes = useStyles();
   return (
-    <Grid component="article" container direction="column" className={classes.root}>
-      <Grid item className={classes.image}>
-        <img src={imgSrc} alt={title} loading="lazy" />
+    <a href={link}>
+      <Grid component="article" container direction="column" className={classes.root}>
+        <Grid item className={classes.image}>
+          <img src={imgSrc} alt={title} loading="lazy" />
+        </Grid>
+        <Grid item className={classes.title}>
+          <Typography variant="h3">{title}</Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="body2" color="secondary" className={classes.content}>
+            {content}
+          </Typography>
+        </Grid>
       </Grid>
-      <Grid item className={classes.title}>
-        <Typography variant="h3">{title}</Typography>
-      </Grid>
-      <Grid item>
-        <Typography variant="body2" color="secondary" className={classes.content}>
-          {content}
-        </Typography>
-      </Grid>
-    </Grid>
+    </a>
   );
 };
 

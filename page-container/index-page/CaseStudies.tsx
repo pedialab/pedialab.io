@@ -3,18 +3,25 @@ import { ArticleCardList, CommonButton } from 'pedialab-shared/components';
 
 const cards = [
   {
+    link: '',
     title: 'SLEEEP by Space is Ltd',
     imgSrc: '/case_sleeep.jpg',
     content: `Red Dot Design Awards 18’
 Our partner Vincent Lau, lead the development of reservation systems and IoT integrations of the award winning sleeping pod, during his time with Space is Ltd.`
   },
   {
+    link: '',
     title: 'Teaming up with Spaceship',
     imgSrc: '/case_spaceship.jpg',
     content:
       'One of the rapidly growing logistics startups in Hong Kong, Spaceship has urging need to increase their technical capacity for their next stage of growth.'
   },
-  { title: 'HYPEFEST by Hypebeast', imgSrc: '/case_hypefest.jpg', content: 'Mobile App developed by ReactNative. For a 2 days event named HYPEFEST.' }
+  {
+    link: '',
+    title: 'HYPEFEST by Hypebeast',
+    imgSrc: '/case_hypefest.jpg',
+    content: 'Mobile App developed by ReactNative. For a 2 days event named HYPEFEST.'
+  }
 ];
 
 const useStyle = makeStyles({

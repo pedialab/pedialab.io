@@ -6,7 +6,9 @@ export default {
   component: ArticleCard
 } as Meta;
 
-const Template: Story<ArticleCardProps> = ({ title, imgSrc, content }: ArticleCardProps) => <ArticleCard title={title} imgSrc={imgSrc} content={content} />;
+const Template: Story<ArticleCardProps> = ({
+  title, imgSrc, content, link
+}: ArticleCardProps) => <ArticleCard link={link} title={title} imgSrc={imgSrc} content={content} />;
 
 export const Default = Template.bind({});
 Default.args = {

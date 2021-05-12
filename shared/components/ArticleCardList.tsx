@@ -22,7 +22,7 @@ const ArticleCardList = ({ cards, className }: ArticleCardListProps) => {
   const items = useMemo(
     () => cards.map((articleCard) => (
       <Grid item key={articleCard.title} className={classes.card}>
-        <ArticleCard title={articleCard.title} imgSrc={articleCard.imgSrc} content={articleCard.content} />
+        <ArticleCard link={articleCard.link} title={articleCard.title} imgSrc={articleCard.imgSrc} content={articleCard.content} />
       </Grid>
     )),
     [cards, classes]
