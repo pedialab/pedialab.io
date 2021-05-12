@@ -1703,6 +1703,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@corex/deepmerge@npm:^2.5.11":
+  version: 2.5.11
+  resolution: "@corex/deepmerge@npm:2.5.11"
+  checksum: 01feb029985a070e01d442d4b0bec412e9df0ae727d4bd24aff6971a55954c01a6b8bb2b9416165e8932c2db50152b92314a78eaa436b57a62de1f836e540272
+  languageName: node
+  linkType: hard
+
 "@emotion/cache@npm:^10.0.27":
   version: 10.0.29
   resolution: "@emotion/cache@npm:10.0.29"
@@ -2275,7 +2282,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:10.2.0":
+"@next/env@npm:10.2.0, @next/env@npm:^10.2.0":
   version: 10.2.0
   resolution: "@next/env@npm:10.2.0"
   checksum: 664e0c3166453cb4b5edd042594d0bd9833682e9151e372431b91bf510befa69a0e6fb40f14d31f2006fed4f157f5a658efbaaf2b95ba76f2b2ca8b05e752ef0
@@ -7269,6 +7276,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"escape-string-regexp@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "escape-string-regexp@npm:4.0.0"
+  checksum: c747be8d5ff7873127e3e0cffe7d2206a37208077fa9c30a3c1bb4f26bebd081c8c24d5fba7a99449f9d20670bea3dc5e1b6098b0f074b099bd38766271a272f
+  languageName: node
+  linkType: hard
+
 "escodegen@npm:^2.0.0":
   version: 2.0.0
   resolution: "escodegen@npm:2.0.0"
@@ -11095,6 +11109,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"matcher@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "matcher@npm:4.0.0"
+  dependencies:
+    escape-string-regexp: ^4.0.0
+  checksum: 457f90baba61bef6210978422d8581dc1a08b032565f208abf3db9b063367bd9750f664c71fcc6c262b3b4201aa5c3aebb4c63c40341d92d65ff14ba2e607271
+  languageName: node
+  linkType: hard
+
 "md5.js@npm:^1.3.4":
   version: 1.3.5
   resolution: "md5.js@npm:1.3.5"
@@ -11662,6 +11685,21 @@ fsevents@^1.2.7:
   peerDependencies:
     webpack: ^4.0.0 || ^5.0.0
   checksum: 9c094fc1358ebb5180366b240e87af945fc9d04fa7463ed8ae17ba6382121866230953bb9d637fe488964a7de7bad41f461802139e08dd7f202f53d93840b414
+  languageName: node
+  linkType: hard
+
+"next-sitemap@npm:^1.6.57":
+  version: 1.6.57
+  resolution: "next-sitemap@npm:1.6.57"
+  dependencies:
+    "@corex/deepmerge": ^2.5.11
+    matcher: ^4.0.0
+    minimist: ^1.2.5
+  peerDependencies:
+    next: "*"
+  bin:
+    next-sitemap: bin/next-sitemap
+  checksum: 6dbd20510bdef9fab8748d5e7497d81abe63b6a10926e0e8820bd7fef576606be420b0b4ec9005a4c5c99ba0e4545543ae8768b86bce2e98c20d5c969072b4fe
   languageName: node
   linkType: hard
 
@@ -12568,6 +12606,7 @@ fsevents@^1.2.7:
     "@babel/runtime": ^7.14.0
     "@material-ui/core": ^4.11.4
     "@mdx-js/react": ^1.6.22
+    "@next/env": ^10.2.0
     "@storybook/addon-actions": ^6.2.9
     "@storybook/addon-docs": ^6.2.9
     "@storybook/addon-essentials": ^6.2.9
@@ -12592,6 +12631,7 @@ fsevents@^1.2.7:
     jest: ^26.6.3
     next: ^10.2.0
     next-fonts: ^1.5.1
+    next-sitemap: ^1.6.57
     react: ^17.0.2
     react-dom: ^17.0.2
     remark-parse: ^9.0.0
