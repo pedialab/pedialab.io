@@ -2,7 +2,7 @@ import {
   Typography, Grid, makeStyles, TextField, Button
 } from '@material-ui/core';
 import { useCallback, useState } from 'react';
-import packageConfig from '../../package.json';
+import { postContactForm } from './service';
 
 const useStyle = makeStyles((theme) => ({
   title: {
@@ -46,8 +46,6 @@ type FormState = {
   message: string;
 } | null;
 
-const formPostUrl = packageConfig.pedialab.contactFormEndpoint;
-
 const ContactForm = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyle();
 
@@ -56,16 +54,7 @@ const ContactForm = ({ className }: Partial<{ className: string }>) => {
   const handleSubmit = useCallback(
     (event: React.FormEvent) => {
       event.preventDefault();
-
-      if (formState) {
-        fetch(formPostUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(formState)
-        });
-      }
+      postContactForm(formState);
     },
     [formState]
   );
