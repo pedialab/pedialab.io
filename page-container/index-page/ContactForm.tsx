@@ -2,6 +2,7 @@ import {
   Typography, Grid, makeStyles, TextField, Button
 } from '@material-ui/core';
 import { useCallback, useState } from 'react';
+import { useRouter } from 'next/router';
 import { postContactForm } from './service';
 
 const useStyle = makeStyles((theme) => ({
@@ -48,15 +49,19 @@ type FormState = {
 
 const ContactForm = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyle();
+  const router = useRouter();
 
   const [formState, setFormState] = useState<FormState>(null);
 
   const handleSubmit = useCallback(
-    (event: React.FormEvent) => {
+    async (event: React.FormEvent) => {
       event.preventDefault();
-      postContactForm(formState);
+      const isSuccess = await postContactForm(formState);
+      if (isSuccess) {
+        router.push('/thank-you');
+      }
     },
-    [formState]
+    [formState, router]
   );
 
   return (
