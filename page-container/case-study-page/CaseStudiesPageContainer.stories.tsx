@@ -6,6 +6,6 @@ export default {
   component: CaseStudiesPageContainer
 } as Meta;
 
-const Template: Story = () => <CaseStudiesPageContainer cards={[]} />;
+const Template: Story = () => <CaseStudiesPageContainer articleCards={[]} />;
 
 export const Default = Template.bind({});

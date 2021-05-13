@@ -11,7 +11,7 @@ const useStyle = makeStyles({
   }
 });
 
-const CaseStudiesPage = ({ cards }: { cards: ArticleCardProps[]}) => {
+const CaseStudiesPage = ({ articleCards }: { articleCards: ArticleCardProps[]}) => {
   const classes = useStyle();
   return (
     <Box mx="10%">
@@ -25,7 +25,7 @@ const CaseStudiesPage = ({ cards }: { cards: ArticleCardProps[]}) => {
         >
           Case Studies
         </Box>
-        <ArticleCardList cards={cards} className={classes.caseStudyList} />
+        <ArticleCardList articleCards={articleCards} className={classes.caseStudyList} />
         <Footer className={classes.footer} />
       </Grid>
     </Box>

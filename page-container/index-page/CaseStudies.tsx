@@ -1,23 +1,23 @@
 import { Typography, Grid, makeStyles } from '@material-ui/core';
 import { ArticleCardList, CommonButton } from 'pedialab-shared/components';
 
-const cards = [
+const articleCards = [
   {
-    link: '',
+    link: '/case-study/sleeep-by-space-is-ltd',
     title: 'SLEEEP by Space is Ltd',
     imgSrc: '/case_sleeep.jpg',
     content: `Red Dot Design Awards 18’
 Our partner Vincent Lau, lead the development of reservation systems and IoT integrations of the award winning sleeping pod, during his time with Space is Ltd.`
   },
   {
-    link: '',
+    link: '/case-study/teaming-up-with-spaceship',
     title: 'Teaming up with Spaceship',
     imgSrc: '/case_spaceship.jpg',
     content:
       'One of the rapidly growing logistics startups in Hong Kong, Spaceship has urging need to increase their technical capacity for their next stage of growth.'
   },
   {
-    link: '',
+    link: '/case-study/hypefest-by-hypebeast',
     title: 'HYPEFEST by Hypebeast',
     imgSrc: '/case_hypefest.jpg',
     content: 'Mobile App developed by ReactNative. For a 2 days event named HYPEFEST.'
@@ -41,7 +41,7 @@ const CaseStudies = ({ className }: Partial<{ className: string }>) => {
         </Typography>
       </Grid>
       <Grid item className={classes.articleCardList}>
-        <ArticleCardList cards={cards} />
+        <ArticleCardList articleCards={articleCards} />
       </Grid>
       <Grid item container justify="center">
         <CommonButton title="Explore more of our work" href="/case-study" />

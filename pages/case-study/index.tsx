@@ -5,7 +5,7 @@ import { ArticleCardProps } from 'pedialab-shared/components/ArticleCard';
 import { loadAllMarkdownFileNames, loadMarkdownFile } from 'pedialab-pages/case-study-page/lib-server';
 import { matter } from 'pedialab-pages/case-study-page/lib-iso';
 
-type Props = { cards : ArticleCardProps[] }
+type Props = { articleCards : ArticleCardProps[] }
 
 type CaseStudyMeta = {
   fileName: string;
@@ -25,7 +25,7 @@ const getStaticProps: GetStaticProps<Props> = async () => {
     .map((markdown) => ({ ...matter(markdown.file).data, fileName: markdown.fileName }) as CaseStudyMeta)
     .sort((m1, m2) => (m1.order - m2.order));
 
-  const cards: ArticleCardProps[] = metadataList.map((caseStudyMeta) => ({
+  const articleCards: ArticleCardProps[] = metadataList.map((caseStudyMeta) => ({
     link: '/case-study/'.concat(caseStudyMeta.fileName),
     title: caseStudyMeta.title,
     imgSrc: caseStudyMeta.heroImage,
@@ -34,20 +34,20 @@ const getStaticProps: GetStaticProps<Props> = async () => {
 
   return {
     props: {
-      cards
+      articleCards
     }
   };
 };
 
 export { getStaticProps };
 
-function CaseStudiesPage({ cards }: Props) {
+function CaseStudiesPage({ articleCards }: Props) {
   return (
     <>
       <Head>
         <title>Pedia Lab - Case Study</title>
       </Head>
-      <CaseStudiesPageContainer cards={cards} />
+      <CaseStudiesPageContainer articleCards={articleCards} />
     </>
   );
 }
