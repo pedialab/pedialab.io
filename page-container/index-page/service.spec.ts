@@ -19,7 +19,6 @@ describe('index page services', () => {
     };
 
     postContactForm(fakeFormData);
-
     expect(mockFetch).toBeCalled();
     const fetchArguments = mockFetch.mock.calls[0][1];
     expect(fetchArguments.method).toBe('POST');

@@ -6,14 +6,18 @@ export const postContactForm = async (
   formState: Record<string, string> | null
 ) => {
   if (formState) {
-    const res = await fetch(formPostUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formState)
-    });
-    return res.ok;
+    try {
+      const res = await fetch(formPostUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {},
+        body: JSON.stringify(formState)
+      });
+      return true;
+    } catch (err) {
+      console.debug(err);
+      return false;
+    }
   }
   return false;
 };

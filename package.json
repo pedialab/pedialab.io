@@ -14,7 +14,7 @@
   },
   "pedialab": {
     "caseStudySource": "case-study-source",
-    "contactFormEndpoint": ""
+    "contactFormEndpoint": "https://peraperatom.app.n8n.cloud/webhook/31fcabf0-492e-4996-86f0-f7ac041381de"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
