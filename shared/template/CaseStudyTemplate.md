@@ -1,6 +1,6 @@
 ---
 title: ""
-heroImage: ""
+heroImagePath: ""
 highlight: ""
 summary: ""
 order: 0
