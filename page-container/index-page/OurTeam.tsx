@@ -58,8 +58,8 @@ const OurTeam = ({ className }: Partial<{ className: string }>) => {
       <LogoList title={title} brands={brands} brandsMarginTop={brandsMarginTop}>
         <Grid container justify="space-between" className={classes.members}>
           {members.map((member) => (
-            <Grid item>
-              <Member key={member.name} name={member.name} position={member.position} avatarSrc={member.avatarSrc} />
+            <Grid item key={member.name}>
+              <Member name={member.name} position={member.position} avatarSrc={member.avatarSrc} />
             </Grid>
           ))}
         </Grid>
