@@ -2,7 +2,8 @@ import {
   Typography, Grid, makeStyles, TextField, Button
 } from '@material-ui/core';
 import { useCallback, useState } from 'react';
-import packageConfig from '../../package.json';
+import { useRouter } from 'next/router';
+import { postContactForm } from './service';
 
 const useStyle = makeStyles((theme) => ({
   title: {
@@ -46,28 +47,21 @@ type FormState = {
   message: string;
 } | null;
 
-const formPostUrl = packageConfig.pedialab.contactFormEndpoint;
-
 const ContactForm = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyle();
+  const router = useRouter();
 
   const [formState, setFormState] = useState<FormState>(null);
 
   const handleSubmit = useCallback(
-    (event: React.FormEvent) => {
+    async (event: React.FormEvent) => {
       event.preventDefault();
-
-      if (formState) {
-        fetch(formPostUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(formState)
-        });
+      const isSuccess = await postContactForm(formState);
+      if (isSuccess) {
+        router.push('/thank-you');
       }
     },
-    [formState]
+    [formState, router]
   );
 
   return (

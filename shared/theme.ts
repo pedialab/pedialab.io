@@ -89,6 +89,9 @@ const theme = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
+        a: {
+          textDecoration: 'none'
+        },
         img: {
           width: '100%',
           height: 'auto',

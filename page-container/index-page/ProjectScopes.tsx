@@ -11,21 +11,39 @@ type ServiceItemProps = {
 const content: ServiceItemProps[] = [
   {
     title: 'Team up',
-    price: '$8-64 hrs',
+    price: '8-64 hrs',
     priceUnit: '/month',
-    service: ['Architecture Audit', 'Strategy Meetings', 'Team Coaching', 'Office Hours', 'Partnership Meetings']
+    service: [
+      'Architecture Audit',
+      'Strategy Meetings',
+      'Team Coaching',
+      'Office Hours',
+      'Partnership Meetings'
+    ]
   },
   {
     title: 'Developer Support',
     price: '$5k-$10k',
     priceUnit: '/month',
-    service: ['Architecture Demo', 'QA-as-a-Service', 'Browser testing', 'k8s/CICD setup', 'Code Review']
+    service: [
+      'Architecture Demo',
+      'QA-as-a-Service',
+      'Browser testing',
+      'k8s/CICD setup',
+      'Code Review'
+    ]
   },
   {
     title: 'Project Delivery',
     price: '$15k-$100',
     priceUnit: '/project',
-    service: ['Architecture Demo', 'QA-as-a-Service', 'Browser testing', 'k8s/CICD setup', 'Code Review']
+    service: [
+      'Architecture Demo',
+      'QA-as-a-Service',
+      'Browser testing',
+      'k8s/CICD setup',
+      'Code Review'
+    ]
   }
 ];
 
@@ -55,7 +73,10 @@ const useStyles = makeStyles({
 });
 
 const ServiceItem = ({
-  title, price, priceUnit, service
+  title,
+  price,
+  priceUnit,
+  service
 }: ServiceItemProps) => {
   const classes = useStyles();
   return (
@@ -87,16 +108,34 @@ const ServiceItem = ({
 const ProjectScopes = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyles();
   return (
-    <Grid id="typical-project-scopes" container component="article" justify="space-between" className={[className].join(' ')}>
+    <Grid
+      id="typical-project-scopes"
+      container
+      component="article"
+      justify="space-between"
+      className={[className].join(' ')}
+    >
       <Grid item sm={12}>
         <Typography align="center" variant="h2" color="primary">
           Typical Project Scopes
         </Typography>
       </Grid>
       {content.map((item) => (
-        <ServiceItem key={item.title} title={item.title} price={item.price} priceUnit={item.priceUnit} service={item.service} />
+        <ServiceItem
+          key={item.title}
+          title={item.title}
+          price={item.price}
+          priceUnit={item.priceUnit}
+          service={item.service}
+        />
       ))}
-      <Grid item sm={12} container justify="center" className={classes.letsTalk}>
+      <Grid
+        item
+        sm={12}
+        container
+        justify="center"
+        className={classes.letsTalk}
+      >
         <LetsTalkButton />
       </Grid>
     </Grid>

@@ -2,8 +2,7 @@ import {
   Box,
   Grid,
   makeStyles,
-  Typography,
-  Container
+  Typography
 } from '@material-ui/core';
 import { Header, Footer, CommonButton } from 'pedialab-shared/components';
 
@@ -17,7 +16,7 @@ const CareerPage = () => {
   const classes = useStyle();
   return (
     <>
-      <Container disableGutters fixed>
+      <Box mx="10%">
         <Grid container direction="column" justify="center">
           <Header isActivatedOrder={4} />
           <Box alignSelf="center" mt="9.4rem">
@@ -41,7 +40,7 @@ const CareerPage = () => {
           </Box>
           <Footer className={classes.footer} />
         </Grid>
-      </Container>
+      </Box>
     </>
   );
 };

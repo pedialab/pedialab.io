@@ -61,7 +61,7 @@ const ProjectPhrases = ({ className }: Partial<{ className: string }>) => {
       </Grid>
       <Grid component="ol" className={classes.list} item container direction="column">
         {phrases.map((step) => (
-          <Grid component="li" item container>
+          <Grid component="li" item container key={step.title}>
             <Grid item component="section" className={classes.textRoot}>
               <Typography variant="h3" color="primary">
                 {step.title}

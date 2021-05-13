@@ -1,7 +1,11 @@
 import fs from 'fs';
 import { loadAllMarkdownFileNames, loadMarkdownFile } from './lib-server';
 
-jest.mock('fs');
+jest.mock('fs', () => ({
+  promises: {
+    readFile: jest.fn()
+  }
+}));
 
 describe('case studies server-side library', () => {
   it('read local folder to get markdown file names', () => {
@@ -10,15 +14,15 @@ describe('case studies server-side library', () => {
     expect(loadAllMarkdownFileNames()).toEqual(['caseStudy_1', 'caseStudy_2']);
   });
 
-  it('load markdown file by file name', () => {
+  it('load markdown file by file name', async () => {
     const mockMarkdown = `
     ---
     title: "meta title"
     ---
     # hello markdown
     `;
-    fs.readFileSync = jest.fn().mockReturnValue(mockMarkdown);
-
-    expect(loadMarkdownFile('caseStudy_1.md')).toBe(mockMarkdown);
+    fs.promises.readFile = jest.fn().mockReturnValue(Promise.resolve(mockMarkdown));
+    const received = await loadMarkdownFile('caseStudy_1.md');
+    expect(received).toBe(mockMarkdown);
   });
 });

@@ -34,7 +34,7 @@ const HeroContent = ({ className }: Partial<{ className: string }>) => {
           </Typography>
         </Box>
         <Box mt="4rem" borderRadius="60px" overflow="hidden" maxWidth="max-content">
-          <img src="/the_pedia_lab_difference.jpg" alt="index hero" loading="lazy" className={classes.image} />
+          <img src="/the_pedia_lab_difference.png" alt="index hero" loading="lazy" className={classes.image} />
         </Box>
       </Box>
     </Box>
