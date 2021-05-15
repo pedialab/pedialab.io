@@ -5,8 +5,8 @@ export type FooterProps = {
   className?: string;
 };
 
-const useStyles = makeStyles({
-  root: {
+const useStyles = makeStyles((theme) => ({
+  footerContainer: {
     borderTopWidth: '1px',
     borderTopStyle: 'solid',
     borderTopColor: '#2F2F2F',
@@ -14,12 +14,15 @@ const useStyles = makeStyles({
     '& > :last-child': {
       marginTop: '1.5rem',
       marginBottom: '1rem'
+    },
+    [theme.breakpoints.down('sm')]: {
+      alignItems: 'center'
     }
   },
   logoContainer: {
     width: 'max-content'
   }
-});
+}));
 
 const Footer = ({ className }: FooterProps) => {
   const classes = useStyles();
@@ -27,9 +30,9 @@ const Footer = ({ className }: FooterProps) => {
     <Grid
       container
       component="footer"
-      className={[className, classes.root].join(' ')}
+      className={[className, classes.footerContainer].join(' ')}
       direction="column"
-      alignItems="center"
+      alignItems="flex-start"
     >
       <Grid item className={classes.logoContainer}><LogoWithName /></Grid>
       <Grid item>
