@@ -92,11 +92,10 @@ theme = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
-        // html: {
-        //   [theme.breakpoints.down('xs')]: {
-        //     fontSize: '11px'
-        //   }
-        // },
+        body: {
+          marginTop: 0,
+          marginBottom: 0
+        },
         a: {
           textDecoration: 'none'
         },

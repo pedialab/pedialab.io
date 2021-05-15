@@ -39,7 +39,7 @@ const CareerPage = () => {
   const classes = useStyle();
   return (
     <>
-      <Box mx={{ xs: 0, md: '10%' }}>
+      <Box mx={{ xs: '5.8%', md: '10%' }}>
         <Header isActivatedOrder={4} />
         <Grid container direction="column" alignItems="center">
           <Grid item className={classes.title}>

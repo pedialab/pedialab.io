@@ -72,34 +72,34 @@ const IndexPageContainer = () => {
   const classes = useStyle();
   return (
     <>
-      <Box mx={{ xs: 0, md: '10%' }}>
+      <Box mx={{ xs: '5.8%', md: '10%' }}>
         <Grid container direction="column">
-          <Header />
+          <Header isIndexPage />
           <HeroContent className={classes.heroContent} />
           <OurCompany className={classes.ourCompany} />
           <SoftwareDelivery className={classes.softwareDelivery} />
           <VendorDifference className={classes.vendorDifference} />
         </Grid>
       </Box>
-      <Box ml={{ xs: 0, md: '10%' }}>
+      <Box ml={{ xs: '5.8%', md: '10%' }}>
         <TechleadaaS className={classes.techleadaaS} />
       </Box>
-      <Box mx={{ xs: 0, md: '10%' }}>
+      <Box mx={{ xs: '5.8%', md: '10%' }}>
         <ProjectScopes className={classes.projectScopes} />
         <TeamUpWithTechlead className={classes.teamUpWithTechlead} />
         <DeveloperSupport className={classes.developerSupport} />
         <OurTeam className={classes.ourTeam} />
         <ClientCompanies className={classes.clientCompanies} />
       </Box>
-      <Box mr={{ xs: 0, lg: '17%', xl: '30%' }}>
+      <Box mr={{ xs: '5.8%', lg: '17%', xl: '30%' }}>
         <WhereWeServe className={classes.whereWeServe} />
       </Box>
-      <Box mx={{ xs: 0, md: '10%' }}>
+      <Box mx={{ xs: '5.8%', md: '10%' }}>
         <CaseStudies className={classes.caseStudies} />
         <ProjectPhrases className={classes.projectPhrases} />
       </Box>
       <Testimonial className={classes.testimonial} />
-      <Box mx={{ xs: 0, md: '10%' }}>
+      <Box mx={{ xs: '5.8%', md: '10%' }}>
         <Contact className={classes.contact} />
         <Footer className={classes.footer} />
       </Box>

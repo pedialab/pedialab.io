@@ -14,7 +14,7 @@ const useStyle = makeStyles({
 const CaseStudiesPage = ({ articleCards }: { articleCards: ArticleCardProps[]}) => {
   const classes = useStyle();
   return (
-    <Box mx={{ xs: 0, md: '10%' }}>
+    <Box mx={{ xs: '5.8%', md: '10%' }}>
       <Grid container direction="column">
         <Header isActivatedOrder={3} />
         <Box
