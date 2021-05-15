@@ -72,7 +72,7 @@ const IndexPageContainer = () => {
   const classes = useStyle();
   return (
     <>
-      <Box mx="10%">
+      <Box mx={{ xs: 0, md: '10%' }}>
         <Grid container direction="column">
           <Header />
           <HeroContent className={classes.heroContent} />
@@ -81,25 +81,25 @@ const IndexPageContainer = () => {
           <VendorDifference className={classes.vendorDifference} />
         </Grid>
       </Box>
-      <Box ml="10%">
+      <Box ml={{ xs: 0, md: '10%' }}>
         <TechleadaaS className={classes.techleadaaS} />
       </Box>
-      <Box mx="10%">
+      <Box mx={{ xs: 0, md: '10%' }}>
         <ProjectScopes className={classes.projectScopes} />
         <TeamUpWithTechlead className={classes.teamUpWithTechlead} />
         <DeveloperSupport className={classes.developerSupport} />
         <OurTeam className={classes.ourTeam} />
         <ClientCompanies className={classes.clientCompanies} />
       </Box>
-      <Box mr="17%">
+      <Box mr={{ xs: 0, lg: '17%', xl: '30%' }}>
         <WhereWeServe className={classes.whereWeServe} />
       </Box>
-      <Box mx="10%">
+      <Box mx={{ xs: 0, md: '10%' }}>
         <CaseStudies className={classes.caseStudies} />
         <ProjectPhrases className={classes.projectPhrases} />
       </Box>
       <Testimonial className={classes.testimonial} />
-      <Box mx="10%">
+      <Box mx={{ xs: 0, md: '10%' }}>
         <Contact className={classes.contact} />
         <Footer className={classes.footer} />
       </Box>

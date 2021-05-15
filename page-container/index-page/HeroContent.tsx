@@ -13,7 +13,7 @@ const useStyles = makeStyles({
 const HeroContent = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyles();
   return (
-    <Box className={className}>
+    <Box component="article" width="100%" className={className}>
       <Typography variant="h2" color="primary">
         Architecting software, teams,
         <br />

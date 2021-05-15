@@ -1,7 +1,15 @@
-import { Grid, makeStyles, Typography } from '@material-ui/core';
+import {
+  Grid, Hidden, makeStyles, Typography
+} from '@material-ui/core';
 import LetsTalkButton from './LetsTalkButton';
 
-const useStyle = makeStyles({
+const useStyle = makeStyles((theme) => ({
+  articleContainer: {
+    [theme.breakpoints.down('md')]: {
+      justifyContent: 'center',
+      textAlign: 'center'
+    }
+  },
   textContent: {
     marginTop: '3.75rem',
     width: '30rem',
@@ -19,7 +27,7 @@ const useStyle = makeStyles({
   letsTalk: {
     marginTop: '9.375rem'
   }
-});
+}));
 
 const content = [
   {
@@ -35,7 +43,7 @@ const content = [
 const DeveloperSupport = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyle();
   return (
-    <Grid className={className} component="article" container justify="space-between">
+    <Grid className={[className, classes.articleContainer].join(' ')} component="article" container justify="space-between">
       <Grid item container direction="column" className={classes.textContent}>
         <Grid item>
           <Typography variant="h2" color="primary">
@@ -61,9 +69,11 @@ const DeveloperSupport = ({ className }: Partial<{ className: string }>) => {
           </Grid>
         ))}
       </Grid>
-      <Grid item className={classes.image}>
-        <img src="/developer_support.jpg" alt="Developer Support" />
-      </Grid>
+      <Hidden mdDown>
+        <Grid item className={classes.image}>
+          <img src="/developer_support.jpg" alt="Developer Support" />
+        </Grid>
+      </Hidden>
       <Grid item container justify="center" className={classes.letsTalk}>
         <LetsTalkButton />
       </Grid>

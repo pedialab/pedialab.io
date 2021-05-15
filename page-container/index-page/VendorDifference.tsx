@@ -24,6 +24,11 @@ const content = {
 };
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    borderTopWidth: '1px',
+    borderTopStyle: 'solid',
+    borderColor: theme.palette.secondary.main
+  },
   title: {
     width: '10.3rem',
     marginLeft: '1.6875rem',
@@ -32,7 +37,10 @@ const useStyles = makeStyles((theme) => ({
   firstSection: {
     borderRightStyle: 'solid',
     borderWidth: '1px',
-    borderColor: theme.palette.secondary.main
+    borderColor: theme.palette.secondary.main,
+    [theme.breakpoints.down('md')]: {
+      borderStyle: 'none'
+    }
   },
   letsTalk: {
     marginTop: '5rem'
@@ -43,24 +51,24 @@ const VendorDifference = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyles();
   return (
     <>
-      <Box component="article" className={className} borderTop={1} borderColor="secondary.main" display="flex">
-        <Box flexGrow={1} flexBasis={0} className={classes.firstSection}>
+      <Grid container component="article" className={[className, classes.root].join(' ')}>
+        <Grid item lg={6} xs={12} className={classes.firstSection}>
           <Box mt="0.75rem" ml="0.75rem" display="flex" paddingTop="2.9375rem" paddingRight="7%">
             <Typography variant="h3" color="primary" className={classes.title}>
               {content.vendor.title}
             </Typography>
             <TextList texts={content.vendor.lists} />
           </Box>
-        </Box>
-        <Box flexGrow={1} flexBasis={0}>
+        </Grid>
+        <Grid item lg={6} xs={12}>
           <Box mt="0.75rem" ml="0.75rem" bgcolor="background.paper" display="flex" borderRadius="40px" paddingTop="2.9375rem" paddingRight="7%">
             <Typography color="textPrimary" variant="h3" className={classes.title}>
               {content.pedialab.title}
             </Typography>
             <TextList texts={content.pedialab.lists} />
           </Box>
-        </Box>
-      </Box>
+        </Grid>
+      </Grid>
       <Grid container justify="center">
         <LetsTalkButton className={classes.letsTalk} />
       </Grid>

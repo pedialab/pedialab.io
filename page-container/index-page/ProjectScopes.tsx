@@ -47,7 +47,7 @@ const content: ServiceItemProps[] = [
   }
 ];
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   serviceItem: {
     marginTop: '4.625rem',
     width: 'fit-content',
@@ -58,6 +58,9 @@ const useStyles = makeStyles({
         marginTop: '2.25rem',
         fontSize: '1.25rem'
       }
+    },
+    [theme.breakpoints.down('md')]: {
+      alignItems: 'center'
     }
   },
   price: {
@@ -70,7 +73,7 @@ const useStyles = makeStyles({
   letsTalk: {
     marginTop: '5.3125rem'
   }
-});
+}));
 
 const ServiceItem = ({
   title,
@@ -80,7 +83,7 @@ const ServiceItem = ({
 }: ServiceItemProps) => {
   const classes = useStyles();
   return (
-    <Grid item container direction="column" className={classes.serviceItem}>
+    <Grid item container md={12} lg={4} direction="column" className={classes.serviceItem}>
       <Grid item>
         <Typography color="primary" variant="button">
           {title}
@@ -120,15 +123,17 @@ const ProjectScopes = ({ className }: Partial<{ className: string }>) => {
           Typical Project Scopes
         </Typography>
       </Grid>
-      {content.map((item) => (
-        <ServiceItem
-          key={item.title}
-          title={item.title}
-          price={item.price}
-          priceUnit={item.priceUnit}
-          service={item.service}
-        />
-      ))}
+      {
+        content.map((item) => (
+          <ServiceItem
+            key={item.title}
+            title={item.title}
+            price={item.price}
+            priceUnit={item.priceUnit}
+            service={item.service}
+          />
+        ))
+      }
       <Grid
         item
         sm={12}

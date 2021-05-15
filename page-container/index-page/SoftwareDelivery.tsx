@@ -42,7 +42,7 @@ const SoftwareDelivery = ({ className }: Partial<{ className: string }>) => {
     [classes]
   );
   return (
-    <Box component="article" className={className}>
+    <Box width="100%" component="article" className={className}>
       <Grid container>
         <Grid item component="section" lg={6}>
           <Typography variant="h2" color="primary" className={classes.header}>

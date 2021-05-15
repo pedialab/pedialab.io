@@ -8,7 +8,7 @@ const content = {
   Experienced UX & Product Designers, Senior Backend Developers, Site Reliability Engineers are ready to work on your project.`
 };
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   article: {
     width: '28.75rem',
     '& > :nth-child(1)': {
@@ -19,22 +19,27 @@ const useStyles = makeStyles({
     },
     '& > :nth-child(3)': {
       marginTop: '1rem'
+    },
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: '2rem',
+      paddingRight: '2rem'
     }
   },
   letsTalkButton: {
-    marginTop: '3rem'
+    marginTop: '3rem',
+    justifyContent: 'flex-start'
   }
-});
+}));
 
 const WhereWeServe = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyles();
   const { title, subtitle, description } = content;
   return (
     <Grid container justify="space-between" className={className}>
-      <Grid item>
+      <Grid item md={6} lg="auto">
         <img src="/map.jpg" alt="where we serve map" />
       </Grid>
-      <Grid item container direction="column" component="article" className={classes.article}>
+      <Grid item container direction="column" component="article" className={classes.article} md={6} lg="auto">
         <Typography variant="h2" color="primary">
           {title}
         </Typography>

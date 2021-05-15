@@ -24,14 +24,32 @@ const content: ItemProps[] = [
   }
 ];
 
-const useStyles = makeStyles({
-  root: { width: '18.75rem', marginTop: '6.6875rem' },
-  svgImage: { width: '5rem' },
-  title: { minHeight: '9.6rem', marginTop: '1.5rem' },
+const useStyles = makeStyles((theme) => ({
+  articleContainer: {
+    [theme.breakpoints.down('md')]: {
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
+  },
+  root: {
+    width: '18.75rem',
+    marginTop: '6.6875rem',
+    [theme.breakpoints.down('md')]: {
+      alignItems: 'center',
+      textAlign: 'center'
+    }
+  },
+  svgImage: {
+    width: '5rem'
+  },
+  title: {
+    minHeight: '9.6rem',
+    marginTop: '1.5rem'
+  },
   description: {
     marginTop: '1.5rem'
   }
-});
+}));
 
 const Item = ({ imgSrc, title, description }: ItemProps) => {
   const classes = useStyles();
@@ -58,17 +76,20 @@ export type TeamUpWithTechleadProps = {
   className?: string;
 };
 
-const TeamUpWithTechlead = ({ className }: TeamUpWithTechleadProps) => (
-  <Grid container component="article" justify="space-between" className={[className].join(' ')}>
-    <Grid item sm={12}>
-      <Typography align="center" variant="h2" color="primary">
-        Team up with Tech-Lead in a nutshell
-      </Typography>
+const TeamUpWithTechlead = ({ className }: TeamUpWithTechleadProps) => {
+  const classes = useStyles();
+  return (
+    <Grid container component="article" justify="space-between" className={[className, classes.articleContainer].join(' ')}>
+      <Grid item sm={12}>
+        <Typography align="center" variant="h2" color="primary">
+          Team up with Tech-Lead in a nutshell
+        </Typography>
+      </Grid>
+      {content.map((item) => (
+        <Item key={item.title} title={item.title} imgSrc={item.imgSrc} description={item.description} />
+      ))}
     </Grid>
-    {content.map((item) => (
-      <Item key={item.title} title={item.title} imgSrc={item.imgSrc} description={item.description} />
-    ))}
-  </Grid>
-);
+  );
+};
 
 export default TeamUpWithTechlead;
