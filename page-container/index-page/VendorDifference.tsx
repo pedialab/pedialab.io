@@ -64,7 +64,6 @@ const VendorDifference = ({ className }: Partial<{ className: string }>) => {
       <Grid container justify="center">
         <LetsTalkButton className={classes.letsTalk} />
       </Grid>
-      x
     </>
   );
 };

@@ -17,7 +17,13 @@ export type NavListProps = {
 
 const NavList = ({ items = [] }: NavListProps) => {
   const classes = useStyles();
-  const navListItems = useMemo(() => items.map((item) => <NavItem text={item.text} href={item.href} key={item.text} isActive={item.isActive} />), [items]);
+  const navListItems = useMemo(() => items.map(
+    (item) => (
+      <Grid item component="li">
+        <NavItem text={item.text} href={item.href} key={item.text} isActive={item.isActive} />
+      </Grid>
+    )
+  ), [items]);
   return (
     <>
       <Grid container component="ul" className={classes.navList}>

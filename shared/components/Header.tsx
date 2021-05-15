@@ -4,21 +4,6 @@ import { useMemo } from 'react';
 import LogoWithName from './LogoWithName';
 import NavList from './NavList';
 
-const useStyles = makeStyles({
-  container: {
-    alignItems: 'center'
-  },
-  lastItem: {
-    marginLeft: 'auto'
-  }
-});
-
-export type HeaderProps = {
-  className?: string;
-  isActivatedOrder?: number;
-  isIndexPage?: boolean
-};
-
 const content = [
   { text: 'About', href: '#our-company' },
   { text: 'Pricing', href: '#typical-project-scopes' },
@@ -27,6 +12,23 @@ const content = [
   { text: 'Careers', href: '/careers' },
   { text: 'Contact', href: '#contact' }
 ];
+
+export type HeaderProps = {
+  className?: string;
+  isActivatedOrder?: number;
+  isIndexPage?: boolean
+};
+
+const useStyles = makeStyles({
+  container: {
+    '& > :first-child': {
+      flex: '0 0 auto'
+    },
+    '& > :last-child': {
+      marginLeft: 'auto'
+    }
+  }
+});
 
 const inPageLinkToCrossPageLink = (href: string) => (href.startsWith('#') ? '/'.concat(href) : href);
 
@@ -40,11 +42,11 @@ const Header = ({ className, isActivatedOrder, isIndexPage = false }: HeaderProp
 
   return (
     <Box component="header" mt="2.25rem" width="100%" className={className}>
-      <Grid container spacing={2} className={classes.container}>
+      <Grid container wrap="nowrap" spacing={2} alignItems="center" className={classes.container}>
         <Grid item>
           <LogoWithName />
         </Grid>
-        <Grid item component="nav" className={classes.lastItem}>
+        <Grid item component="nav">
           <NavList items={headerList} />
         </Grid>
       </Grid>

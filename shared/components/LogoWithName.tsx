@@ -5,7 +5,7 @@ import Logo from './Logo';
 
 const LogoWithName = () => (
   <a href="/">
-    <Grid container>
+    <Grid container wrap="nowrap">
       <Box mr="8px">
         <Logo />
       </Box>
