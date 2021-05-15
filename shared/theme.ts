@@ -3,7 +3,20 @@ import NotoSansRegular from '../public/Noto_Sans/NotoSans-Regular.ttf';
 import NotoSansBold from '../public/Noto_Sans/NotoSans-Bold.ttf';
 import NotoSansLight from '../public/Noto_Sans/NotoSans-Light.ttf';
 
-const theme = createMuiTheme({
+let theme = createMuiTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1135,
+      xl: 1920
+    }
+  }
+});
+
+theme = createMuiTheme({
+  ...theme,
   palette: {
     primary: {
       main: '#E0E0E0'
@@ -76,19 +89,14 @@ const theme = createMuiTheme({
       fontSize: '0.875rem'
     }
   },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 960,
-      lg: 1080,
-      xl: 1920
-    }
-  },
-  props: { MuiContainer: { maxWidth: 'xl' } },
   overrides: {
     MuiCssBaseline: {
       '@global': {
+        // html: {
+        //   [theme.breakpoints.down('xs')]: {
+        //     fontSize: '11px'
+        //   }
+        // },
         a: {
           textDecoration: 'none'
         },
@@ -141,4 +149,6 @@ const theme = createMuiTheme({
   }
 });
 
-export default theme;
+const defaultTheme = theme;
+
+export default defaultTheme;
