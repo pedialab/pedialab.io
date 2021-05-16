@@ -36,7 +36,10 @@ const useStyle = makeStyles((theme) => ({
     }
   },
   softwareDelivery: {
-    marginTop: '14rem'
+    marginTop: '14rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '5.688rem'
+    }
   },
   vendorDifference: {
     marginTop: '13rem'

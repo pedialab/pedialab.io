@@ -51,14 +51,19 @@ theme = createMuiTheme({
       lineHeight: '1.266',
       [theme.breakpoints.down('sm')]: {
         fontSize: '2.25rem',
-        textAlign: 'center'
+        textAlign: 'center',
+        lineHeight: '1.36'
       }
     },
     // section header
     h3: {
       fontSize: '2.125rem',
       fontWeight: 700,
-      lineHeight: '1.5'
+      lineHeight: '1.5',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '1.75rem',
+        textAlign: 'center'
+      }
     },
     // button title, 18px
     button: {

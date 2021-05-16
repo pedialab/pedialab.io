@@ -4,14 +4,24 @@ import {
 import { useMemo } from 'react';
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    [theme.breakpoints.down('sm')]: {
+      '& > section:nth-child(2)': {
+        marginTop: '1.25rem'
+      }
+    }
+  },
   header: {
-    display: 'table-caption'
+    display: 'table-caption',
+    [theme.breakpoints.down('sm')]: {
+      display: 'block'
+    }
   },
   listRoot: {
     borderTop: '1px',
     borderTopStyle: 'solid',
     color: theme.palette.secondary.main,
-    marginTop: '1rem',
+    marginTop: '1.25rem',
     paddingTop: '1.625rem',
     lineHeight: '2',
     paddingLeft: '2rem'
@@ -42,25 +52,27 @@ const SoftwareDelivery = ({ className }: Partial<{ className: string }>) => {
     [classes]
   );
   return (
-    <Box width="100%" component="article" className={className}>
-      <Grid container>
-        <Grid item component="section" lg={6}>
-          <Typography variant="h2" color="primary" className={classes.header}>
-            PROBLEM OF SOFTWARE DELIVERY
-          </Typography>
-        </Grid>
-        <Grid item component="section" lg={6}>
-          <Typography variant="h3" color="primary">
-            Your Rocket startup or project
-            <br />
-            needs a Rocket Engine.
-          </Typography>
-          <Box component="ul" className={classes.listRoot}>
-            {listContent}
-          </Box>
-        </Grid>
+    <Grid container component="article" className={[className, classes.root].join(' ')}>
+      <Grid item component="section" md={6} xs={12}>
+        <Typography variant="h2" color="primary" className={classes.header}>
+          PROBLEM
+          <br />
+          OF
+          <br />
+          SOFTWARE DELIVERY
+        </Typography>
       </Grid>
-    </Box>
+      <Grid item component="section" md={6} xs={12}>
+        <Typography variant="h3" color="primary">
+          Your Rocket startup or project
+          <br />
+          needs a Rocket Engine.
+        </Typography>
+        <Box component="ul" className={classes.listRoot}>
+          {listContent}
+        </Box>
+      </Grid>
+    </Grid>
   );
 };
 
