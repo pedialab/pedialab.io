@@ -1,4 +1,6 @@
-import { Grid, makeStyles, Typography } from '@material-ui/core';
+import {
+  Grid, makeStyles, Typography, Hidden
+} from '@material-ui/core';
 
 type ItemProps = {
   imgSrc: string;
@@ -27,16 +29,23 @@ const content: ItemProps[] = [
 const useStyles = makeStyles((theme) => ({
   articleContainer: {
     [theme.breakpoints.down('md')]: {
-      flexDirection: 'column',
       alignItems: 'center'
+    },
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column'
     }
   },
-  root: {
+  itemRoot: {
     width: '18.75rem',
     marginTop: '6.6875rem',
     [theme.breakpoints.down('md')]: {
       alignItems: 'center',
-      textAlign: 'center'
+      textAlign: 'center',
+      marginTop: '2.5rem',
+      width: '32%'
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '100%'
     }
   },
   svgImage: {
@@ -44,7 +53,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     minHeight: '9.6rem',
-    marginTop: '1.5rem'
+    marginTop: '1.5rem',
+    [theme.breakpoints.down('md')]: {
+      minHeight: 'auto'
+    }
   },
   description: {
     marginTop: '1.5rem'
@@ -54,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
 const Item = ({ imgSrc, title, description }: ItemProps) => {
   const classes = useStyles();
   return (
-    <Grid item container direction="column" className={classes.root}>
+    <Grid item container direction="column" className={classes.itemRoot}>
       <Grid item className={classes.svgImage}>
         <img src={imgSrc} alt={title} loading="lazy" />
       </Grid>
@@ -82,7 +94,9 @@ const TeamUpWithTechlead = ({ className }: TeamUpWithTechleadProps) => {
     <Grid container component="article" justify="space-between" className={[className, classes.articleContainer].join(' ')}>
       <Grid item sm={12}>
         <Typography align="center" variant="h2" color="primary">
-          Team up with Tech-Lead in a nutshell
+          Team up with
+          <Hidden lgUp><br /></Hidden>
+          Tech-Lead in a nutshell
         </Typography>
       </Grid>
       {content.map((item) => (

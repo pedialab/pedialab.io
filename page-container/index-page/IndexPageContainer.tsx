@@ -60,7 +60,10 @@ const useStyle = makeStyles((theme) => ({
     }
   },
   teamUpWithTechlead: {
-    marginTop: '13.75rem'
+    marginTop: '13.75rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '10.188rem'
+    }
   },
   developerSupport: {
     marginTop: '15.625rem'
