@@ -48,7 +48,10 @@ const useStyle = makeStyles((theme) => ({
     }
   },
   techleadaaS: {
-    marginTop: '14.65rem'
+    marginTop: '14.65rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '5.5rem'
+    }
   },
   projectScopes: {
     marginTop: '15rem'
@@ -91,10 +94,12 @@ const IndexPageContainer = () => {
           <HeroContent className={classes.heroContent} />
           <OurCompany className={classes.ourCompany} />
           <SoftwareDelivery className={classes.softwareDelivery} />
-          <VendorDifference className={classes.vendorDifference} />
         </Grid>
       </Box>
-      <Box ml={{ xs: '5.8%', md: '10%' }}>
+      <Box mx={{ xs: 0, md: '10%' }}>
+        <VendorDifference className={classes.vendorDifference} />
+      </Box>
+      <Box ml={{ xs: '5.8%', md: '10%' }} mr={{ xs: '5.8%', md: 0 }}>
         <TechleadaaS className={classes.techleadaaS} />
       </Box>
       <Box mx={{ xs: '5.8%', md: '10%' }}>

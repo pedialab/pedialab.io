@@ -3,24 +3,48 @@ import {
 } from '@material-ui/core';
 import { TextList } from 'pedialab-shared/components';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     borderTopLeftRadius: '40px',
     borderBottomLeftRadius: '40px',
-    backgroundColor: '#333333'
+    backgroundColor: '#333333',
+    [theme.breakpoints.down('sm')]: {
+      borderRadius: 0,
+      backgroundColor: 'transparent',
+      flexDirection: 'column'
+    }
   },
   textContainer: {
     marginTop: '1rem',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    '& > div': {
+      marginTop: '1.5rem'
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginTop: 0,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      '& > h3': {
+        fontSize: '2.25rem',
+        fontWeight: 300
+      },
+      '& > div': {
+        marginTop: '3rem'
+      }
+    }
   },
   imgContainer: {
+    borderRadius: '50px',
+    overflow: 'hidden',
+    width: '43.31%',
     transform: 'translate(0, -8.6%)',
-    '& > img': {
+    [theme.breakpoints.down('sm')]: {
       width: '100%',
-      height: 'auto'
+      transform: 'none'
     }
   }
-});
+}));
 
 const content = [
   'Don’t let poor execution get in your way.',
@@ -33,17 +57,17 @@ const TechleadaaS = ({ className }: Partial<{ className: string }>) => {
 
   return (
     <Grid container component="article" className={[className, classes.root].join(' ')} alignContent="center" justify="space-evenly">
-      <Grid item className={classes.textContainer}>
+      <Grid item xs={12} md="auto" className={classes.textContainer}>
         <Typography variant="h3" color="primary">
           Tech Lead as a Service
         </Typography>
-        <Box mt="1.5rem">
+        <Box>
           <TextList texts={content} textColor="primary.main" />
         </Box>
       </Grid>
-      <Box className={classes.imgContainer} borderRadius="50px" overflow="hidden" width="43.31%">
+      <Grid item xs={12} md="auto" className={classes.imgContainer}>
         <img loading="lazy" src="/tech_lead_as_a_service.jpg" alt="" />
-      </Box>
+      </Grid>
     </Grid>
   );
 };

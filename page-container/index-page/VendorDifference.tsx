@@ -42,7 +42,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       flexWrap: 'wrap',
       '& > section': {
-        paddingTop: '1.5rem'
+        paddingTop: '1.5rem',
+        paddingLeft: '6vw',
+        paddingRight: '6vw'
       },
       '& ul': {
         marginTop: '1.5rem'
