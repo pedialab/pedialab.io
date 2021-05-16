@@ -1,17 +1,24 @@
 import {
-  Button, Typography, Box, makeStyles
+  Button, Typography, makeStyles, Grid
 } from '@material-ui/core';
 
 export type CommonButtonProps = {
   title: string;
   subtitle?: string;
-  width?: string;
+  className?: string;
   href?: string;
 };
 
 const useStyle = makeStyles((theme) => ({
+  defaultStyle: {
+    width: '22.5rem'
+  },
   commonButton: {
-    backgroundColor: theme.palette.background.paper
+    backgroundColor: theme.palette.background.paper,
+    textAlign: 'center'
+  },
+  subtitle: {
+    marginTop: '0.25rem'
   }
 }));
 
@@ -19,19 +26,21 @@ const CommonButton = ({
   title,
   subtitle,
   href,
-  width = '22.5rem'
+  className
 }: CommonButtonProps) => {
   const classes = useStyle();
 
   return (
-    <Box display="flex" flexDirection="column" width={width}>
-      <Button fullWidth href={href} className={classes.commonButton}>
-        <Typography color="textPrimary" variant="button" component="span">
-          {title}
-        </Typography>
-      </Button>
+    <Grid container direction="column" className={[className, classes.defaultStyle].join(' ')}>
+      <Grid item>
+        <Button fullWidth href={href} className={classes.commonButton}>
+          <Typography color="textPrimary" variant="button" component="span">
+            {title}
+          </Typography>
+        </Button>
+      </Grid>
       {subtitle && (
-        <Box mt="5px">
+        <Grid item className={classes.subtitle}>
           <Typography
             variant="subtitle1"
             color="secondary"
@@ -40,9 +49,9 @@ const CommonButton = ({
           >
             {subtitle}
           </Typography>
-        </Box>
+        </Grid>
       )}
-    </Box>
+    </Grid>
   );
 };
 

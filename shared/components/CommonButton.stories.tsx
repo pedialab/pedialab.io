@@ -8,10 +8,9 @@ export default {
 
 const Template: Story<CommonButtonProps> = ({
   title,
-  subtitle,
-  width
+  subtitle
 }: CommonButtonProps) => (
-  <CommonButton title={title} subtitle={subtitle} width={width} />
+  <CommonButton title={title} subtitle={subtitle} />
 );
 
 export const Default = Template.bind({});
@@ -21,10 +20,4 @@ export const WithSubtitle = Template.bind({});
 WithSubtitle.args = {
   ...Default.args,
   subtitle: '*Budget in USD'
-};
-
-export const CustomWidth = Template.bind({});
-CustomWidth.args = {
-  ...WithSubtitle.args,
-  width: '420px'
 };

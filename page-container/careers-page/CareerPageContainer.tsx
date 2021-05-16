@@ -10,7 +10,10 @@ const useStyle = makeStyles((theme) => ({
   title: {
     marginTop: '9.4rem',
     [theme.breakpoints.down('sm')]: {
-      marginTop: '5.25rem'
+      marginTop: '5.25rem',
+      '& > h2': {
+        fontSize: '2.25rem'
+      }
     }
   },
   linkContainer: {
@@ -30,8 +33,20 @@ const useStyle = makeStyles((theme) => ({
       }
     }
   },
+  button: {
+    width: '26.25rem',
+    [theme.breakpoints.down('sm')]: {
+      width: '22.5rem'
+    },
+    '@media (max-width: 410px)': {
+      width: '80vw'
+    }
+  },
   footer: {
-    marginTop: '9.4rem'
+    marginTop: '9.4rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '5.5rem'
+    }
   }
 }));
 
@@ -51,15 +66,15 @@ const CareerPage = () => {
             <Grid item>
               <CommonButton
                 title="Career opportunities - CakeResume"
-                width="26.3rem"
                 href="https://www.cakeresume.com/companies/peraperaai?ref=navs_company"
+                className={classes.button}
               />
             </Grid>
             <Grid item>
               <CommonButton
                 title="Career opportunities - AngelList"
-                width="26.3rem"
                 href="https://angel.co/company/peraperaai"
+                className={classes.button}
               />
             </Grid>
           </Grid>
