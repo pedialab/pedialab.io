@@ -48,9 +48,19 @@ const content: ServiceItemProps[] = [
 ];
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    [theme.breakpoints.down('md')]: {
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
+  },
+  title: {
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '2.625rem'
+    }
+  },
   serviceItem: {
     marginTop: '4.625rem',
-    width: 'fit-content',
     '& > ul': {
       listStyle: 'none',
       paddingLeft: 0,
@@ -60,7 +70,12 @@ const useStyles = makeStyles((theme) => ({
       }
     },
     [theme.breakpoints.down('md')]: {
+      flexDirection: 'column',
       alignItems: 'center'
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginTop: 0,
+      marginBottom: '3.438rem'
     }
   },
   price: {
@@ -68,10 +83,18 @@ const useStyles = makeStyles((theme) => ({
     '& > :first-child': {
       color: '#ffffff',
       marginRight: '0.5rem'
+    },
+    [theme.breakpoints.down('sm')]: {
+      '& > :first-child': {
+        fontSize: '3.75rem'
+      }
     }
   },
   letsTalk: {
-    marginTop: '5.3125rem'
+    marginTop: '5.3125rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: 0
+    }
   }
 }));
 
@@ -83,7 +106,7 @@ const ServiceItem = ({
 }: ServiceItemProps) => {
   const classes = useStyles();
   return (
-    <Grid item container md={12} lg={4} direction="column" className={classes.serviceItem}>
+    <Grid item container xs={12} lg={4} direction="column" className={classes.serviceItem}>
       <Grid item>
         <Typography color="primary" variant="button">
           {title}
@@ -116,9 +139,9 @@ const ProjectScopes = ({ className }: Partial<{ className: string }>) => {
       container
       component="article"
       justify="space-between"
-      className={[className].join(' ')}
+      className={[className, classes.root].join(' ')}
     >
-      <Grid item sm={12}>
+      <Grid item xs={12} className={classes.title}>
         <Typography align="center" variant="h2" color="primary">
           Typical Project Scopes
         </Typography>

@@ -54,7 +54,10 @@ const useStyle = makeStyles((theme) => ({
     }
   },
   projectScopes: {
-    marginTop: '15rem'
+    marginTop: '15rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '7.5rem'
+    }
   },
   teamUpWithTechlead: {
     marginTop: '13.75rem'
