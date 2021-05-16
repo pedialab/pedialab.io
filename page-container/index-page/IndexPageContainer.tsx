@@ -42,7 +42,10 @@ const useStyle = makeStyles((theme) => ({
     }
   },
   vendorDifference: {
-    marginTop: '13rem'
+    marginTop: '13rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '7.5rem'
+    }
   },
   techleadaaS: {
     marginTop: '14.65rem'

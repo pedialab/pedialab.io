@@ -27,23 +27,66 @@ const useStyles = makeStyles((theme) => ({
   root: {
     borderTopWidth: '1px',
     borderTopStyle: 'solid',
-    borderColor: theme.palette.secondary.main
-  },
-  title: {
-    width: '10.3rem',
-    marginLeft: '1.6875rem',
-    marginRight: '2rem'
+    borderColor: theme.palette.secondary.main,
+    [theme.breakpoints.down('md')]: {
+      '& > section': {
+        flexWrap: 'wrap',
+        paddingLeft: '2.5vw',
+        paddingRight: '2.5vw'
+      },
+      '& ul': {
+        flex: '1 0 100%',
+        marginTop: '0.5rem'
+      }
+    },
+    [theme.breakpoints.down('sm')]: {
+      flexWrap: 'wrap',
+      '& > section': {
+        paddingTop: '1.5rem'
+      },
+      '& ul': {
+        marginTop: '1.5rem'
+      }
+    }
   },
   firstSection: {
     borderRightStyle: 'solid',
     borderWidth: '1px',
     borderColor: theme.palette.secondary.main,
+    paddingTop: '3.75rem',
+    '& > h3': {
+      width: 'min-content',
+      height: 'max-content'
+    },
     [theme.breakpoints.down('md')]: {
-      borderStyle: 'none'
+      paddingTop: '2.75rem'
+    },
+    [theme.breakpoints.down('sm')]: {
+      borderRightStyle: 'none',
+      '& > h3': {
+        width: 'max-content'
+      }
+    }
+  },
+  secondSection: {
+    backgroundColor: theme.palette.background.paper,
+    borderRadius: '40px',
+    marginTop: '0.75rem',
+    marginLeft: '0.75rem',
+    paddingTop: '3rem',
+    [theme.breakpoints.down('md')]: {
+      paddingTop: '2rem'
+    },
+    [theme.breakpoints.down('sm')]: {
+      borderRadius: 0,
+      margin: 0
     }
   },
   letsTalk: {
-    marginTop: '5rem'
+    marginTop: '5rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '2.5rem'
+    }
   }
 }));
 
@@ -51,22 +94,18 @@ const VendorDifference = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyles();
   return (
     <>
-      <Grid container component="article" className={[className, classes.root].join(' ')}>
-        <Grid item lg={6} xs={12} className={classes.firstSection}>
-          <Box mt="0.75rem" ml="0.75rem" display="flex" paddingTop="2.9375rem" paddingRight="7%">
-            <Typography variant="h3" color="primary" className={classes.title}>
-              {content.vendor.title}
-            </Typography>
-            <TextList texts={content.vendor.lists} />
-          </Box>
+      <Grid component="article" container wrap="nowrap" className={[className, classes.root].join(' ')}>
+        <Grid component="section" className={classes.firstSection} item container wrap="nowrap" justify="space-evenly" lg={6} xs={12}>
+          <Typography variant="h3" color="primary">
+            {content.vendor.title}
+          </Typography>
+          <TextList texts={content.vendor.lists} width="18.4vw" />
         </Grid>
-        <Grid item lg={6} xs={12}>
-          <Box mt="0.75rem" ml="0.75rem" bgcolor="background.paper" display="flex" borderRadius="40px" paddingTop="2.9375rem" paddingRight="7%">
-            <Typography color="textPrimary" variant="h3" className={classes.title}>
-              {content.pedialab.title}
-            </Typography>
-            <TextList texts={content.pedialab.lists} />
-          </Box>
+        <Grid component="section" className={classes.secondSection} item container wrap="nowrap" justify="space-evenly" lg={6} xs={12}>
+          <Typography variant="h3" color="textPrimary">
+            {content.pedialab.title}
+          </Typography>
+          <TextList texts={content.pedialab.lists} width="18.4vw" />
         </Grid>
       </Grid>
       <Grid container justify="center">
