@@ -20,9 +20,12 @@ import {
   Contact
 } from 'pedialab-pages/index-page';
 
-const useStyle = makeStyles({
+const useStyle = makeStyles((theme) => ({
   heroContent: {
-    marginTop: '7rem'
+    marginTop: '7rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '4.188rem'
+    }
   },
   ourCompany: {
     marginTop: '7.5rem',
@@ -66,7 +69,7 @@ const useStyle = makeStyles({
   footer: {
     marginTop: '9.4rem'
   }
-});
+}));
 
 const IndexPageContainer = () => {
   const classes = useStyle();

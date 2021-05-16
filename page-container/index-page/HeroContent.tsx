@@ -1,43 +1,81 @@
-import { Box, makeStyles, Typography } from '@material-ui/core';
+import {
+  Grid, Box, makeStyles, Typography, Hidden
+} from '@material-ui/core';
 
-const useStyles = makeStyles({
-  heroImage: {
-    filter: 'grayscale(1)'
+const useStyles = makeStyles((theme) => ({
+  root: {
+    [theme.breakpoints.down('sm')]: {
+      '& h2, & h3': {
+        fontSize: '2.25rem',
+        textAlign: 'center'
+      }
+    }
   },
-  image: {
-    width: '100%',
-    minWidth: '100%'
+  heroImageContainer: {
+    marginTop: '2.5rem',
+    borderRadius: '40px',
+    overflow: 'hidden',
+    '& > img': {
+      filter: 'grayscale(1)'
+    }
+  },
+  contentContainer: {
+    marginTop: '8rem',
+    marginLeft: '34.46%',
+    '& > p': {
+      maxWidth: '27.43vw',
+      marginTop: '1.5rem'
+    },
+    '& > div': {
+      marginTop: '4rem',
+      borderRadius: '60px',
+      overflow: 'hidden',
+      maxWidth: 'max-content'
+    },
+    [theme.breakpoints.down('sm')]: {
+      alignItems: 'center',
+      marginTop: '5.625rem',
+      marginLeft: 0,
+      textAlign: 'center',
+      '& > p': {
+        maxWidth: 'max-content',
+        marginTop: '1rem'
+      },
+      '& > div': {
+        marginTop: '2.5rem'
+      }
+    }
   }
-});
+}));
 
 const HeroContent = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyles();
   return (
-    <Box component="article" width="100%" className={className}>
-      <Typography variant="h2" color="primary">
-        Architecting software, teams,
-        <br />
-        companies and dreams
-      </Typography>
-      <Box maxWidth="100%" mt="2.5rem" borderRadius="40px" overflow="hidden">
-        <img src="/hero_image.jpg" alt="index hero" className={[classes.heroImage, classes.image].join(' ')} />
-      </Box>
-      <Box ml="34.46%" mt="8rem">
+    <Grid container direction="column" component="article" className={[className, classes.root].join(' ')}>
+      <Grid item xs={12}>
+        <Typography variant="h2" color="primary">
+          Architecting software, teams,
+          <Hidden smDown><br /></Hidden>
+          companies and dreams
+        </Typography>
+      </Grid>
+      <Grid item xs={12} className={classes.heroImageContainer}>
+        <img src="/hero_image.jpg" alt="index hero" />
+      </Grid>
+      <Grid item container direction="column" className={classes.contentContainer}>
         <Typography component="h3" variant="h2" color="primary">
           The Pedia Lab
           <br />
           Difference
         </Typography>
-        <Box maxWidth="27.43vw" marginTop={3}>
-          <Typography component="p" variant="body1" color="secondary">
-            Why employ tech-lead as a service to grow together instead of just outsourcing?
-          </Typography>
+        <Typography component="p" variant="body1" color="secondary">
+          Why employ tech-lead as a service to grow together instead of just outsourcing?
+        </Typography>
+        <Box>
+          <img src="/the_pedia_lab_difference.png" alt="index hero" loading="lazy" />
         </Box>
-        <Box mt="4rem" borderRadius="60px" overflow="hidden" maxWidth="max-content">
-          <img src="/the_pedia_lab_difference.png" alt="index hero" loading="lazy" className={classes.image} />
-        </Box>
-      </Box>
-    </Box>
+      </Grid>
+    </Grid>
   );
 };
 
