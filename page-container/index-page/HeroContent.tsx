@@ -3,14 +3,6 @@ import {
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    [theme.breakpoints.down('sm')]: {
-      '& h2, & h3': {
-        fontSize: '2.25rem',
-        textAlign: 'center'
-      }
-    }
-  },
   heroImageContainer: {
     marginTop: '2.5rem',
     borderRadius: '40px',
@@ -20,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   contentContainer: {
+    width: 'max-content',
     marginTop: '8rem',
     marginLeft: '34.46%',
     '& > p': {
@@ -33,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 'max-content'
     },
     [theme.breakpoints.down('sm')]: {
+      width: '100%',
       alignItems: 'center',
       marginTop: '5.625rem',
       marginLeft: 0,
@@ -51,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 const HeroContent = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyles();
   return (
-    <Grid container direction="column" component="article" className={[className, classes.root].join(' ')}>
+    <Grid container direction="column" component="article" className={className}>
       <Grid item xs={12}>
         <Typography variant="h2" color="primary">
           Architecting software, teams,

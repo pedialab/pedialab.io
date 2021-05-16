@@ -29,7 +29,11 @@ const useStyle = makeStyles((theme) => ({
   },
   ourCompany: {
     marginTop: '7.5rem',
-    paddingLeft: '8.8%'
+    paddingLeft: '8.8%',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '7rem',
+      paddingLeft: 0
+    }
   },
   softwareDelivery: {
     marginTop: '14rem'

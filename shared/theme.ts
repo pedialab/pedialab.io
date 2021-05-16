@@ -48,7 +48,11 @@ theme = createMuiTheme({
     h2: {
       fontSize: '3.75rem',
       fontWeight: 300,
-      lineHeight: '1.266'
+      lineHeight: '1.266',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '2.25rem',
+        textAlign: 'center'
+      }
     },
     // section header
     h3: {
