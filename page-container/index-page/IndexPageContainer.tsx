@@ -66,7 +66,10 @@ const useStyle = makeStyles((theme) => ({
     }
   },
   developerSupport: {
-    marginTop: '15.625rem'
+    marginTop: '15.625rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '7.125rem'
+    }
   },
   ourTeam: {
     marginTop: '15.75rem'
