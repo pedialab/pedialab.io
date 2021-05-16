@@ -72,10 +72,16 @@ const useStyle = makeStyles((theme) => ({
     }
   },
   ourTeam: {
-    marginTop: '15.75rem'
+    marginTop: '15.75rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '5.938rem'
+    }
   },
   clientCompanies: {
-    marginTop: '20rem'
+    marginTop: '20rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '9.063rem'
+    }
   },
   whereWeServe: {
     marginTop: '16.4375rem'

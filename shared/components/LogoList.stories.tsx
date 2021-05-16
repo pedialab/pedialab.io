@@ -8,9 +8,9 @@ export default {
 } as Meta;
 
 const Template: Story<LogoListProps> = ({
-  title, brands, brandsMarginTop, children
+  title, brands, children
 }: LogoListProps) => (
-  <LogoList title={title} brands={brands} brandsMarginTop={brandsMarginTop}>
+  <LogoList title={title} brands={brands}>
     {children}
   </LogoList>
 );
@@ -22,7 +22,6 @@ OurTeam.args = {
       OUR TEAM
     </Typography>
   ),
-  brandsMarginTop: '5rem',
   brands: [
     { name: 'Yahoo!', logoSrc: '/logo_yahoo.png' },
     { name: 'J.P.Morgan', logoSrc: '/logo_jp.png' },
@@ -48,7 +47,6 @@ CompaniesWeWorkWith.args = {
       we work with
     </Typography>
   ),
-  brandsMarginTop: '4rem',
   brands: [
     { name: 'HYPEBEAST', logoSrc: '/logo_hypebeast.png' },
     { name: 'Codibook', logoSrc: '/logo_codibook.png' },

@@ -7,26 +7,39 @@ export type Brand = {
 export type LogoListProps = {
   title: JSX.Element;
   brands: Brand[];
-  brandsMarginTop?: string;
   children?: JSX.Element;
+  className?: string
 };
 
-const useStyle = makeStyles({
-  brands: { marginTop: '' }
-});
+const useStyle = makeStyles((theme) => ({
+  brand: {
+    margin: '2.063rem 1.15rem',
+    height: '72px',
+    '& img': {
+      width: 'auto',
+      height: '100%'
+    },
+    [theme.breakpoints.down('md')]: {
+      margin: '1.5rem 1.1rem'
+    },
+    [theme.breakpoints.down('sm')]: {
+      height: '48px',
+      margin: '1.25rem 0.3125rem 0.625rem 0.3125rem'
+    }
+  }
+}));
 
 const LogoList = ({
-  title, brands, brandsMarginTop, children
+  title, brands, children, className
 }: LogoListProps) => {
   const classes = useStyle();
   return (
-    <Grid container direction="column">
+    <Grid container direction="column" className={className}>
       <Grid item>{title}</Grid>
       <Grid item>{children}</Grid>
-      <Box mt={brandsMarginTop} />
-      <Grid item container className={classes.brands} justify="center" spacing={10}>
+      <Grid item container justify="space-evenly">
         {brands.map((brand) => (
-          <Grid item key={brand.name}>
+          <Grid item key={brand.name} className={classes.brand}>
             <img src={brand.logoSrc} alt={brand.name.concat(' logo')} />
           </Grid>
         ))}

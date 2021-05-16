@@ -1,5 +1,5 @@
+import { Typography, Box, makeStyles } from '@material-ui/core';
 import { LogoList } from 'pedialab-shared/components';
-import { Typography, Box } from '@material-ui/core';
 
 const content = {
   title: (
@@ -9,7 +9,6 @@ const content = {
       we work with
     </Typography>
   ),
-  brandsMarginTop: '4rem',
   brands: [
     { name: 'HYPEBEAST', logoSrc: '/logo_hypebeast.png' },
     { name: 'Codibook', logoSrc: '/logo_codibook.png' },
@@ -28,14 +27,26 @@ const content = {
   ]
 };
 
+const useStyle = makeStyles((theme) => ({
+  listRoot: {
+    '& > :last-child': { // brand list
+      marginTop: '1.938rem',
+      [theme.breakpoints.down('sm')]: {
+        marginTop: '1.25rem'
+      }
+    }
+  }
+}));
+
 const ClientCompanies = ({ className }: Partial<{ className: string }>) => {
-  const { title, brands, brandsMarginTop } = content;
+  const { title, brands } = content;
+  const classes = useStyle();
   return (
     <Box component="article" className={className}>
       <LogoList
+        className={classes.listRoot}
         title={title}
         brands={brands}
-        brandsMarginTop={brandsMarginTop}
       />
     </Box>
   );
