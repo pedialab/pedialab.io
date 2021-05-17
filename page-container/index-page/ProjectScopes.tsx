@@ -71,7 +71,10 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
-      alignItems: 'center'
+      alignItems: 'center',
+      '& > ul': {
+        textAlign: 'center'
+      }
     },
     [theme.breakpoints.down('sm')]: {
       marginTop: 0,
@@ -84,9 +87,16 @@ const useStyles = makeStyles((theme) => ({
       color: '#ffffff',
       marginRight: '0.5rem'
     },
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
+      textAlign: 'center'
+    },
     [theme.breakpoints.down('sm')]: {
       '& > :first-child': {
         fontSize: '3.75rem'
+      },
+      '& span': {
+        display: 'inline-block'
       }
     }
   },
@@ -112,7 +122,7 @@ const ServiceItem = ({
           {title}
         </Typography>
       </Grid>
-      <Grid item className={classes.price}>
+      <Grid component="p" item className={classes.price}>
         <Typography component="span" variant="h2">
           {price}
         </Typography>

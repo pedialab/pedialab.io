@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('sm')]: {
       marginTop: 0,
+      width: '100%',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -62,7 +63,7 @@ const TechleadaaS = ({ className }: Partial<{ className: string }>) => {
           Tech Lead as a Service
         </Typography>
         <Box>
-          <TextList texts={content} textColor="primary.main" />
+          <TextList texts={content} textColor="primary.main" width={{ xs: '100%', sm: '22rem' }} />
         </Box>
       </Grid>
       <Grid item xs={12} md="auto" className={classes.imgContainer}>
