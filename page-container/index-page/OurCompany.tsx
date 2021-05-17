@@ -29,7 +29,7 @@ const OurCompany = ({ className }: Partial<{ className: string }>) => {
         OUR COMPANY
       </Typography>
       <Grid item className={classes.imageContainer}>
-        <img src="/our_company_img.svg" alt="our company introduction logo" />
+        <img src="/our_company_img.svg" width="415" height="361" alt="our company introduction logo" />
       </Grid>
       <Grid item className={classes.textContainer}>
         <Typography variant="body1" color="secondary">

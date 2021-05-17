@@ -33,10 +33,10 @@ const ArticleCard = ({
 }: ArticleCardProps) => {
   const classes = useStyles();
   return (
-    <a href={link}>
+    <a href={link} title={`go to ${title} article page`}>
       <Grid component="article" container direction="column" className={classes.root}>
         <Grid item className={classes.image}>
-          <img src={imgSrc} alt={title} loading="lazy" />
+          <img src={imgSrc} alt={title} width="448" height="266" loading="lazy" />
         </Grid>
         <Grid item className={classes.title}>
           <Typography variant="h3">{title}</Typography>
