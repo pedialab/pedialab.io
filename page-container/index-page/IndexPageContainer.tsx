@@ -107,9 +107,17 @@ const useStyle = makeStyles((theme) => ({
       marginTop: '9.25rem'
     }
   },
-  contact: { marginTop: '13rem' },
+  contact: {
+    marginTop: '13rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '5rem'
+    }
+  },
   footer: {
-    marginTop: '9.4rem'
+    marginTop: '9.4rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '6.25rem'
+    }
   }
 }));
 
