@@ -37,6 +37,18 @@ const useStyle = makeStyles((theme) => ({
         paddingLeft: '2.5625rem',
         paddingRight: '2.5625rem'
       }
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '2.313rem',
+      '& > li': {
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        marginTop: '0.75rem',
+        '&::before': {
+          padding: 0,
+          width: '100%'
+        }
+      }
     }
   },
   textRoot: {
@@ -44,8 +56,14 @@ const useStyle = makeStyles((theme) => ({
     '& :nth-child(n)': {
       marginBottom: '1.25rem'
     },
-    '& :last-child': {
+    '& :last-child': { // text content
       width: '62.91%'
+    },
+    [theme.breakpoints.down('sm')]: {
+      '& :last-child': {
+        textAlign: 'center',
+        width: '100%'
+      }
     }
   }
 }));

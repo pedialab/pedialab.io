@@ -96,7 +96,10 @@ const useStyle = makeStyles((theme) => ({
     }
   },
   projectPhrases: {
-    marginTop: '19.875rem'
+    marginTop: '19.875rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '8.688rem'
+    }
   },
   testimonial: {
     marginTop: '12.75rem'
