@@ -2,21 +2,31 @@ import { Grid, makeStyles, Typography } from '@material-ui/core';
 
 export type ArticleCardProps = { link: string, title: string; imgSrc: string; content: string };
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: { width: '100%' },
   image: {
     height: 'auto',
     display: 'inline-flex'
   },
   title: {
+    marginTop: '0.625rem',
     minHeight: '6.3rem',
-    color: '#ffffff'
+    color: '#ffffff',
+    [theme.breakpoints.down('sm')]: {
+      minHeight: 'auto',
+      '& > h3': {
+        fontSize: '1.75rem'
+      }
+    }
   },
   content: {
-    marginTop: '0.9375rem',
-    marginBlock: 0
+    marginTop: '0.938rem',
+    marginBottom: 0,
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '0.625rem'
+    }
   }
-});
+}));
 
 const ArticleCard = ({
   link, title, imgSrc, content

@@ -24,18 +24,26 @@ Our partner Vincent Lau, lead the development of reservation systems and IoT int
   }
 ];
 
-const useStyle = makeStyles({
+const useStyle = makeStyles((theme) => ({
   articleCardList: {
     marginTop: '5rem',
-    '& + div': { marginTop: '0.9375rem' }
+    '& + div': { // button container
+      marginTop: '0.9375rem',
+      [theme.breakpoints.down('sm')]: {
+        marginTop: '0.188rem'
+      }
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '3.313rem'
+    }
   }
-});
+}));
 
 const CaseStudies = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyle();
   return (
     <Grid id="case-studies" container component="article" className={className}>
-      <Grid item>
+      <Grid item xs={12}>
         <Typography variant="h2" color="textSecondary">
           Case Studies
         </Typography>

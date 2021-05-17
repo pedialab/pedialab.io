@@ -1,5 +1,5 @@
 import {
-  Typography, Grid, makeStyles, TextField, Button
+  Typography, Grid, makeStyles, TextField, Button, useMediaQuery, useTheme
 } from '@material-ui/core';
 import { useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -7,7 +7,12 @@ import { postContactForm } from './service';
 
 const useStyle = makeStyles((theme) => ({
   title: {
-    color: '#ffffff'
+    color: '#ffffff',
+    [theme.breakpoints.down('md')]: {
+      '& p': {
+        textAlign: 'center'
+      }
+    }
   },
   formRoot: {
     marginTop: '7rem',
@@ -26,6 +31,13 @@ const useStyle = makeStyles((theme) => ({
     '& button[type="submit"]': {
       backgroundColor: theme.palette.background.paper,
       borderRadius: '3px'
+    },
+    [theme.breakpoints.down('md')]: {
+      marginTop: '2.25rem',
+      width: '100%',
+      '& > div': {
+        marginBottom: '1.875rem'
+      }
     }
   },
   inputRoot: {
@@ -49,6 +61,8 @@ type FormState = {
 
 const ContactForm = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyle();
+  const theme = useTheme();
+  const isXs = useMediaQuery(theme.breakpoints.down('xs'));
   const router = useRouter();
 
   const [formState, setFormState] = useState<FormState>(null);
@@ -74,8 +88,15 @@ const ContactForm = ({ className }: Partial<{ className: string }>) => {
           Got a project you&#39;re excited about and think we can help?
         </Typography>
       </Grid>
-      <Grid component="form" className={classes.formRoot} onSubmit={handleSubmit} item container justify="space-between">
-        <Grid item sm={12}>
+      <Grid
+        component="form"
+        className={classes.formRoot}
+        onSubmit={handleSubmit}
+        item
+        container
+        justify="space-between"
+      >
+        <Grid item xs={12}>
           <TextField
             id="guest-name"
             fullWidth
@@ -86,7 +107,7 @@ const ContactForm = ({ className }: Partial<{ className: string }>) => {
             }}
           />
         </Grid>
-        <Grid item sm={5}>
+        <Grid item sm={5} xs={12}>
           <TextField
             id="guest-email"
             fullWidth
@@ -98,7 +119,7 @@ const ContactForm = ({ className }: Partial<{ className: string }>) => {
             }}
           />
         </Grid>
-        <Grid item sm={5}>
+        <Grid item md={5} sm={6} xs={12}>
           <TextField
             id="guest-phone"
             fullWidth
@@ -110,7 +131,7 @@ const ContactForm = ({ className }: Partial<{ className: string }>) => {
             }}
           />
         </Grid>
-        <Grid item sm={12}>
+        <Grid item xs={12}>
           <TextField
             id="guest-company"
             fullWidth
@@ -121,10 +142,10 @@ const ContactForm = ({ className }: Partial<{ className: string }>) => {
             }}
           />
         </Grid>
-        <Grid item sm={12}>
+        <Grid item xs={12}>
           <TextField
             id="guest-message"
-            label="What’s your project about? How can we help?"
+            label={`${isXs ? '' : 'What’s your project about?'} How can we help?`}
             fullWidth
             multiline
             classes={{ root: classes.inputRoot }}
@@ -133,7 +154,7 @@ const ContactForm = ({ className }: Partial<{ className: string }>) => {
             }}
           />
         </Grid>
-        <Grid item sm={5}>
+        <Grid item md={5} xs={12}>
           <Button type="submit" fullWidth>
             Submit
           </Button>

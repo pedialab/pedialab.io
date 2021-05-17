@@ -9,7 +9,6 @@ const content = {
       OUR TEAM
     </Typography>
   ),
-  brandsMarginTop: '5rem',
   brands: [
     { name: 'Yahoo!', logoSrc: '/logo_yahoo.png' },
     { name: 'J.P.Morgan', logoSrc: '/logo_jp.png' },
@@ -44,18 +43,42 @@ const members = [
   }
 ];
 
-const useStyle = makeStyles({
+const useStyle = makeStyles((theme) => ({
+  listRoot: {
+    '& > :last-child': { // brand list
+      marginTop: '2.937rem',
+      [theme.breakpoints.down('sm')]: {
+        marginTop: 0
+      }
+    },
+    [theme.breakpoints.down('sm')]: {
+      '& h2': {
+        marginBottom: '2.688rem'
+      }
+    }
+  },
   members: {
-    marginTop: '5rem'
+    marginTop: '5rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: 0,
+      flexDirection: 'column',
+      alignItems: 'center',
+      '& > div': {
+        marginBottom: '3.25rem'
+      },
+      '& > :last-child': {
+        marginBottom: '2.06rem'
+      }
+    }
   }
-});
+}));
 
 const OurTeam = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyle();
-  const { title, brands, brandsMarginTop } = content;
+  const { title, brands } = content;
   return (
     <Box id="our-team" component="article" className={className}>
-      <LogoList title={title} brands={brands} brandsMarginTop={brandsMarginTop}>
+      <LogoList className={classes.listRoot} title={title} brands={brands}>
         <Grid container justify="space-between" className={classes.members}>
           {members.map((member) => (
             <Grid item key={member.name}>

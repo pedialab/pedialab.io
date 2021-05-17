@@ -1,4 +1,6 @@
-import { Grid, makeStyles, Typography } from '@material-ui/core';
+import {
+  Grid, makeStyles, Typography, Hidden
+} from '@material-ui/core';
 
 type ItemProps = {
   imgSrc: string;
@@ -24,19 +26,47 @@ const content: ItemProps[] = [
   }
 ];
 
-const useStyles = makeStyles({
-  root: { width: '18.75rem', marginTop: '6.6875rem' },
-  svgImage: { width: '5rem' },
-  title: { minHeight: '9.6rem', marginTop: '1.5rem' },
+const useStyles = makeStyles((theme) => ({
+  articleContainer: {
+    [theme.breakpoints.down('md')]: {
+      alignItems: 'center'
+    },
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column'
+    }
+  },
+  itemRoot: {
+    width: '18.75rem',
+    marginTop: '6.6875rem',
+    [theme.breakpoints.down('md')]: {
+      alignItems: 'center',
+      textAlign: 'center',
+      marginTop: '2.5rem',
+      width: '32%'
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '100%'
+    }
+  },
+  svgImage: {
+    width: '5rem'
+  },
+  title: {
+    minHeight: '9.6rem',
+    marginTop: '1.5rem',
+    [theme.breakpoints.down('md')]: {
+      minHeight: 'auto'
+    }
+  },
   description: {
     marginTop: '1.5rem'
   }
-});
+}));
 
 const Item = ({ imgSrc, title, description }: ItemProps) => {
   const classes = useStyles();
   return (
-    <Grid item container direction="column" className={classes.root}>
+    <Grid item container direction="column" className={classes.itemRoot}>
       <Grid item className={classes.svgImage}>
         <img src={imgSrc} alt={title} loading="lazy" />
       </Grid>
@@ -58,17 +88,22 @@ export type TeamUpWithTechleadProps = {
   className?: string;
 };
 
-const TeamUpWithTechlead = ({ className }: TeamUpWithTechleadProps) => (
-  <Grid container component="article" justify="space-between" className={[className].join(' ')}>
-    <Grid item sm={12}>
-      <Typography align="center" variant="h2" color="primary">
-        Team up with Tech-Lead in a nutshell
-      </Typography>
+const TeamUpWithTechlead = ({ className }: TeamUpWithTechleadProps) => {
+  const classes = useStyles();
+  return (
+    <Grid container component="article" justify="space-between" className={[className, classes.articleContainer].join(' ')}>
+      <Grid item sm={12}>
+        <Typography align="center" variant="h2" color="primary">
+          Team up with
+          <Hidden lgUp><br /></Hidden>
+          Tech-Lead in a nutshell
+        </Typography>
+      </Grid>
+      {content.map((item) => (
+        <Item key={item.title} title={item.title} imgSrc={item.imgSrc} description={item.description} />
+      ))}
     </Grid>
-    {content.map((item) => (
-      <Item key={item.title} title={item.title} imgSrc={item.imgSrc} description={item.description} />
-    ))}
-  </Grid>
-);
+  );
+};
 
 export default TeamUpWithTechlead;

@@ -1,25 +1,7 @@
-import { Grid, makeStyles, Typography } from '@material-ui/core';
+import {
+  Grid, Hidden, makeStyles, Typography
+} from '@material-ui/core';
 import LetsTalkButton from './LetsTalkButton';
-
-const useStyle = makeStyles({
-  textContent: {
-    marginTop: '3.75rem',
-    width: '30rem',
-    '& > div:nth-child(2)': {
-      marginTop: '1.11rem'
-    },
-    '& > div:nth-child(n+3)': {
-      marginTop: '2.6rem',
-      '& > :nth-child(3)': {
-        marginTop: '0.75rem'
-      }
-    }
-  },
-  image: { borderRadius: '60px', overflow: 'hidden', width: '30rem' },
-  letsTalk: {
-    marginTop: '9.375rem'
-  }
-});
 
 const content = [
   {
@@ -32,10 +14,52 @@ const content = [
   }
 ];
 
+const useStyle = makeStyles((theme) => ({
+  articleContainer: {
+    [theme.breakpoints.down('md')]: {
+      justifyContent: 'center',
+      textAlign: 'center'
+    }
+  },
+  textContent: {
+    marginTop: '3.75rem',
+    width: '30rem',
+    '& > div:nth-child(2)': {
+      marginTop: '1.11rem'
+    },
+    '& > div:nth-child(n+3)': {
+      marginTop: '2.6rem',
+      '& > :nth-child(3)': {
+        marginTop: '0.75rem'
+      }
+    },
+    [theme.breakpoints.down('md')]: {
+      marginTop: 0
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginTop: 0,
+      '& > div:nth-child(n+3)': {
+        marginTop: '2.25rem'
+      }
+    }
+  },
+  image: {
+    borderRadius: '60px',
+    overflow: 'hidden',
+    width: '30rem'
+  },
+  letsTalk: {
+    marginTop: '9.375rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '2.75rem'
+    }
+  }
+}));
+
 const DeveloperSupport = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyle();
   return (
-    <Grid className={className} component="article" container justify="space-between">
+    <Grid className={[className, classes.articleContainer].join(' ')} component="article" container justify="space-between">
       <Grid item container direction="column" className={classes.textContent}>
         <Grid item>
           <Typography variant="h2" color="primary">
@@ -61,9 +85,11 @@ const DeveloperSupport = ({ className }: Partial<{ className: string }>) => {
           </Grid>
         ))}
       </Grid>
-      <Grid item className={classes.image}>
-        <img src="/developer_support.jpg" alt="Developer Support" />
-      </Grid>
+      <Hidden mdDown>
+        <Grid item className={classes.image}>
+          <img src="/developer_support.jpg" alt="Developer Support" />
+        </Grid>
+      </Hidden>
       <Grid item container justify="center" className={classes.letsTalk}>
         <LetsTalkButton />
       </Grid>

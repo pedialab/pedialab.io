@@ -8,18 +8,21 @@ export type MemberProps = {
   position: string;
 };
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     '& > div:nth-child(2)': {
       marginTop: '1.5rem',
       marginBottom: '2px'
+    },
+    [theme.breakpoints.down('sm')]: {
+      alignItems: 'center'
     }
   },
   avatar: {
     width: '12.5rem',
     height: '12.5rem'
   }
-});
+}));
 
 const Member = ({ avatarSrc, name, position }: MemberProps) => {
   const classes = useStyles();

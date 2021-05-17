@@ -3,7 +3,20 @@ import NotoSansRegular from '../public/Noto_Sans/NotoSans-Regular.ttf';
 import NotoSansBold from '../public/Noto_Sans/NotoSans-Bold.ttf';
 import NotoSansLight from '../public/Noto_Sans/NotoSans-Light.ttf';
 
-const theme = createMuiTheme({
+let theme = createMuiTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1135,
+      xl: 1920
+    }
+  }
+});
+
+theme = createMuiTheme({
+  ...theme,
   palette: {
     primary: {
       main: '#E0E0E0'
@@ -35,13 +48,22 @@ const theme = createMuiTheme({
     h2: {
       fontSize: '3.75rem',
       fontWeight: 300,
-      lineHeight: '1.266'
+      lineHeight: '1.266',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '2.25rem',
+        textAlign: 'center',
+        lineHeight: '1.36'
+      }
     },
     // section header
     h3: {
       fontSize: '2.125rem',
       fontWeight: 700,
-      lineHeight: '1.5'
+      lineHeight: '1.5',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '1.75rem',
+        textAlign: 'center'
+      }
     },
     // button title, 18px
     button: {
@@ -59,7 +81,8 @@ const theme = createMuiTheme({
       fontSize: '1.125rem',
       lineHeight: '1.56',
       marginTop: '1.625rem',
-      marginBottom: '1.625rem'
+      marginBottom: '1.625rem',
+      whiteSpace: 'pre-wrap'
     },
     // 12px
     subtitle1: {
@@ -76,19 +99,13 @@ const theme = createMuiTheme({
       fontSize: '0.875rem'
     }
   },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 960,
-      lg: 1152,
-      xl: 1920
-    }
-  },
-  props: { MuiContainer: { maxWidth: 'xl' } },
   overrides: {
     MuiCssBaseline: {
       '@global': {
+        body: {
+          marginTop: 0,
+          marginBottom: 0
+        },
         a: {
           textDecoration: 'none'
         },
@@ -141,4 +158,6 @@ const theme = createMuiTheme({
   }
 });
 
-export default theme;
+const defaultTheme = theme;
+
+export default defaultTheme;

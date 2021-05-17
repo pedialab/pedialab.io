@@ -1,4 +1,6 @@
-import { Typography, Box, makeStyles } from '@material-ui/core';
+import {
+  Typography, Grid, makeStyles
+} from '@material-ui/core';
 import { markdownToReactComponent } from './lib-iso';
 
 export type MarkdownArticleProps = {
@@ -8,14 +10,37 @@ export type MarkdownArticleProps = {
   content: string;
 };
 
-const useStyle = makeStyles({
+const useStyle = makeStyles((theme) => ({
+  titleContainer: {
+    alignSelf: 'center',
+    '& > h2': {
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '2.25rem',
+        textAlign: 'center'
+      }
+    }
+  },
+  heroImage: {
+    marginTop: '4rem',
+    borderRadius: '20px',
+    overflow: 'hidden',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '2.5rem'
+    }
+  },
   highlight: {
+    marginTop: '2rem',
     borderBottomStyle: 'solid',
     borderBottomWidth: '1px',
     borderBottomColor: '#FF5C00',
-    width: 'fit-content'
+    width: 'max-content',
+    alignSelf: 'flex-start',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '2.5rem',
+      alignSelf: 'center'
+    }
   }
-});
+}));
 
 const StyledParagraph = ({ children }: { children: JSX.Element }) => (
   <Typography variant="body2" color="secondary" component="p">
@@ -28,29 +53,27 @@ const MarkdownArticle = ({
 }: MarkdownArticleProps) => {
   const classes = useStyle();
 
-  const styledComponents = {
+  const componentMapper = {
     p: StyledParagraph
   };
 
-  const contentElement = markdownToReactComponent(content, styledComponents);
+  const contentElement = markdownToReactComponent(content, componentMapper);
 
   return (
-    <Box component="article" display="flex" flexDirection="column">
-      <Box alignSelf="center">
+    <Grid container component="article" direction="column" alignItems="center">
+      <Grid item className={classes.titleContainer}>
         <Typography variant="h2" color="primary">
           {title}
         </Typography>
-      </Box>
-      <Box mt="4rem">
-        <img src={heroImageSrc} alt={title} />
-      </Box>
-      <Box mt="2rem">
-        <Typography component="p" variant="subtitle1" color="primary" className={classes.highlight}>
+      </Grid>
+      <img className={classes.heroImage} src={heroImageSrc} alt={title} />
+      <Grid item className={classes.highlight}>
+        <Typography component="p" variant="subtitle1" color="primary">
           {highlight}
         </Typography>
-      </Box>
-      <Box>{contentElement}</Box>
-    </Box>
+      </Grid>
+      <Grid item>{contentElement}</Grid>
+    </Grid>
   );
 };
 

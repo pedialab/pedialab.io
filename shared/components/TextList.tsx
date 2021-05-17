@@ -2,7 +2,7 @@ import { Box } from '@material-ui/core';
 
 export type TextListProps = {
   texts: string[];
-  width?: string;
+  width?: string | Record<string, string>;
   textColor?: string;
 };
 

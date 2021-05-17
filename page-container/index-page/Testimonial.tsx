@@ -21,8 +21,20 @@ const content = [
   }
 ];
 
-const useStyle = makeStyles({
-  title: { textAlign: 'center', marginBottom: '4rem' },
+const useStyle = makeStyles((theme) => ({
+  root: {
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
+  },
+  title: {
+    textAlign: 'center',
+    marginBottom: '4rem',
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '2.5rem'
+    }
+  },
   sectionRoot: {
     width: '33.40%',
     marginBottom: '6rem',
@@ -31,15 +43,19 @@ const useStyle = makeStyles({
       lineHeight: '1.555',
       textAlign: 'center',
       marginTop: '1.5rem'
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '2.5rem',
+      width: '100%'
     }
   }
-});
+}));
 
 const Testimonial = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyle();
 
   return (
-    <Grid component="article" container justify="space-around" className={className}>
+    <Grid component="article" container justify="space-around" className={[className, classes.root].join(' ')}>
       <Grid item sm={12} className={classes.title}>
         <Typography variant="h2" color="primary">
           Testimonial

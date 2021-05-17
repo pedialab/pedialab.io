@@ -20,86 +20,143 @@ import {
   Contact
 } from 'pedialab-pages/index-page';
 
-const useStyle = makeStyles({
+const useStyle = makeStyles((theme) => ({
   heroContent: {
-    marginTop: '7rem'
+    marginTop: '7rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '4.188rem'
+    }
   },
   ourCompany: {
     marginTop: '7.5rem',
-    paddingLeft: '8.8%'
+    paddingLeft: '8.8%',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '7rem',
+      paddingLeft: 0
+    }
   },
   softwareDelivery: {
-    marginTop: '14rem'
+    marginTop: '14rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '5.688rem'
+    }
   },
   vendorDifference: {
-    marginTop: '13rem'
+    marginTop: '13rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '7.5rem'
+    }
   },
   techleadaaS: {
-    marginTop: '14.65rem'
+    marginTop: '14.65rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '5.5rem'
+    }
   },
   projectScopes: {
-    marginTop: '15rem'
+    marginTop: '15rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '7.5rem'
+    }
   },
   teamUpWithTechlead: {
-    marginTop: '13.75rem'
+    marginTop: '13.75rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '10.188rem'
+    }
   },
   developerSupport: {
-    marginTop: '15.625rem'
+    marginTop: '15.625rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '7.125rem'
+    }
   },
   ourTeam: {
-    marginTop: '15.75rem'
+    marginTop: '15.75rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '5.938rem'
+    }
   },
   clientCompanies: {
-    marginTop: '20rem'
+    marginTop: '20rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '9.063rem'
+    }
   },
   whereWeServe: {
-    marginTop: '16.4375rem'
+    marginTop: '16.4375rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '4.688rem'
+    }
   },
-  caseStudies: { marginTop: '24.3125rem' },
+  caseStudies: {
+    marginTop: '24.3125rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '7.313rem'
+    }
+  },
   projectPhrases: {
-    marginTop: '19.875rem'
+    marginTop: '19.875rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '8.688rem'
+    }
   },
   testimonial: {
-    marginTop: '12.75rem'
+    marginTop: '12.75rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '9.25rem'
+    }
   },
-  contact: { marginTop: '13rem' },
+  contact: {
+    marginTop: '13rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '5rem'
+    }
+  },
   footer: {
-    marginTop: '9.4rem'
+    marginTop: '9.4rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '6.25rem'
+    }
   }
-});
+}));
 
 const IndexPageContainer = () => {
   const classes = useStyle();
   return (
     <>
-      <Box mx="10%">
+      <Box mx={{ xs: '5.8%', md: '10%' }}>
         <Grid container direction="column">
-          <Header />
+          <Header isIndexPage />
           <HeroContent className={classes.heroContent} />
           <OurCompany className={classes.ourCompany} />
           <SoftwareDelivery className={classes.softwareDelivery} />
-          <VendorDifference className={classes.vendorDifference} />
         </Grid>
       </Box>
-      <Box ml="10%">
+      <Box mx={{ xs: 0, md: '10%' }}>
+        <VendorDifference className={classes.vendorDifference} />
+      </Box>
+      <Box ml={{ xs: '5.8%', md: '10%' }} mr={{ xs: '5.8%', md: 0 }}>
         <TechleadaaS className={classes.techleadaaS} />
       </Box>
-      <Box mx="10%">
+      <Box mx={{ xs: '5.8%', md: '10%' }}>
         <ProjectScopes className={classes.projectScopes} />
         <TeamUpWithTechlead className={classes.teamUpWithTechlead} />
         <DeveloperSupport className={classes.developerSupport} />
         <OurTeam className={classes.ourTeam} />
         <ClientCompanies className={classes.clientCompanies} />
       </Box>
-      <Box mr="17%">
+      <Box mr={{ xs: 0, lg: '17%', xl: '30%' }}>
         <WhereWeServe className={classes.whereWeServe} />
       </Box>
-      <Box mx="10%">
+      <Box mx={{ xs: '5.8%', md: '10%' }}>
         <CaseStudies className={classes.caseStudies} />
         <ProjectPhrases className={classes.projectPhrases} />
       </Box>
-      <Testimonial className={classes.testimonial} />
-      <Box mx="10%">
+      <Box mx={{ xs: '5.8%', md: 0 }}>
+        <Testimonial className={classes.testimonial} />
+      </Box>
+      <Box mx={{ xs: '5.8%', md: '10%' }}>
         <Contact className={classes.contact} />
         <Footer className={classes.footer} />
       </Box>

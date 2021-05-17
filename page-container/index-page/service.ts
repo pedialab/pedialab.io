@@ -7,6 +7,7 @@ export const postContactForm = async (
 ) => {
   if (formState) {
     try {
+      // n8n response without CORS header, therefore with mode: 'no-cors' and always return 'true'
       const res = await fetch(formPostUrl, {
         method: 'POST',
         mode: 'no-cors',

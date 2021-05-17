@@ -13,17 +13,22 @@ const useStyles = makeStyles(() => ({
 
 export type NavListProps = {
   items: NavItemProps[];
+  className?: string
 };
 
-const NavList = ({ items = [] }: NavListProps) => {
+const NavList = ({ items = [], className = '' }: NavListProps) => {
   const classes = useStyles();
-  const navListItems = useMemo(() => items.map((item) => <NavItem text={item.text} href={item.href} key={item.text} isActive={item.isActive} />), [items]);
-  return (
-    <>
-      <Grid container component="ul" className={classes.navList}>
-        {navListItems}
+  const navListItems = useMemo(() => items.map(
+    (item) => (
+      <Grid item component="li" key={item.text}>
+        <NavItem text={item.text} href={item.href} isActive={item.isActive} />
       </Grid>
-    </>
+    )
+  ), [items]);
+  return (
+    <Grid container component="ul" className={[className, classes.navList].join(' ')}>
+      {navListItems}
+    </Grid>
   );
 };
 
