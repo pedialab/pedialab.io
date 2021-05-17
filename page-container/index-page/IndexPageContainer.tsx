@@ -89,7 +89,12 @@ const useStyle = makeStyles((theme) => ({
       marginTop: '4.688rem'
     }
   },
-  caseStudies: { marginTop: '24.3125rem' },
+  caseStudies: {
+    marginTop: '24.3125rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '7.313rem'
+    }
+  },
   projectPhrases: {
     marginTop: '19.875rem'
   },

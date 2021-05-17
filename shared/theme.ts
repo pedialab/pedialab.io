@@ -81,7 +81,8 @@ theme = createMuiTheme({
       fontSize: '1.125rem',
       lineHeight: '1.56',
       marginTop: '1.625rem',
-      marginBottom: '1.625rem'
+      marginBottom: '1.625rem',
+      whiteSpace: 'pre-wrap'
     },
     // 12px
     subtitle1: {
