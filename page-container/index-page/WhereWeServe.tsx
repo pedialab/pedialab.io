@@ -11,23 +11,43 @@ const content = {
 const useStyles = makeStyles((theme) => ({
   article: {
     width: '28.75rem',
-    '& > :nth-child(1)': {
+    '& > h2': {
       marginTop: '4.875rem'
     },
-    '& > :nth-child(2)': {
+    '& > p:nth-child(2)': {
       marginTop: '1.5rem'
     },
-    '& > :nth-child(3)': {
+    '& > p:nth-child(3)': {
       marginTop: '1rem'
     },
     [theme.breakpoints.down('md')]: {
       paddingLeft: '2rem',
       paddingRight: '2rem'
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: 0,
+      marginLeft: '5.8%',
+      marginRight: '5.8%',
+      width: '100%',
+      alignItems: 'center',
+      '& > h2': {
+        marginTop: '2.5rem'
+      },
+      '& > p:nth-child(2)': {
+        marginTop: '1.75rem'
+      },
+      '& > p:nth-child(3)': {
+        marginTop: '1rem',
+        textAlign: 'center'
+      }
     }
   },
   letsTalkButton: {
     marginTop: '3rem',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center'
+    }
   }
 }));
 
@@ -36,10 +56,19 @@ const WhereWeServe = ({ className }: Partial<{ className: string }>) => {
   const { title, subtitle, description } = content;
   return (
     <Grid container justify="space-between" className={className}>
-      <Grid item md={6} lg="auto">
+      <Grid item xs="auto" md={6} lg="auto">
         <img src="/map.jpg" alt="where we serve map" />
       </Grid>
-      <Grid item container direction="column" component="article" className={classes.article} md={6} lg="auto">
+      <Grid
+        item
+        container
+        direction="column"
+        component="article"
+        className={classes.article}
+        xs={10}
+        md={6}
+        lg="auto"
+      >
         <Typography variant="h2" color="primary">
           {title}
         </Typography>

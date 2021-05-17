@@ -84,7 +84,10 @@ const useStyle = makeStyles((theme) => ({
     }
   },
   whereWeServe: {
-    marginTop: '16.4375rem'
+    marginTop: '16.4375rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '4.688rem'
+    }
   },
   caseStudies: { marginTop: '24.3125rem' },
   projectPhrases: {
@@ -124,7 +127,7 @@ const IndexPageContainer = () => {
         <OurTeam className={classes.ourTeam} />
         <ClientCompanies className={classes.clientCompanies} />
       </Box>
-      <Box mr={{ xs: '5.8%', lg: '17%', xl: '30%' }}>
+      <Box mr={{ xs: 0, lg: '17%', xl: '30%' }}>
         <WhereWeServe className={classes.whereWeServe} />
       </Box>
       <Box mx={{ xs: '5.8%', md: '10%' }}>
