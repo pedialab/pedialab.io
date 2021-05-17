@@ -6,6 +6,7 @@ function HomePage() {
     <>
       <Head>
         <title>Pedia Lab</title>
+        <link rel="preload" as="image" href="/hero_image.jpg" />
       </Head>
       <IndexPageContainer />
     </>

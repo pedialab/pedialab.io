@@ -53,6 +53,7 @@ const CaseStudyPage = ({ markdown }: Props) => {
           Pedia Lab,
           {title}
         </title>
+        <link rel="preload" as="image" href={heroImage} />
       </Head>
       <CaseStudyPageContainer title={title} heroImageSrc={heroImage} highlight={highlight} content={content} />
     </>
