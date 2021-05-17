@@ -102,7 +102,10 @@ const useStyle = makeStyles((theme) => ({
     }
   },
   testimonial: {
-    marginTop: '12.75rem'
+    marginTop: '12.75rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '9.25rem'
+    }
   },
   contact: { marginTop: '13rem' },
   footer: {
@@ -142,7 +145,9 @@ const IndexPageContainer = () => {
         <CaseStudies className={classes.caseStudies} />
         <ProjectPhrases className={classes.projectPhrases} />
       </Box>
-      <Testimonial className={classes.testimonial} />
+      <Box mx={{ xs: '5.8%', md: 0 }}>
+        <Testimonial className={classes.testimonial} />
+      </Box>
       <Box mx={{ xs: '5.8%', md: '10%' }}>
         <Contact className={classes.contact} />
         <Footer className={classes.footer} />
