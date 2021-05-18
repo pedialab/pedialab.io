@@ -77,6 +77,11 @@ const ContactForm = ({ className }: Partial<{ className: string }>) => {
     },
     [formState, router]
   );
+  const preventEnterSubmit = useCallback((event) => {
+    if (event.code.includes('Enter')) {
+      event.preventDefault();
+    }
+  }, []);
 
   return (
     <Grid container className={className} direction="column">
@@ -102,6 +107,7 @@ const ContactForm = ({ className }: Partial<{ className: string }>) => {
             fullWidth
             label="Name"
             classes={{ root: classes.inputRoot }}
+            onKeyPress={preventEnterSubmit}
             onChange={(event) => {
               setFormState({ ...formState, name: event.target['value'] });
             }}
@@ -114,6 +120,7 @@ const ContactForm = ({ className }: Partial<{ className: string }>) => {
             type="email"
             label="Email"
             classes={{ root: classes.inputRoot }}
+            onKeyPress={preventEnterSubmit}
             onChange={(event) => {
               setFormState({ ...formState, email: event.target['value'] });
             }}
@@ -126,6 +133,7 @@ const ContactForm = ({ className }: Partial<{ className: string }>) => {
             type="tel"
             label="Phone"
             classes={{ root: classes.inputRoot }}
+            onKeyPress={preventEnterSubmit}
             onChange={(event) => {
               setFormState({ ...formState, phone: event.target['value'] });
             }}
@@ -137,6 +145,7 @@ const ContactForm = ({ className }: Partial<{ className: string }>) => {
             fullWidth
             label="Company"
             classes={{ root: classes.inputRoot }}
+            onKeyPress={preventEnterSubmit}
             onChange={(event) => {
               setFormState({ ...formState, company: event.target['value'] });
             }}

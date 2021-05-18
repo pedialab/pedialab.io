@@ -87,7 +87,7 @@ const DeveloperSupport = ({ className }: Partial<{ className: string }>) => {
       </Grid>
       <Hidden mdDown>
         <Grid item className={classes.image}>
-          <img src="/developer_support.jpg" alt="Developer Support" />
+          <img src="/developer_support.jpg" width="480" height="1040" alt="Developer Support" />
         </Grid>
       </Hidden>
       <Grid item container justify="center" className={classes.letsTalk}>

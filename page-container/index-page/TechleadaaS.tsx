@@ -67,7 +67,7 @@ const TechleadaaS = ({ className }: Partial<{ className: string }>) => {
         </Box>
       </Grid>
       <Grid item xs={12} md="auto" className={classes.imgContainer}>
-        <img loading="lazy" src="/tech_lead_as_a_service.jpg" alt="" />
+        <img loading="lazy" width="1000" height="1500" src="/tech_lead_as_a_service.jpg" alt="" />
       </Grid>
     </Grid>
   );

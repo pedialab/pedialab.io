@@ -57,7 +57,7 @@ const WhereWeServe = ({ className }: Partial<{ className: string }>) => {
   return (
     <Grid container justify="space-between" className={className}>
       <Grid item xs="auto" md={6} lg="auto">
-        <img src="/map.jpg" alt="where we serve map" />
+        <img src="/map.jpg" width="507" height="734" alt="where we serve map" />
       </Grid>
       <Grid
         item

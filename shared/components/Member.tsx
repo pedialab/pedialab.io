@@ -29,7 +29,7 @@ const Member = ({ avatarSrc, name, position }: MemberProps) => {
   return (
     <Grid container direction="column" component="section" className={classes.root}>
       <Grid item>
-        <Avatar src={avatarSrc} alt={name} className={classes.avatar} />
+        <Avatar src={avatarSrc} alt={name} className={classes.avatar} imgProps={{ width: '200', height: '200' }} />
       </Grid>
       <Grid item>
         <Typography component="h3" variant="h3" color="primary">

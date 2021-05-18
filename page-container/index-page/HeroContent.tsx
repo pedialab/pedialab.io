@@ -54,7 +54,7 @@ const HeroContent = ({ className }: Partial<{ className: string }>) => {
         </Typography>
       </Grid>
       <Grid item xs={12} className={classes.heroImageContainer}>
-        <img src="/hero_image.jpg" alt="index hero" />
+        <img src="/hero_image.jpg" width="1440" height="716" alt="index hero" />
       </Grid>
       <Grid item container direction="column" className={classes.contentContainer}>
         <Typography component="h3" variant="h2" color="primary">
@@ -66,7 +66,7 @@ const HeroContent = ({ className }: Partial<{ className: string }>) => {
           Why employ tech-lead as a service to grow together instead of just outsourcing?
         </Typography>
         <Box>
-          <img src="/the_pedia_lab_difference.png" alt="index hero" loading="lazy" />
+          <img src="/the_pedia_lab_difference.png" width="556" height="320" alt="index hero" loading="lazy" />
         </Box>
       </Grid>
     </Grid>

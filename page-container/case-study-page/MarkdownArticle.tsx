@@ -30,6 +30,7 @@ const useStyle = makeStyles((theme) => ({
   },
   highlight: {
     marginTop: '2rem',
+    marginBottom: '1.563rem',
     borderBottomStyle: 'solid',
     borderBottomWidth: '1px',
     borderBottomColor: '#FF5C00',
@@ -66,7 +67,7 @@ const MarkdownArticle = ({
           {title}
         </Typography>
       </Grid>
-      <img className={classes.heroImage} src={heroImageSrc} alt={title} />
+      <img className={classes.heroImage} src={heroImageSrc} width="960" height="570" alt={title} />
       <Grid item className={classes.highlight}>
         <Typography component="p" variant="subtitle1" color="primary">
           {highlight}

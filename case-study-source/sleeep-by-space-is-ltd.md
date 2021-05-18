@@ -1,6 +1,6 @@
 ---
 title: "SLEEEP by Space is Ltd"
-heroImage: "/case_sleeep.jpg"
+heroImagePath: "/case_sleeep.jpg"
 highlight: "Red Dot Design Awards 18’"
 summary: "Red Dot Design Awards 18’
 Our partner Vincent Lau, lead the development of reservation systems and IoT integrations of the award winning sleeping pod, during his time with Space is Ltd."
