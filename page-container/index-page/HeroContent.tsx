@@ -54,7 +54,14 @@ const HeroContent = ({ className }: Partial<{ className: string }>) => {
         </Typography>
       </Grid>
       <Grid item xs={12} className={classes.heroImageContainer}>
-        <img src="/hero_image.jpg" width="1440" height="716" alt="index hero" />
+        <img
+          srcSet="/hero_image.jpg 1440w, /hero_image_mobile.png 730w"
+          sizes="(max-width: 960px) 88.4vw, 80vw"
+          src="/hero_image.jpg"
+          width="1440"
+          height="716"
+          alt="index hero, two building with light on"
+        />
       </Grid>
       <Grid item container direction="column" className={classes.contentContainer}>
         <Typography component="h3" variant="h2" color="primary">

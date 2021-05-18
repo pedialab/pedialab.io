@@ -68,7 +68,7 @@ const Item = ({ imgSrc, title, description }: ItemProps) => {
   return (
     <Grid item container direction="column" className={classes.itemRoot}>
       <Grid item className={classes.svgImage}>
-        <img src={imgSrc} alt={title} loading="lazy" />
+        <img src={imgSrc} alt={title} width="80" height="80" loading="lazy" />
       </Grid>
       <Grid item className={classes.title}>
         <Typography component="p" variant="h3" color="primary">
