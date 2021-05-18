@@ -30,6 +30,7 @@ const useStyle = makeStyles((theme) => ({
   },
   highlight: {
     marginTop: '2rem',
+    marginBottom: '1.563rem',
     borderBottomStyle: 'solid',
     borderBottomWidth: '1px',
     borderBottomColor: '#FF5C00',

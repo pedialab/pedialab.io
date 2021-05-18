@@ -23,6 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <link rel="icon" href="/favicon_logo.svg" />
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />

@@ -10,7 +10,7 @@ type Props = { articleCards : ArticleCardProps[] }
 type CaseStudyMeta = {
   fileName: string;
   title: string;
-  heroImage: string;
+  heroImagePath: string;
   highlight: string;
   summary: string;
   order: number;
@@ -28,7 +28,7 @@ const getStaticProps: GetStaticProps<Props> = async () => {
   const articleCards: ArticleCardProps[] = metadataList.map((caseStudyMeta) => ({
     link: '/case-study/'.concat(caseStudyMeta.fileName),
     title: caseStudyMeta.title,
-    imgSrc: caseStudyMeta.heroImage,
+    imgSrc: caseStudyMeta.heroImagePath,
     content: caseStudyMeta.summary
   }));
 
@@ -42,10 +42,15 @@ const getStaticProps: GetStaticProps<Props> = async () => {
 export { getStaticProps };
 
 function CaseStudiesPage({ articleCards }: Props) {
+  const pageDescription = articleCards.reduce((description, article) => ([description, article.title].join(', ')), 'Explore our work');
   return (
     <>
       <Head>
         <title>Pedia Lab - Case Study</title>
+        <meta name="description" content={pageDescription} />
+        <meta property="og:title" content="Pedia Lab - Case Study" />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content="https://pedialab.io/og_logo.png" />
       </Head>
       <CaseStudiesPageContainer articleCards={articleCards} />
     </>

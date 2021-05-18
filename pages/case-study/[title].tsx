@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { loadAllMarkdownFileNames, loadMarkdownFile } from 'pedialab-pages/case-study-page/lib-server';
 import { matter } from 'pedialab-pages/case-study-page/lib-iso';
 import { CaseStudyPageContainer } from 'pedialab-pages/case-study-page';
+import packageConfig from '../../package.json';
 
 type Params = {
   params: { title: string };
@@ -44,18 +45,23 @@ export { getStaticPaths, getStaticProps };
 const CaseStudyPage = ({ markdown }: Props) => {
   const caseStudy = matter(markdown);
   const content = caseStudy.content;
-  const { title, heroImage, highlight } = caseStudy.data;
+  const {
+    title, heroImagePath, highlight, summary
+  } = caseStudy.data;
 
   return (
     <>
       <Head>
         <title>
-          Pedia Lab,
-          {title}
+          {`Pedia Lab - ${title}`}
         </title>
-        <link rel="preload" as="image" href={heroImage} />
+        <meta name="description" content={summary} />
+        <meta property="og:title" content={`Pedia Lab - ${title}`} />
+        <meta property="og:description" content={summary} />
+        <meta property="og:image" content={packageConfig.homepage.concat(heroImagePath)} />
+        <link rel="preload" as="image" href={heroImagePath} />
       </Head>
-      <CaseStudyPageContainer title={title} heroImageSrc={heroImage} highlight={highlight} content={content} />
+      <CaseStudyPageContainer title={title} heroImageSrc={heroImagePath} highlight={highlight} content={content} />
     </>
   );
 };
