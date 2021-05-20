@@ -1,5 +1,5 @@
 name: Continuous Integration
-on: push
+on: pull_request
 
 jobs:
   tests:
@@ -13,3 +13,23 @@ jobs:
         run: yarn test
       - name: Run TypeScript check
         run: yarn tsc
+  lint:
+    name: Run ESLint with Reviewdog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - name: Check modules
+        run: yarn install --immutable --immutable-cache
+      - run: yarn lint
+      - name: install eslint-formatter-rdjson
+        run: yarn add -D eslint-formatter-rdjson
+      - uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
+      - name: Run ESLint with reviewdog
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn eslint -f rdjson . | reviewdog -f=rdjson -reporter=github-pr-review
