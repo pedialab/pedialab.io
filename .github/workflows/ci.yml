@@ -21,10 +21,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
-      - name: Check modules
+      - name: Yarn 2 check modules
         run: yarn install --immutable --immutable-cache
       - run: yarn lint
-      - name: install eslint-formatter-rdjson
+      - name: Install eslint-formatter-rdjson
         run: yarn add -D eslint-formatter-rdjson
       - uses: reviewdog/action-setup@v1
         with:
