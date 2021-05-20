@@ -50,7 +50,7 @@ function CaseStudiesPage({ articleCards }: Props) {
         <meta name="description" content={pageDescription} />
         <meta property="og:title" content="Pedia Lab - Case Study" />
         <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content="https://pedialab.io/og_logo.png" />
+        <meta property="og:image" content="https://pedialab.io/og_logo_592_310.png" />
       </Head>
       <CaseStudiesPageContainer articleCards={articleCards} />
     </>

@@ -9,7 +9,7 @@ function CareersPage() {
         <meta name="description" content="Join Pedia Lab" />
         <meta property="og:title" content="Pedia Lab - Careers" />
         <meta property="og:description" content="Join Pedia Lab" />
-        <meta property="og:image" content="https://pedialab.io/og_logo.png" />
+        <meta property="og:image" content="https://pedialab.io/og_logo_592_310.png" />
       </Head>
       <CareerPageContainer />
     </>
