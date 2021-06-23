@@ -17,7 +17,7 @@ const content: ItemProps[] = [
   {
     imgSrc: '/icon_recruitment.svg',
     title: 'Recruitment & Coaching',
-    description: 'Recruitment is hard. We help to identify, interview and coach talents that fit team culture.'
+    description: 'Recruitment is hard. We help to identify, interview and coach talents that fit your team culture.'
   },
   {
     imgSrc: '/icon_strategy.svg',

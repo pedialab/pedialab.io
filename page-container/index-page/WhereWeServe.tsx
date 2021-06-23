@@ -5,7 +5,7 @@ const content = {
   title: 'WHERE WE SERVE',
   subtitle: 'Remote + On-site Supported ',
   description: `Our team is located in Hong Kong, Singapore, Taipei and Hanoi.
-  Experienced UX & Product Designers, Senior Backend Developers, Site Reliability Engineers are ready to work on your project.`
+Experienced UX & Product Designers, Senior Backend Developers, Site Reliability Engineers are ready to work on your project.`
 };
 
 const useStyles = makeStyles((theme) => ({
