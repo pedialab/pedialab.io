@@ -9,15 +9,15 @@ const content = {
     title: 'Typical Vendors',
     lists: [
       'They prioritize other clients, risking project completion and don’t understand startup needs.',
-      'Core expertise is loss and your product become a black box for you. Investors show doubts.',
+      'Core expertise is loss and your product becomes a black box to you. Investors show doubts.',
       'Your budget is spent on their sales and middle management.'
     ]
   },
   pedialab: {
     title: 'Pedia Lab',
     lists: [
-      'We’re experienced startup founders and tech Lead, committed to work with your team, persons you can count on.',
-      'Day to day you gain insights in technology related to your Product and stay on top of the game.',
+      'We’re experienced startup founders and tech-lead that you can count on, committed to work with your team.',
+      'Day to day you gain insights in technology related to your product and stay on top of the game.',
       'Your budget spent investing in technology at your company.'
     ]
   }
