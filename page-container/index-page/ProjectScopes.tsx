@@ -38,11 +38,11 @@ const content: ServiceItemProps[] = [
     price: '$15k-$100',
     priceUnit: '/project',
     service: [
-      'Architecture Demo',
-      'QA-as-a-Service',
-      'Browser testing',
-      'k8s/CICD setup',
-      'Code Review'
+      'Mobile Apps',
+      'Ecommerce',
+      'BI Analytics Tools',
+      'Chatbots',
+      'Data Engineering'
     ]
   }
 ];
