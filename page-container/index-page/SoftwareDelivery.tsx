@@ -39,11 +39,12 @@ const SoftwareDelivery = ({ className }: Partial<{ className: string }>) => {
     () => [
       'We’ve been through it.',
       'After sweats and tears, your startup is taking off,',
-      'but now stuck at technical execution.',
+      'but then stuck at technical execution.',
       'Next round of funding is ticking.',
-      'You need experienced and competent Tech-Lead who understand your business and walk the talk.'
+      'You need experienced and competent Tech-Lead who understand your business and walk the talk.',
+      'Now.'
     ].map((content) => (
-      <Box component="li" key={content} className={classes.listItem}>
+      <Box >
         <Typography component="p" variant="subtitle2" color="secondary">
           {content}
         </Typography>
