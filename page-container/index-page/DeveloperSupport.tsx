@@ -68,7 +68,7 @@ const DeveloperSupport = ({ className }: Partial<{ className: string }>) => {
         </Grid>
         <Grid item>
           <Typography variant="body1" color="secondary">
-            Our team readily provide your team support in these areas which are time consuming and require steep learning curve.
+            Our team readily provide your team support in these areas which have steep learning curve and time consuming.
           </Typography>
         </Grid>
         {content.map((item, index) => (

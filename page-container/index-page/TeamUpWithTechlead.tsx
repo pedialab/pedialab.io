@@ -22,7 +22,7 @@ const content: ItemProps[] = [
   {
     imgSrc: '/icon_strategy.svg',
     title: 'Strategy & Partnership Meetings',
-    description: 'From investor meetings, strategic planning to vendor or partnership meetings, we provide you the technology  advice you needed on the spot.'
+    description: 'From investor meetings, strategic planning to vendor or partnership meetings, we provide you the technical advice you needed on the spot.'
   }
 ];
 
@@ -96,6 +96,7 @@ const TeamUpWithTechlead = ({ className }: TeamUpWithTechleadProps) => {
         <Typography align="center" variant="h2" color="primary">
           Team up with
           <Hidden lgUp><br /></Hidden>
+          <Hidden lgDown>&nbsp;</Hidden>
           Tech-Lead in a nutshell
         </Typography>
       </Grid>
