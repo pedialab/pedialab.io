@@ -21,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
   },
   logoContainer: {
     width: 'max-content'
+  },
+  contactInfoBlock: {
+    marginTop: '1rem',
+    fontStyle: 'normal'
   }
 }));
 
@@ -35,9 +39,19 @@ const Footer = ({ className }: FooterProps) => {
       alignItems="flex-start"
     >
       <Grid item className={classes.logoContainer}><LogoWithName /></Grid>
-      <Grid item>
-        <Typography variant="caption" component="small" color="textSecondary">
+      <Grid item container direction="column">
+        <Typography component="small" variant="caption" color="textSecondary">
           Singapore Company Entity, PeraPera Private Limited
+        </Typography>
+        <Typography component="small" variant="caption" color="textSecondary">
+          Pedia Lab  © All Rights Reserved.
+        </Typography>
+        <Typography component="address" className={classes.contactInfoBlock} variant="caption" color="textSecondary">
+          Contact Us
+          <br />
+          Taiwan Office: 6F., No.180, Sec. 1, Keelung Rd., Xinyi Dist., Taipei City 110, Taiwan (R.O.C.)
+          <br />
+          Singapore Office: Mapletree Business City, 20 Pasir Panjang Rd, #03-22/24, 117439
         </Typography>
       </Grid>
     </Grid>
