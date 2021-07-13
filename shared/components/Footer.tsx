@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
     width: 'max-content'
   },
   contactInfoBlock: {
-    marginTop: "1rem",
-    fontStyle: "normal"
+    marginTop: '1rem',
+    fontStyle: 'normal'
   }
 }));
 
