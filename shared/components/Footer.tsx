@@ -44,7 +44,7 @@ const Footer = ({ className }: FooterProps) => {
           Singapore Company Entity, PeraPera Private Limited
         </Typography>
         <Typography component="small" variant="caption" color="textSecondary">
-          PeraPera © All Rights Reserved.
+          Pedia Lab  © All Rights Reserved.
         </Typography>
         <Typography component="address" className={classes.contactInfoBlock} variant="caption" color="textSecondary">
           Contact Us
