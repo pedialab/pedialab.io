@@ -44,7 +44,7 @@ const SoftwareDelivery = ({ className }: Partial<{ className: string }>) => {
       'You need experienced and competent Tech-Lead who understand your business and walk the talk.',
       'Now.'
     ].map((content) => (
-      <Box>
+      <Box key={content}>
         <Typography component="p" variant="subtitle2" color="secondary">
           {content}
         </Typography>
