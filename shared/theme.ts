@@ -105,7 +105,11 @@ theme = createMuiTheme({
           marginBottom: 0
         },
         a: {
-          textDecoration: 'none'
+          textDecoration: 'none',
+          color: '#dddddd'
+        },
+        'h1, h2, h3, h4, h5, h6': {
+          color: '#E0E0E0'
         },
         img: {
           width: '100%',
