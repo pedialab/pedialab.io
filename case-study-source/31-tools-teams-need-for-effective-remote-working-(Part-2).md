@@ -1,8 +1,8 @@
 ---
 title: "31 tools teams need for effective remote working (Part 2)"
-heroImagePath: "https://media-exp3.licdn.com/dms/image/C5112AQEtgDJxTZu_RA/article-cover_image-shrink_720_1280/0/1586665867322?e=1632355200&v=beta&t=I0_RCWRuFBEd-SlXgsKNtI15yMt6efhtP5Wlr3Hqy_c"
+heroImagePath: "/heads.png"
 highlight: ""
-summary: ""
+summary: "Continuing the previous article, this article will introduce the remaining remote tools to maximize the production capacity of the company."
 order: 11
 ---
 
@@ -20,11 +20,11 @@ There are [many Bot apps on the web](https://slack.com/apps/category/At0MQP5BEF-
 
 You may also have heard of IFTTT, which allows you to automate various software and hardware. For example, one can automate smart-home applications such as “turn on my Philips Hue light, turn on the music when I am home”. Zapier has a similar concept to IFTTT and is even more suited for commercial application. For example, when a file is uploaded to Google Drive, it can send automatic Slack notifications or automatically upload the file onto a database. When a new article is published on our blog, it can automatically generate links and remind the team to share the article. When there are a lot of different workflows, without an office environment where we can verbally remind one another, these automations become extremely effective in aiding the team.
 
-![Zapier](https://media-exp3.licdn.com/dms/image/C5112AQEjeupfmrNE2A/article-inline_image-shrink_1500_2232/0/1586665672591?e=1632355200&v=beta&t=QCGLK9Zkhwc16BTCWVf-pkak5vHvckid8_KqQDV2csM)
+![Zapier](/zapier.png)
 
 What people do not often notice is that Zapier has a [Chrome extension.](https://chrome.google.com/webstore/detail/zapier/ngghlnfmdgnpegcmbpgehkbhkhkbkjpj) In many of the teams I have worked in in the past, people often looked for engineers to develop internal user interfaces for semi-automated workflows. By adding this Chrome extension, you can actually achieve the result of getting the system to run the code automatically upon entering details.
 
-![Zapier2](https://media-exp3.licdn.com/dms/image/C5112AQHmS6nBCNlB-g/article-inline_image-shrink_1000_1488/0/1586665583967?e=1632355200&v=beta&t=LOXkJhzWLIdaNgp1R8MvOwIa5L2KBcY3aRi0Tr4MyxM)
+![Zapier2](/zapier2.png)
 
 More importantly, [Zapier](https://zapier.com/about/) is also a remote team, which makes a great case for their product. If you require an even more professional automation tool, [Workato](https://www.workato.com/) from Singapore is a powerful tool which supports complex and deep integrations, with subscription plans priced in the thousands.
 
@@ -36,7 +36,7 @@ Thus, having a task list that is visible and understood by everyone, very much l
 
 Trello needs no introduction - it is the best tool for beginners to running Scrums. If you are not familiar with the “Kanban” flow, [The Kanban Way](https://blog.trello.com/kanban-data-nave) is a great reference. It is easy to use and supports integration with various extensions, and delivers a great user experience in terms of speed and keyboard shortcuts. Trello’s biggest flaw is that you are unable to arrange cards in as many ways as on Airtable, although you are able to select individual cards.
 
-![Kanban](https://media-exp3.licdn.com/dms/image/C5112AQH4FKyeOMMHYw/article-inline_image-shrink_1000_1488/0/1586665597176?e=1632355200&v=beta&t=wENV_kDwwQdQBSg43UDz5N0EfLx75IN-CrlD8nGNNNU)
+![Kanban](/kanban.png)
 
 [ProductBoard](https://productboard.com/) is the best product management tool I have used to date which solves the most critical issue of product and project management: it allows product development to be aligned with user needs, allows you to arrange product features by priority and ensure that critical paths are not blocked.
 
@@ -58,7 +58,7 @@ Check-in here refers not to clocking in at a company, but checking in during a s
 
 Status Hero is a good tool which automatically sends reminders in Slack telling the team to check-in, and then sends out reports. You can also integrate leave calendars and set timezones. My team started out using Status Hero, but in order to cut down on the number of tools, I hacked together a Check-in Bot on Airtable, which reminds everyone to fill in an Airtable list to check-in, which is then automatically sent to Slack. This enabled better integration between our list of tasks which are already on Airtable with the Check-in process.
 
-![head2](https://media-exp3.licdn.com/dms/image/C5112AQH2PpCofh-aXA/article-inline_image-shrink_1000_1488/0/1586665863861?e=1632355200&v=beta&t=WE420cAKRczw5tHp16gpXl8YsIRZcjcer3dEpf087BM)
+![head2](/heads2.png)
 
 If you want to tell your team when you are on leave or online, particularly for customer service teams needing to operate 24/7, apart from Google Calendar, you may also consider [Timetastic](https://timetastic.co.uk/), which allows you to view all team members’ calendars. If you are asking others to block time in your calendar, you can use Calendly for that - it allows others to submit appointments and integrates that directly with your calendar.
 
@@ -82,7 +82,7 @@ You must be thinking that there are too many tools. The solution to this is even
 
 Last year, Dropbox joined the competition [by expressing its intention to become an enterprise collaobration workspace](https://paper.dropbox.com/ep/redirect/external-link?url=https%3A%2F%2Ftechcrunch.com%2F2019%2F06%2F11%2Fdropbox-search%2F&hmac=AeBlRIDxptLYbpP3mu5W5%2FQ0xhmsDTnEXgMVA8DUiC8%3D). Media analyst Ben Thompson also pointed out in his article that Dropbox [had a good shot to become THE Cloud OS](https://stratechery.com/2019/the-new-dropbox-the-cloud-os-connecting-versus-file-sharing/). Opening up Portal is like looking at the home screen of your mobile phone. You can see the latest updates in the company, and search for files or documents on the cloud. Most importantly, extensive integrations with software like Zoom, Slack and Adobe XD are allowed so that everyone can continue to work with the tools best suited for their jobs but easily collaborate with each other. A majority of paid features like access control and permissions management are targeted at enterprises. With a majority of important features still in beta, startups may not find a lot of reason to upgrade for now.
 
-![screen](https://media-exp3.licdn.com/dms/image/C5112AQEhYvhq83Gm-Q/article-inline_image-shrink_1000_1488/0/1586665707969?e=1632355200&v=beta&t=Yh1GuW_RPTzDsHxTBHCH0r5mLKCMN-Hb0VQasmCcRzc)
+![screen](/screen.png)
 
 A similar tool to Airtable is Notion, although both have different starting points. A member of our team once expressed that to do both frontend development as well as content editing required switching between interfaces. We started searching for a notetaking tool with a simple interface and supporting integrations across platforms, that could store code snippets but also format text easily at the same time. Finally we discovered the note-taking tool Notion, widely raved about in Silicon Valley, which satisfied all these requirements and even includes databases so you can manage large amounts of information like lists of movies you have watched or reading lists. There is even an indexing function which helps to arrange these lists in a certain order and make it easier to find what you are looking for.
 
