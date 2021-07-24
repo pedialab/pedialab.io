@@ -65,13 +65,6 @@ const CareerPage = () => {
           <Grid item container className={classes.linkContainer} justify="center">
             <Grid item>
               <CommonButton
-                title="Career opportunities - CakeResume"
-                href="https://www.cakeresume.com/companies/pedia-lab?ref=pedialabio"
-                className={classes.button}
-              />
-            </Grid>
-            <Grid item>
-              <CommonButton
                 title="Career opportunities - AngelList"
                 href="https://angel.co/company/pedia-lab?ref=pedialabio"
                 className={classes.button}
