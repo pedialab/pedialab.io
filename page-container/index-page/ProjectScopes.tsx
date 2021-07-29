@@ -35,7 +35,7 @@ const content: ServiceItemProps[] = [
   },
   {
     title: 'Project Delivery',
-    price: '$15k-$100',
+    price: '$15-$100k',
     priceUnit: '/project',
     service: [
       'Mobile Apps',
