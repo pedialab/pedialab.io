@@ -63,19 +63,6 @@ const HeroContent = ({ className }: Partial<{ className: string }>) => {
           alt="index hero, two building with light on"
         />
       </Grid>
-      <Grid item container direction="column" className={classes.contentContainer}>
-        <Typography component="h3" variant="h2" color="primary">
-          The Pedia Lab
-          <br />
-          Difference
-        </Typography>
-        <Typography component="p" variant="body1" color="secondary">
-          Why employ tech-lead as a service to grow together instead of just outsourcing?
-        </Typography>
-        <Box>
-          <img src="/the_pedia_lab_difference.png" width="556" height="320" alt="index hero" loading="lazy" />
-        </Box>
-      </Grid>
     </Grid>
   );
 };

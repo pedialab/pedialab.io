@@ -94,9 +94,8 @@ const TeamUpWithTechlead = ({ className }: TeamUpWithTechleadProps) => {
     <Grid container component="article" justify="space-between" className={[className, classes.articleContainer].join(' ')}>
       <Grid item sm={12}>
         <Typography align="center" variant="h2" color="primary">
-          Team up with
+          Team up with&nbsp;
           <Hidden lgUp><br /></Hidden>
-          <Hidden lgDown>&nbsp;</Hidden>
           Tech-Lead in a nutshell
         </Typography>
       </Grid>

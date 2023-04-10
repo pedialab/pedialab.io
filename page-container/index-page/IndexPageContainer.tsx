@@ -37,12 +37,16 @@ const useStyle = makeStyles((theme) => ({
   },
   softwareDelivery: {
     marginTop: '14rem',
+    marginBottom: '8rem',
     [theme.breakpoints.down('sm')]: {
       marginTop: '5.688rem'
     }
   },
+  techLeadTitle: {
+    marginTop: '8rem',
+  },
   vendorDifference: {
-    marginTop: '13rem',
+    marginTop: '4rem',
     [theme.breakpoints.down('sm')]: {
       marginTop: '7.5rem'
     }
@@ -78,7 +82,7 @@ const useStyle = makeStyles((theme) => ({
     }
   },
   clientCompanies: {
-    marginTop: '20rem',
+    marginTop: '15rem',
     [theme.breakpoints.down('sm')]: {
       marginTop: '9.063rem'
     }
@@ -130,21 +134,23 @@ const IndexPageContainer = () => {
           <Header isIndexPage />
           <HeroContent className={classes.heroContent} />
           <OurCompany className={classes.ourCompany} />
+        
+          <ClientCompanies className={classes.clientCompanies} />
           <SoftwareDelivery className={classes.softwareDelivery} />
         </Grid>
       </Box>
       <Box mx={{ xs: 0, md: '10%' }}>
         <VendorDifference className={classes.vendorDifference} />
       </Box>
-      <Box ml={{ xs: '5.8%', md: '10%' }} mr={{ xs: '5.8%', md: 0 }}>
+      {/* <Box ml={{ xs: '5.8%', md: '10%' }} mr={{ xs: '5.8%', md: 0 }}>
         <TechleadaaS className={classes.techleadaaS} />
-      </Box>
+      </Box> */}
       <Box mx={{ xs: '5.8%', md: '10%' }}>
         <ProjectScopes className={classes.projectScopes} />
         <TeamUpWithTechlead className={classes.teamUpWithTechlead} />
         <DeveloperSupport className={classes.developerSupport} />
         <OurTeam className={classes.ourTeam} />
-        <ClientCompanies className={classes.clientCompanies} />
+      
       </Box>
       <Box mr={{ xs: 0, lg: '17%', xl: '30%' }}>
         <WhereWeServe className={classes.whereWeServe} />

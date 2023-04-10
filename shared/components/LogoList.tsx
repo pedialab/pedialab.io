@@ -14,7 +14,7 @@ export type LogoListProps = {
 const useStyle = makeStyles((theme) => ({
   brand: {
     margin: '2.063rem 1.15rem',
-    height: '72px',
+    height: '62px',
     '& img': {
       width: 'auto',
       height: '100%'

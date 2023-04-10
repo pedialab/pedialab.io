@@ -44,7 +44,7 @@ const useStyle = makeStyles((theme) => ({
 }));
 
 const StyledParagraph = ({ children }: { children: JSX.Element }) => (
-  <Typography variant="body2" color="secondary" component="p">
+  <Typography variant="body2" color="primary" component="p">
     {children}
   </Typography>
 );
@@ -69,7 +69,7 @@ const MarkdownArticle = ({
       </Grid>
       <img className={classes.heroImage} src={heroImageSrc} width="960" height="570" alt={title} />
       <Grid item className={classes.highlight}>
-        <Typography component="p" variant="subtitle1" color="primary">
+        <Typography component="p" variant="title1" color="primary">
           {highlight}
         </Typography>
       </Grid>

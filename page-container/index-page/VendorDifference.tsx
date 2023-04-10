@@ -96,6 +96,12 @@ const VendorDifference = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyles();
   return (
     <>
+      <Grid container className={classes.techLeadTitle} justify="center">
+          <Typography variant="h3" color="primary">
+         Tech Lead as a Service
+          </Typography>
+      </Grid>
+
       <Grid component="article" container wrap="nowrap" className={[className, classes.root].join(' ')}>
         <Grid component="section" className={classes.firstSection} item container wrap="nowrap" justify="space-evenly" lg={6} xs={12}>
           <Typography variant="h3" color="primary">
