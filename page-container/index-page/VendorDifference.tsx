@@ -96,7 +96,7 @@ const VendorDifference = ({ className }: Partial<{ className: string }>) => {
   const classes = useStyles();
   return (
     <>
-      <Grid container className={classes.techLeadTitle} justify="center">
+      <Grid container justify="center">
           <Typography variant="h3" color="primary">
          Tech Lead as a Service
           </Typography>

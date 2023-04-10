@@ -69,7 +69,7 @@ const MarkdownArticle = ({
       </Grid>
       <img className={classes.heroImage} src={heroImageSrc} width="960" height="570" alt={title} />
       <Grid item className={classes.highlight}>
-        <Typography component="p" variant="title1" color="primary">
+        <Typography component="p" variant="subtitle1" color="primary">
           {highlight}
         </Typography>
       </Grid>
