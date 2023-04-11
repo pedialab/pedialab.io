@@ -2,12 +2,18 @@ import { Typography, Grid, makeStyles } from '@material-ui/core';
 import { ArticleCardList, CommonButton } from 'pedialab-shared/components';
 
 const articleCards = [
-
   {
     link: '/case-study/mocaverse',
     title: 'Mocaverse NFT by Animoca Brands',
     imgSrc: '/case_mocaverse.jpg',
     content: `Animoca Brands completes @MocaverseNFT mint, an event during which Animoca Brands’ shareholders, employees, investees, partners, and supporters minted a total of 8,888 Mocaverse #NFTs, and sees 3,552 #ETH (US$5.5 million) sales volume in first 48 hours.`
+  },
+  {
+    link: '/case-study/tinytap',
+    title: 'Publisher NFTs by TinyTap, Animoca Brands',
+    imgSrc: '/case_tinytap.jpg',
+    
+    content: `Animoca Brands & TinyTap launched first batch of six TinyTap Publisher NFTs sold at auction for a total of 138.926 ETH, generating a total 67.7 ETH for the six teachers who authored the content.`
   },
   {
     link: '/case-study/sleeep-by-space-is-ltd',
