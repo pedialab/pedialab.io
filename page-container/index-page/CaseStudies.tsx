@@ -11,7 +11,7 @@ const articleCards = [
   {
     link: '/case-study/tinytap',
     title: 'Publisher NFTs by TinyTap, Animoca Brands',
-    imgSrc: '/case_tinytap.jpg',
+    imgSrc: '/case_tinytap.png',
     
     content: `Animoca Brands & TinyTap launched first batch of six TinyTap Publisher NFTs sold at auction for a total of 138.926 ETH, generating a total 67.7 ETH for the six teachers who authored the content.`
   },

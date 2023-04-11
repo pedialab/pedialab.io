@@ -1,6 +1,6 @@
 ---
 title: "Publisher NFT by TinyTap"
-heroImagePath: "/case_tinytap.jpg"
+heroImagePath: "/case_tinytap.png"
 highlight: ""
 summary: "TinyTap Publisher NFTs"
 order: 4
