@@ -12,7 +12,7 @@ const articleCards = [
     link: '/case-study/tinytap',
     title: 'Publisher NFTs by TinyTap, Animoca Brands',
     imgSrc: '/case_tinytap.png',
-    
+
     content: `Animoca Brands & TinyTap launched first batch of six TinyTap Publisher NFTs sold at auction for a total of 138.926 ETH, generating a total 67.7 ETH for the six teachers who authored the content.`
   },
   {
@@ -28,6 +28,13 @@ Our partner Vincent Lau, lead the development of reservation systems and IoT int
     imgSrc: '/case_spaceship.jpg',
     content:
       'One of the rapidly growing logistics startups in Hong Kong, Spaceship has urging need to increase their technical capacity for their next stage of growth.'
+  },
+  {
+    link: '/case-study/teaming-up-with-stockviva',
+    title: 'Teaming up with Stockviva',
+    imgSrc: '/case_stockviva.png',
+    content:
+      'Leading social trading app that is rapidly expanding in Asia. Backed by Alibaba Entrepreneurs Fund, K3 Ventures, HK Science Park and others. Transformation in Architecture and DevOps pipelines was cruical to unblocking growth.'
   },
   {
     link: '/case-study/hypefest-by-hypebeast',
